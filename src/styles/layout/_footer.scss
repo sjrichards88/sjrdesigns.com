@@ -1,0 +1,8 @@
+.footer {
+    background-color: $black;
+    padding: $gutter;
+    p {
+        max-width: $container-max-width;
+        margin: 0 auto;
+    }
+}
