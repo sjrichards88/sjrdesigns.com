@@ -2,7 +2,7 @@ import React from 'react'
 
 const Services = () => (
     <section className="section services" id="services">
-        <h2>Services</h2>
+        <h2>services</h2>
         <div className="services__wrap">
 
             <div className="services__service">
