@@ -132,6 +132,12 @@
             &__errors {
                 color: $soft-red;
                 padding-top: 5px;
+                &.hidden {
+                    visibility: hidden;
+                }
+            }
+            &__success {
+                color: $brand-blue;
             }
             &__message {
                 p {

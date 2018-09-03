@@ -9,9 +9,14 @@ class Contact extends Component {
             name: '',
             email: '',
             message: '',
+            nameError: false,
+            emailError: false,
+            messageError: false,
             nameActive: false,
             emailActive: false,
-            messageActive: false
+            messageActive: false,
+            formSuccess: false,
+            formError: false
         }
 
         this.handleInputFocus = this.handleInputFocus.bind(this)
@@ -31,8 +36,15 @@ class Contact extends Component {
     handleInput(e) {
         const name = e.target.name
         const value = e.target.value
+        let error = false
+
+        if (value === '') {
+            error = true
+        }
+
         this.setState({
-            [name]: value
+            [name]: value,
+            [`${name}Error`]: error
         })
     }
 
@@ -44,7 +56,26 @@ class Contact extends Component {
 
     handleSubmit(e) {
         e.preventDefault()
+        let errorState = []
         const { name, email, message } = this.state
+
+        if (name === '') {
+            errorState.nameError = true
+        }
+
+        if (email === '') {
+            errorState.emailError = true
+        }
+
+        if (message === '') {
+            errorState.messageError = true
+        }
+
+        if (Object.keys(errorState).length !== 0 && errorState.constructor !== Object) {
+            this.setState(errorState)
+            return
+        }
+
         const postData = this.encode({
             "form-name": "contact",
             "name": name,
@@ -57,8 +88,19 @@ class Contact extends Component {
             headers: { "Content-Type": "application/x-www-form-urlencoded" },
             body: postData
         })
-            .then(() => alert("Success!"))
-            .catch(error => alert(error))
+            .then(() => {
+                this.setState({
+                    name: '',
+                    email: '',
+                    message: '',
+                    formSuccess: true
+                })
+            })
+            .catch(error => {
+                this.setState({
+                    formError: true
+                })
+            })
     }
 
     render() {
@@ -67,9 +109,13 @@ class Contact extends Component {
             name,
             email,
             message,
+            nameError,
+            emailError,
+            messageError,
             nameActive,
             emailActive,
-            messageActive
+            messageActive,
+            formSuccess
         } = this.state
 
         return(
@@ -90,7 +136,9 @@ class Contact extends Component {
                                     onChange={this.handleInput} 
                                     />
                                 </div>
-                                <div className="form__errors"></div>
+                                <div className={`form__errors ${nameError === true ? '' : 'hidden'}`}>
+                                    Name is required
+                                </div>
                             </div>
 
                             <div className="form__group form__group--50 form__group--50-right">
@@ -105,7 +153,9 @@ class Contact extends Component {
                                     onChange={this.handleInput} 
                                     />
                                 </div>
-                                <div className="form__errors"></div>
+                                <div className={`form__errors ${emailError === true ? '' : 'hidden'}`}>
+                                    Email is required
+                                </div>
                             </div>
 
                             <div className="form__group">
@@ -122,12 +172,20 @@ class Contact extends Component {
                                     >
                                     </textarea>
                                 </div>
-                                <div className="form__errors"></div>
+                                <div className={`form__errors ${messageError === true ? '' : 'hidden'}`}>
+                                    Message is required
+                                </div>
                             </div>
 
                             <div className="form__group">
                                 <button type="submit">Send</button>
                             </div>
+
+                            {formSuccess && 
+                                <div className="form__success">
+                                    Thank you for your message, I will be in touch shortly.
+                                </div>
+                            }
 
                         </form>
                     </div>

@@ -73,7 +73,7 @@ class Work extends Component {
                     note: 'developed at Dewynters'
                 },
                 {
-                    title: 'Bouquets &amp; Bows',
+                    title: 'Bouquets & Bows',
                     image: imgBows,
                     url: '',
                     note: 'coming soon'
