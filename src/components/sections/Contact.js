@@ -36,6 +36,12 @@ class Contact extends Component {
         })
     }
 
+    encode(data) {
+        return Object.keys(data)
+            .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+            .join("&");
+    }
+
     handleSubmit(e) {
         e.preventDefault()
         const { name, email, message } = this.state
@@ -43,7 +49,7 @@ class Contact extends Component {
         fetch("/", {
             method: "POST",
             headers: { "Content-Type": "application/x-www-form-urlencoded" },
-            body: encode({ 
+            body: this.encode({ 
                 "form-name": "contact", 
                 "name": name,
                 "email": email,
