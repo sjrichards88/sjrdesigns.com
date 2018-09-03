@@ -45,20 +45,20 @@ class Contact extends Component {
     handleSubmit(e) {
         e.preventDefault()
         const { name, email, message } = this.state
+        const postData = this.encode({
+            "form-name": "contact",
+            "name": name,
+            "email": email,
+            "message": message,
+        })
 
         fetch("/", {
             method: "POST",
             headers: { "Content-Type": "application/x-www-form-urlencoded" },
-            body: this.encode({ 
-                "form-name": "contact", 
-                "name": name,
-                "email": email,
-                "message": message,
-            })
+            body: postData
         })
             .then(() => alert("Success!"))
-            .catch(error => alert(error));
-
+            .catch(error => alert(error))
     }
 
     render() {
