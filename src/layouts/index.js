@@ -58,7 +58,19 @@ class Layout extends Component {
 								"areaServed": "GB", 
 								"availableLanguage": "English" 
 							}]
-						} 					
+						},
+						{
+							"@context" : "http://schema.org",
+							"@type" : "WebSite",
+							"name" : "London and Basingstoke based Web Developer",
+							"url" : "https://sjrdesigns.com"
+						},
+						{
+							"@context": "http://schema.org",
+							"@type": "Person",
+							"name": "Simon Richards",
+							"url": "https://sjrdesigns.com"
+						}					
 					`}</script>
 				</Helmet>
 				<Header siteTitle={data.site.siteMetadata.title} navToggled={navToggled} toggleNav={this.toggleNav} />
