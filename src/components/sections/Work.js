@@ -1,4 +1,7 @@
 import React, { Component } from 'react'
+import {
+    isMobile
+} from "react-device-detect";
 
 import imgPopHouse from '../../assets/images/pop-house.jpg'
 import imgKingTut from '../../assets/images/king-tut.jpg'
@@ -17,6 +20,7 @@ class Work extends Component {
         super(props)
 
         this.state = {
+            itemActive: '',
             items: [
                 {
                     title: 'Pophouse Hotel',
@@ -80,6 +84,37 @@ class Work extends Component {
                 },
             ]
         }
+
+        this.workTrigger = this.workTrigger.bind(this)
+    }
+
+    openTab(url) {
+        if (url) {
+            const win = window.open(url, '_blank');
+            if (win) {
+                //Browser has allowed it to be opened
+                win.focus()
+            }
+        }
+    }
+
+    workTrigger(e) {
+        e.preventDefault()
+        const url = e.currentTarget.href
+        const { itemActive } = this.state
+        if (isMobile) {
+            const key = e.currentTarget.getAttribute('data-key')
+            if (itemActive !== key) {
+                this.setState({
+                    itemActive: key
+                })
+            } else {
+                this.openTab(url)
+            }
+        } else {
+            this.openTab(url)
+        }
+
     }
 
     render() {
@@ -88,7 +123,7 @@ class Work extends Component {
 
             if (item.url === '') {
                 return (
-                    <div className="work__block" key={i}>
+                    <div className={`work__block ${this.state.itemActive === i ? 'active' : ''}`} key={i} data-key={i} onClick={this.workTrigger}>
                         <img src={item.image} className="work__block-image" alt={`${item.title} website`} />
                         <div className="work__block-content">
                             <h3>{item.title}</h3>
@@ -98,7 +133,7 @@ class Work extends Component {
                 )
             } else {
                 return (
-                    <a href={item.url} className="work__block" target="_blank" rel="noreferrer noopener" key={i}>
+                    <a href={item.url} className={`work__block ${this.state.itemActive === i ? 'active' : ''}`} key={i} data-key={i} onClick={this.workTrigger}>
                         <img src={item.image} className="work__block-image" alt={`${item.title} website`} />
                         <div className="work__block-content">
                             <h3>{item.title}</h3>

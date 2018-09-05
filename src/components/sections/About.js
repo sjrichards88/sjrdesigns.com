@@ -14,11 +14,11 @@ const About = () => (
 
                 <h2>about</h2>
 
-                <p>Hello, I am Simon Richards, a web developer and designer based in London. I graduated in Multimedia Computing at Plymouth University and have been employed as a web developer for 5+ years.</p>
+                <p>Hello, I am Simon Richards, a web developer and designer based in London &amp; Basingstoke. I graduated in Multimedia Computing at Plymouth University and have been working as a web developer for 5+ years.</p>
 
                 <p>I currently work at <a href="//www.dewynters.com" target="_blank" rel="noreferrer">Dewynters</a> as a senior web developer.</p>
 
-                <p>I am available for freelance work for small to medium sized projects. <a href="#contact" className="scroll-to">Contact me</a>  if you are interested.</p>
+                <p>I am available for freelance work for small to medium sized projects. <a href="#contact" className="scroll-to">Contact me</a> if you are interested.</p>
 
                 <p>Some companies that I’ve been lucky to work with along the way...</p>
 

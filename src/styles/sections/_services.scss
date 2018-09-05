@@ -23,12 +23,11 @@
         @media (min-width: $screen-md) {
             width: 33.3%;
         }
-        h4 {
+        h3 {
             margin: $gutter / 2 0;
             font-size: $h5-font-size;
             @media (min-width: $screen-sm) {
                 margin: $gutter 0;
-                font-size: $h4-font-size;
             }
         }
         .icon {

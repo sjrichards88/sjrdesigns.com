@@ -28,5 +28,13 @@ module.exports = {
         precision: 8,
       },
     },
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: "UA-22794481-1",
+        // Puts tracking script in the head instead of the body
+        head: false,
+      },
+    },
 ],
 }

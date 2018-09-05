@@ -11,15 +11,22 @@ class Header extends Component {
 
 		this.handleScroll = this.handleScroll.bind(this)
 		this.scrollToSection = this.scrollToSection.bind(this)
+		this.horizontalScrollBar = this.horizontalScrollBar.bind(this)
 	}
 
 	componentDidMount() {
 		this.handleScroll()
-		window.addEventListener('scroll', this.handleScroll, true);
+		window.addEventListener('scroll', this.handleScroll, true)
+
+		this.horizontalScrollBar()
+		window.addEventListener('scroll', this.horizontalScrollBar, true)
+		window.addEventListener('resize', this.horizontalScrollBar, true)
 	}
 
 	componentWillUnmount() {
 		window.removeEventListener('scroll', this.handleScroll, true);
+		window.removeEventListener('scroll', this.horizontalScrollBar, true);
+		window.removeEventListener('resize', this.horizontalScrollBar, true);
 	}
 
 	handleScroll() {
@@ -54,6 +61,15 @@ class Header extends Component {
 		}
 	}
 
+	horizontalScrollBar() {
+		var documentHeight = document.body.clientHeight,
+			windowHeight = window.outerHeight,
+			windowOffset = window.pageYOffset,
+			percentage = windowOffset / (documentHeight - windowHeight) * 100;
+
+		this.bar.style.width =  percentage + '%'
+	}
+
 	render() {
 
 		const { navWhite } = this.state
@@ -62,7 +78,7 @@ class Header extends Component {
 		return(
 			<header className={`header ${navToggled === true ? 'active' : ''} ${navWhite === true ? 'header--white' : ''}`}>
 				<div className="header__logo">
-					<a href="#landing">simon richards</a>
+					<a href="#landing" onClick={(e) => this.scrollToSection(e, 'landing')}>simon richards</a>
 				</div>
 				<div className="header__nav-toggle" onClick={toggleNav}>
 					<div className="burger">MENU</div>
@@ -83,7 +99,7 @@ class Header extends Component {
 						</li>
 					</ul>
 				</nav>
-				<div className="header__horizontal-bar"></div>
+				<div className="header__horizontal-bar" ref={(bar) => { this.bar = bar }}></div>
 			</header>
 		)
 	}

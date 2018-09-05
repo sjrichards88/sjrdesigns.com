@@ -42,6 +42,24 @@ class Layout extends Component {
 					<link rel="manifest" href="./manifest.json" />
 					<link rel="mask-icon" href="./safari-pinned-tab.svg" color="#0a0b0f" />
 					<meta name="theme-color" content="#ffffff" />
+
+					{/* Schema */}
+					<script type="application/ld+json">{`
+						{ 
+							"@context": "http://schema.org", 
+							"@type": "Organization", 
+							"url": "https://sjrdesigns.com", 
+							"logo": "https://sjrdesigns.com/android-chrome-384x384.png", 
+							"contactPoint": [{ 
+								"@type": "ContactPoint", 
+								"telephone": "+447850944628", 
+								"email": "sjrichards88@gmail.com", 
+								"contactType": "customer service", 
+								"areaServed": "GB", 
+								"availableLanguage": "English" 
+							}]
+						} 					
+					`}</script>
 				</Helmet>
 				<Header siteTitle={data.site.siteMetadata.title} navToggled={navToggled} toggleNav={this.toggleNav} />
 				<div className="content-wrap">

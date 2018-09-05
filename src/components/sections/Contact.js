@@ -38,7 +38,7 @@ class Contact extends Component {
         const value = e.target.value
         let error = false
 
-        if (value === '') {
+        if (value.trim() === '') {
             error = true
         }
 
@@ -59,15 +59,15 @@ class Contact extends Component {
         let errorState = []
         const { name, email, message } = this.state
 
-        if (name === '') {
+        if (name.trim() === '') {
             errorState.nameError = true
         }
 
-        if (email === '') {
+        if (email.trim() === '') {
             errorState.emailError = true
         }
 
-        if (message === '') {
+        if (message.trim() === '') {
             errorState.messageError = true
         }
 
@@ -194,7 +194,7 @@ class Contact extends Component {
 
                         <div className="contact__info-block">
                             <h4>Get in Touch!</h4>
-                            <p>Interesting in working with me? Need a website? <br /> Don't hesitate to drop me a line.</p>
+                            <p>Interesting in working with me? Need a website? <br /> Don't hesitate to send me a message.</p>
                         </div>
 
                         <div className="contact__info-block">

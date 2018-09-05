@@ -138,6 +138,7 @@
             }
             &__success {
                 color: $brand-blue;
+                padding: $gutter / 2 0 $gutter 0;
             }
             &__message {
                 p {
