@@ -30,7 +30,7 @@ class Header extends Component {
 	}
 
 	handleScroll() {
-		let scrollPosition = document.documentElement.scrollTop
+		let scrollPosition = window.scrollY
 		let landingHeight = document.getElementById('landing').clientHeight
 		let navWhite = scrollPosition <= (landingHeight - 10) ? false : true
 
