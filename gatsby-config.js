@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: 'Simon Richards | London / Basingstoke based Web Developer &amp; Designer',
+    title: 'Simon Richards | London / Basingstoke based Web Developer & Designer',
   },
   plugins: [
     `gatsby-plugin-react-next`,
