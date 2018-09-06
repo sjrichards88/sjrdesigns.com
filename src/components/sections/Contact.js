@@ -123,7 +123,17 @@ class Contact extends Component {
                 <h2>contact</h2>
                 <div className="contact__wrap">
                     <div className="contact__form">
-                        <form name="contact" method="POST" className="form" data-netlify="true" onSubmit={this.handleSubmit}>
+                        <form 
+                            name="contact" 
+                            method="POST" 
+                            className="form" 
+                            data-netlify="true" 
+                            netlify-honeypot="bot-field"
+                            onSubmit={this.handleSubmit}
+                        >
+                            <div className="hidden"> 
+                                <input name="bot-field" />
+                            </div>
                             <div className="form__group form__group--50">
                                 <div className={`form__input-wrap ${nameActive === true ? 'active' : ''}`} id="name">
                                     <input 

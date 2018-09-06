@@ -143,9 +143,9 @@
                         border-bottom-color: $black-blue; // Make borders visible
                         border-left-color: $black-blue;
                         transition:
-                            border-color 0s ease-out 0.4s, // Wait for ::before to finish before showing border
-                            width 0.2s ease-out 0.4s, // And then exanding width
-                            height 0.2s ease-out 0.6s; // And finally height
+                        border-color 0s ease-out 0.4s, // Wait for ::before to finish before showing border
+                        width 0.2s ease-out 0.4s, // And then exanding width
+                        height 0.2s ease-out 0.6s; // And finally height
                     }
                 }
                 .work__block-image {

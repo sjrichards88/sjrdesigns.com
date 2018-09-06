@@ -20,7 +20,7 @@ class Work extends Component {
         super(props)
 
         this.state = {
-            itemActive: '',
+            itemActive: -1,
             items: [
                 {
                     title: 'Pophouse Hotel',
@@ -114,16 +114,18 @@ class Work extends Component {
         } else {
             this.openTab(url)
         }
-
     }
 
     render() {
+
+        let { itemActive } = this.state
+        itemActive = parseInt(itemActive)
 
         const workItems = this.state.items.map( (item, i) => {
 
             if (item.url === '') {
                 return (
-                    <div className={`work__block ${this.state.itemActive === i ? 'active' : ''}`} key={i} data-key={i} onClick={this.workTrigger}>
+                    <div className={`work__block ${itemActive === i ? 'active' : ''}`} key={i} data-key={i} onClick={this.workTrigger}>
                         <img src={item.image} className="work__block-image" alt={`${item.title} website`} />
                         <div className="work__block-content">
                             <h3>{item.title}</h3>
@@ -133,7 +135,7 @@ class Work extends Component {
                 )
             } else {
                 return (
-                    <a href={item.url} className={`work__block ${this.state.itemActive === i ? 'active' : ''}`} key={i} data-key={i} onClick={this.workTrigger}>
+                    <a href={item.url} className={`work__block ${itemActive === i ? 'active' : ''}`} key={i} data-key={i} onClick={this.workTrigger}>
                         <img src={item.image} className="work__block-image" alt={`${item.title} website`} />
                         <div className="work__block-content">
                             <h3>{item.title}</h3>
