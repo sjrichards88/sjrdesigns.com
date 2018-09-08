@@ -128,6 +128,7 @@ class Contact extends Component {
                             method="POST" 
                             className="form" 
                             data-netlify="true" 
+                            data-netlify-recaptcha="true" 
                             netlify-honeypot="bot-field"
                             onSubmit={this.handleSubmit}
                         >
@@ -185,6 +186,10 @@ class Contact extends Component {
                                 <div className={`form__errors ${messageError === true ? '' : 'hidden'}`}>
                                     Message is required
                                 </div>
+                            </div>
+
+                            <div className="form__group">
+                                <div class="g-recaptcha" data-sitekey="6LdAMW8UAAAAANEbvi_hxSI83hgdz9ZCAajbS8t-"></div>
                             </div>
 
                             <div className="form__group">
