@@ -130,6 +130,7 @@ class Contact extends Component {
             nameError,
             emailError,
             messageError,
+            googleVerifiedError,
             nameActive,
             emailActive,
             messageActive,
