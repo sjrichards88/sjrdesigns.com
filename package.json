@@ -15,8 +15,8 @@
     "gatsby-plugin-resolve-src": "^1.1.4",
     "gatsby-plugin-sass": "^1.0.26",
     "react-device-detect": "^1.5.9",
-    "react-helmet": "^5.2.0",
-    "react-recaptcha": "^2.3.10"
+    "react-google-recaptcha": "^1.0.2",
+    "react-helmet": "^5.2.0"
   },
   "keywords": [
     "gatsby"

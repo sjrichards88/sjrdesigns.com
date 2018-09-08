@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import Recaptcha from 'react-recaptcha'
+import ReCAPTCHA from "react-google-recaptcha";
 
 let recaptchaInstance;
 
@@ -105,7 +105,7 @@ class Contact extends Component {
                     message: '',
                     formSuccess: true
                 })
-                recaptchaInstance.reset();
+                this.recap.reset()
             })
             .catch(error => {
                 this.setState({
@@ -115,11 +115,13 @@ class Contact extends Component {
     }
 
 
-    onGoogleVerify() {
-        this.setState({
-            googleVerified: true,
-            googleVerifiedError: false
-        })
+    onGoogleVerify(res) {
+        if (res.length !== 0) {
+            this.setState({
+                googleVerified: true,
+                googleVerifiedError: false
+            })
+        }
     }
 
     render() {
@@ -208,9 +210,10 @@ class Contact extends Component {
                             </div>
 
                             <div className="form__group">
-                                <Recaptcha
+                                <ReCAPTCHA
+                                    ref={(r) => this.recap = r}
                                     sitekey="6LdAMW8UAAAAANEbvi_hxSI83hgdz9ZCAajbS8t-"
-                                    verifyCallback={this.onGoogleVerify}
+                                    onChange={this.onGoogleVerify}
                                 />
                                 <div className={`form__errors ${googleVerifiedError === true ? '' : 'hidden'}`}>
                                     Recaptcha is required
