@@ -117,7 +117,8 @@ class Contact extends Component {
 
     onGoogleVerify() {
         this.setState({
-            googleVerified: true
+            googleVerified: true,
+            googleVerifiedError: false
         })
     }
 
