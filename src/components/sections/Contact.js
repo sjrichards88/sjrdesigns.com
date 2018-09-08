@@ -148,7 +148,6 @@ class Contact extends Component {
                             method="POST" 
                             className="form" 
                             data-netlify="true" 
-                            data-netlify-recaptcha="true" 
                             netlify-honeypot="bot-field"
                             onSubmit={this.handleSubmit}
                         >
