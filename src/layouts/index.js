@@ -76,7 +76,7 @@ class Layout extends Component {
 						}					
 					`}</script>
 
-					<script src='https://www.google.com/recaptcha/api.js'></script>
+					<script src='https://www.google.com/recaptcha/api.js' async defer></script>
 				</Helmet>
 				<Header siteTitle={data.site.siteMetadata.title} navToggled={navToggled} toggleNav={this.toggleNav} />
 				<div className="content-wrap">

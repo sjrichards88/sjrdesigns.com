@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import Reaptcha from 'reaptcha'
+import Recaptcha from 'react-recaptcha'
 
 let recaptchaInstance;
 
@@ -208,9 +208,9 @@ class Contact extends Component {
                             </div>
 
                             <div className="form__group">
-                                <Reaptcha
+                                <Recaptcha
                                     sitekey="6LdAMW8UAAAAANEbvi_hxSI83hgdz9ZCAajbS8t-"
-                                    onVerify={this.onGoogleVerify}
+                                    verifyCallback={this.onGoogleVerify}
                                 />
                                 <div className={`form__errors ${googleVerifiedError === true ? '' : 'hidden'}`}>
                                     Recaptcha is required
