@@ -1,4 +1,7 @@
 import React, { Component } from 'react'
+import Reaptcha from 'reaptcha'
+
+let recaptchaInstance;
 
 class Contact extends Component {
 
@@ -9,9 +12,11 @@ class Contact extends Component {
             name: '',
             email: '',
             message: '',
+            googleVerified: false,
             nameError: false,
             emailError: false,
             messageError: false,
+            googleVerifiedError: false,
             nameActive: false,
             emailActive: false,
             messageActive: false,
@@ -22,6 +27,7 @@ class Contact extends Component {
         this.handleInputFocus = this.handleInputFocus.bind(this)
         this.handleInput = this.handleInput.bind(this)
         this.handleSubmit = this.handleSubmit.bind(this)
+        this.onGoogleVerify = this.onGoogleVerify.bind(this)
     }
 
     handleInputFocus(e) {
@@ -57,7 +63,7 @@ class Contact extends Component {
     handleSubmit(e) {
         e.preventDefault()
         let errorState = []
-        const { name, email, message } = this.state
+        const { name, email, message, googleVerified } = this.state
 
         if (name.trim() === '') {
             errorState.nameError = true
@@ -69,6 +75,10 @@ class Contact extends Component {
 
         if (message.trim() === '') {
             errorState.messageError = true
+        }
+
+        if (googleVerified === false) {
+            errorState.googleVerifiedError = true
         }
 
         if (Object.keys(errorState).length !== 0 && errorState.constructor !== Object) {
@@ -95,12 +105,20 @@ class Contact extends Component {
                     message: '',
                     formSuccess: true
                 })
+                recaptchaInstance.reset();
             })
             .catch(error => {
                 this.setState({
                     formError: true
                 })
             })
+    }
+
+
+    onGoogleVerify() {
+        this.setState({
+            googleVerified: true
+        })
     }
 
     render() {
@@ -189,7 +207,13 @@ class Contact extends Component {
                             </div>
 
                             <div className="form__group">
-                                <div class="g-recaptcha" data-sitekey="6LdAMW8UAAAAANEbvi_hxSI83hgdz9ZCAajbS8t-"></div>
+                                <Reaptcha
+                                    sitekey="6LdAMW8UAAAAANEbvi_hxSI83hgdz9ZCAajbS8t-"
+                                    onVerify={this.onGoogleVerify}
+                                />
+                                <div className={`form__errors ${googleVerifiedError === true ? '' : 'hidden'}`}>
+                                    Recaptcha is required
+                                </div>
                             </div>
 
                             <div className="form__group">
