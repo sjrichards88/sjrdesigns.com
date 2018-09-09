@@ -13,6 +13,7 @@ class Contact extends Component {
             email: '',
             message: '',
             googleVerified: false,
+            g_recaptcha_response: false,
             nameError: false,
             emailError: false,
             messageError: false,
@@ -63,7 +64,7 @@ class Contact extends Component {
     handleSubmit(e) {
         e.preventDefault()
         let errorState = []
-        const { name, email, message, googleVerified } = this.state
+        const { name, email, message, googleVerified, g_recaptcha_response } = this.state
 
         if (name.trim() === '') {
             errorState.nameError = true
@@ -77,7 +78,7 @@ class Contact extends Component {
             errorState.messageError = true
         }
 
-        if (googleVerified === false) {
+        if (googleVerified === false || g_recaptcha_response == false) {
             errorState.googleVerifiedError = true
         }
 
@@ -91,6 +92,7 @@ class Contact extends Component {
             "name": name,
             "email": email,
             "message": message,
+            "g-recaptcha-response": g_recaptcha_response
         })
 
         fetch("/", {
@@ -103,7 +105,9 @@ class Contact extends Component {
                     name: '',
                     email: '',
                     message: '',
-                    formSuccess: true
+                    formSuccess: true,
+                    googleVerified: false,
+                    g_recaptcha_response: false
                 })
                 this.recap.reset()
             })
@@ -119,7 +123,8 @@ class Contact extends Component {
         if (res.length !== 0) {
             this.setState({
                 googleVerified: true,
-                googleVerifiedError: false
+                googleVerifiedError: false,
+                g_recaptcha_response: res
             })
         }
     }
@@ -150,6 +155,7 @@ class Contact extends Component {
                             method="POST" 
                             className="form" 
                             data-netlify="true" 
+                            data-netlify-recaptcha="true"
                             netlify-honeypot="bot-field"
                             onSubmit={this.handleSubmit}
                         >
