@@ -20,12 +20,12 @@
             display: flex;
             flex-wrap: wrap;
             .form__group {
-                margin-bottom: $gutter / 2;
+                margin-bottom: calc($gutter / 2);
                 width: 100%;
                 display: flex;
                 flex-direction: column;
                 @media (min-width: $screen-md) {
-                    margin-bottom: $gutter / 1.5;
+                    margin-bottom: calc($gutter / 1.5);
                 }
                 &--50 {
                     @media (min-width: $screen-md) {
@@ -97,7 +97,7 @@
                 width: 100%;
                 background-color: $input-bg;
                 border: 2px solid transparent;
-                padding: $gutter / 2;
+                padding: calc($gutter / 2);
                 font-family: $default-font-family;
                 font-size: $font-size-base;
                 color: $white;
@@ -105,7 +105,7 @@
                 z-index: 1;
                 border: 0;
                 @media (min-width: $screen-sm) {
-                    padding: $gutter / 1.2;
+                    padding: calc($gutter / 1.2);
                 }
                 &:focus {
                     outline: 0;
@@ -113,7 +113,7 @@
             }
             button {
                 background-color: $brand-blue;
-                padding: $gutter / 2 $gutter * 2;
+                padding: calc($gutter / 2) calc($gutter * 2);
                 border: 0;
                 font-weight: $font-weight-bold;
                 font-family: $heading-font-family;
@@ -138,7 +138,7 @@
             }
             &__success {
                 color: $brand-blue;
-                padding: $gutter / 2 0 $gutter 0;
+                padding: calc($gutter / 2) 0 $gutter 0;
             }
             &__message {
                 p {
@@ -179,7 +179,7 @@
             align-items: center;
             .icon {
                 font-size: $h4-font-size;
-                margin-right: $gutter / 2;
+                margin-right: calc($gutter / 2);
             }
             a {
                 color: $contact-font-color;

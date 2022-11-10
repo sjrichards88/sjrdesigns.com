@@ -1,0 +1,181 @@
+---
+import imgFrameless from '@assets/images/frameless.jpg'
+import imgWinterwonderland from '@assets/images/winter-wonderland.jpg'
+import imgTaste from '@assets/images/taste.jpg'
+import imgEdgesport from '@assets/images/edgesport.jpg'
+import imgJacc from '@assets/images/jacc.jpg'
+import imgThewalk from '@assets/images/thewalk.jpg'
+import imgMubadala from '@assets/images/mubadala.jpg'
+import imgBows from '@assets/images/bows.jpg'
+import imgWsm from '@assets/images/wsm.jpg'
+import imgAtp from '@assets/images/atp.jpg'
+import imgWomensscottish from '@assets/images/womensscottish.jpg'
+import imgChevron from '@assets/images/chevron.jpg'
+import imgPnc from '@assets/images/pnc.jpg'
+import imgBowwow from '@assets/images/bowwowlondon.jpg'
+import imgJDL from '@assets/images/just-dance-live.jpg'
+
+const items = [
+{
+  title: 'Frameless',
+  image: imgFrameless,
+  url: 'https://frameless.com/',
+  note: 'developed at Dewynters'
+},
+{
+  title: 'Hyde Park Winter Wonderland',
+  image: imgWinterwonderland,
+  url: 'https://hydeparkwinterwonderland.com/',
+  note: 'developed at Dewynters'
+},
+{
+  title: 'Taste Festival',
+  image: imgTaste,
+  url: 'https://london.tastefestivals.com/',
+  note: 'developed at Dewynters'
+},
+{
+  title: 'Edgesport',
+  image: imgEdgesport,
+  url: 'https://edgesport.com/',
+  note: 'developed at Dewynters'
+},
+{
+  title: 'Walk With Amal',
+  image: imgThewalk,
+  url: 'https://walkwithamal.org/',
+  note: 'developed at Dewynters'
+},
+{
+  title: 'Mubadala World Tennis Championship',
+  image: imgMubadala,
+  url: 'https://www.mubadalawtc.com/',
+  note: 'developed at Dewynters'
+},
+{
+  title: 'The Worlds Strongest Man',
+  image: imgWsm,
+  url: 'https://www.theworldsstrongestman.com/',
+  note: 'developed at Dewynters'
+},
+{
+  title: 'ATP Champions Tour',
+  image: imgAtp,
+  url: 'https://www.atpchampionstour.com/',
+  note: 'developed at Dewynters'
+},
+{
+  title: 'Women\'s Scottish Open',
+  image: imgWomensscottish,
+  url: 'https://www.womensscottish.com/',
+  note: 'developed at Dewynters'
+},
+{
+  title: 'The Chevron Championship',
+  image: imgChevron,
+  url: 'https://www.thechevronchampionship.com/',
+  note: 'developed at Dewynters'
+},
+{
+  title: 'PNC Championship',
+  image: imgPnc,
+  url: 'https://www.pncchampionship.com/',
+  note: 'developed at Dewynters'
+},
+{
+  title: 'Bowwow London',
+  image: imgBowwow,
+  url: 'https://www.bowwowlondon.org/',
+  note: 'developed at Dewynters'
+},
+{
+  title: 'Just Dance Live',
+  image: imgJDL,
+  url: 'https://justdancelive.com/',
+  note: 'developed at Dewynters'
+},
+{
+  title: 'Sheikh Jaber Al-Ahmad Cultural Centre',
+  image: imgJacc,
+  url: 'https://jacc-kw.com/',
+  note: 'developed at Dewynters'
+},
+{
+  title: 'Bouquets & Bows',
+  image: imgBows,
+  url: 'https://bouquetsandbows.com',
+  note: ''
+},
+]
+---
+
+<section class="section work" id="work">
+  <h2>Work</h2>
+  <div class="work__wrap">
+    {items.map((item) => {
+      return (
+        <a href={item.url} class="work__link" target="_blank" rel="noopener noreferrer">
+          <h3>{item.title}</h3>
+          <div class="work__block">
+            <img src={item.image} alt={`${item.title} website`} class="work__block-image" />
+            <div class="work__block-content">
+              <span class="work__block-smallprint">{item.note}</span>
+              <div class="work__block-icon">
+                <i class="icon icon-forward" aria-hidden="true"></i>
+              </div>
+            </div>
+          </div>
+          <div class="d-md-none text-right">
+            View website <i class="icon icon-forward" aria-hidden="true"></i>
+          </div>
+        </a>
+      )
+    })}
+  </div>
+</section>
+
+{/* 
+Archive
+// {
+//   title: 'Pophouse Hotel',
+//   image: imgPopHouse,
+//   url: 'https://pophouse.se/',
+//   note: 'developed at Dewynters'
+// },
+// {
+//   title: 'King Tut Exhibition',
+//   image: imgKingTut,
+//   url: 'https://kingtutexhibition.com/',
+//   note: 'developed at Dewynters'
+// },
+// {
+//   title: 'Abba the Museum',
+//   image: imgABBA,
+//   url: 'https://abbathemuseum.com/',
+//   note: 'developed at Dewynters'
+// },
+// {
+//   title: 'Mamma Mia The Party',
+//   image: imgMMTP,
+//   url: 'https://mammamiatheparty.com/',
+//   note: 'developed at Dewynters'
+// },
+// {
+//   title: 'Five Guys Named Moe',
+//   image: imgFGNM,
+//   url: 'https://www.fiveguysmusical.com/',
+//   note: 'developed at Dewynters'
+// },
+// {
+//   title: 'Bat Out Of Hell',
+//   image: imgBOOH,
+//   url: 'https://batoutofhellmusical.com/',
+//   note: 'developed at Dewynters'
+// },
+// {
+//   title: 'Marisha Wallace Soul Holiday',
+//   image: imgSoul,
+//   url: 'https://soulholidayalbum.com/',
+//   note: 'developed at Dewynters'
+// },
+*/}

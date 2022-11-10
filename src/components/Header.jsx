@@ -7,11 +7,13 @@ class Header extends Component {
 
 		this.state = {
 			navWhite: false,
+      navToggled: false
 		}
 
 		this.handleScroll = this.handleScroll.bind(this)
 		this.scrollToSection = this.scrollToSection.bind(this)
 		this.horizontalScrollBar = this.horizontalScrollBar.bind(this)
+    this.toggleNav = this.toggleNav.bind(this)
 	}
 
 	componentDidMount() {
@@ -27,6 +29,12 @@ class Header extends Component {
 		window.removeEventListener('scroll', this.handleScroll, true);
 		window.removeEventListener('scroll', this.horizontalScrollBar, true);
 		window.removeEventListener('resize', this.horizontalScrollBar, true);
+	}
+
+	toggleNav() {
+		this.setState({
+			navToggled: !this.state.navToggled
+		})
 	}
 
 	handleScroll() {
@@ -56,8 +64,8 @@ class Header extends Component {
 			behavior: 'smooth'
 		})
 
-		if (this.props.navToggled === true) {
-			this.props.toggleNav()
+		if (this.state.navToggled === true) {
+			this.toggleNav()
 		}
 	}
 
@@ -71,16 +79,14 @@ class Header extends Component {
 	}
 
 	render() {
-
-		const { navWhite } = this.state
-		const { toggleNav, navToggled } = this.props
+		const { navWhite, navToggled } = this.state
 
 		return(
 			<header className={`header ${navToggled === true ? 'active' : ''} ${navWhite === true ? 'header--white' : ''}`}>
 				<div className="header__logo">
 					<a href="#landing" onClick={(e) => this.scrollToSection(e, 'landing')}>simon richards</a>
 				</div>
-				<div className="header__nav-toggle" onClick={toggleNav}>
+				<div className="header__nav-toggle" onClick={this.toggleNav}>
 					<div className="burger">MENU</div>
 				</div>
 				<nav className="header__nav">

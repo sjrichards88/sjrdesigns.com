@@ -68,7 +68,7 @@
             font-size: $h2-font-size;
             font-weight: $font-weight-bold;
             text-align: center;
-            padding: 0 $gutter / 2;
+            padding: 0 calc($gutter / 2);
             @media (min-width: $screen-sm) {
                 text-align: left;
                 font-size: $h1-font-size * 0.9;
@@ -84,7 +84,7 @@
             font-size: $h3-font-size;
             font-weight: $font-weight-semi-bold;
             text-align: center;
-            padding: 0 $gutter / 2;
+            padding: 0 calc($gutter / 2);
             @media (min-width: $screen-sm) {
                 text-align: right;
                 font-size: $h2-font-size * 0.9;

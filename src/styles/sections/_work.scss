@@ -1,24 +1,59 @@
 .work {
+    background-color: $grey-light;
     &__wrap {
         display: flex;
         flex-wrap: wrap;
     }
-    &__block {
+    &__link {
+        display: block;
         width: 100%;
+        @media (min-width: $screen-sm) {
+            width: 50%;
+            padding: calc($gutter / 2);
+            margin-bottom: 0;
+        }
+        // @media (min-width: $screen-md) {
+        //     width: 33.3%;
+        //     padding: $gutter;
+        // }
+        @media (min-width: $screen-lg) {
+            width: 33.3%;
+            padding: $gutter;
+        }
+        h3 {
+            font-family: $default-font-family;
+            font-weight: $font-weight-bold;
+            font-size: $h5-font-size;
+            color: $black-blue;
+            position: relative;
+            &:after {
+                content: "";
+                position: absolute;
+                height: 3px;
+                background-color: $black-blue;
+                width: 0;
+                left: 0;
+                bottom: -10px;
+                transition: $transition-base;
+                opacity: .8;
+            }
+        }
+        &:hover {
+            @media (min-width: $screen-sm) {
+                h3 {
+                    &:after {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+    &__block {
         overflow: hidden;
         position: relative;
         font-size: 0;
         padding: 0;
-        margin-bottom: $gutter / 2;
-        @media (min-width: $screen-xsm) {
-            width: 50%;
-            padding: $gutter / 2;
-            margin-bottom: 0;
-        }
-        @media (min-width: $screen-md) {
-            width: 33.3%;
-            padding: $gutter;
-        }
+        margin-bottom: calc($gutter / 2);
         &-image {
             transition: transform .8s;
             transform: scale(1) rotate(0);
@@ -33,7 +68,7 @@
             background-color: rgba($brand-blue, 0);
             transition: all .8s ease-in-out;
             visibility: hidden;
-            h3 {
+            h4 {
                 margin: 0;
                 position: relative;
                 top: 50%;
@@ -41,36 +76,26 @@
                 transform: translate(-50%, -50%);
                 text-align: center;
                 color: $black-blue;
-                opacity: 0;
-                transition: opacity .3s;
-                transition-delay: .2s;
                 float: left;
                 font-family: $default-font-family;
                 font-weight: $font-weight-bold;
                 font-size: $h5-font-size;
+                opacity: 0;
+                transition: all .8s ease-in-out;
                 @media (min-width: $screen-sm) {
                     font-size: $h4-font-size;
                 }
                 &:after {
-                    content: "";
-                    position: absolute;
-                    height: 3px;
-                    background-color: $black-blue;
-                    width: 0;
-                    bottom: -10px;
-                    left: 50%;
-                    transform: translateX(-50%);
-                    transition: $transition-base;
-                    transition-delay: .5s;
-                    opacity: .8;
+                    display: none;
                 }
             }
         }
         &-icon {
             position: absolute;
             z-index: 5;
-            bottom: $gutter;
-            right: $gutter;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
             height: 40px;
             width: 40px;
             opacity: 0;
@@ -115,11 +140,8 @@
                 .work__block-content {
                     visibility: visible;
                     background-color: rgba($brand-blue, .85);
-                    h3 {
+                    h4 {
                         opacity: 1;
-                        &:after {
-                            width: 80%;
-                        }
                     }
                 }
                 .work__block-smallprint {
@@ -159,12 +181,6 @@
             .work__block-content {
                 visibility: visible;
                 background-color: rgba($brand-blue, .85);
-                h3 {
-                    opacity: 1;
-                    &:after {
-                        width: 80%;
-                    }
-                }
             }
             .work__block-smallprint {
                 opacity: 1;

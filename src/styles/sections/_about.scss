@@ -23,7 +23,7 @@
 		margin: 0 auto;
 		box-shadow: 0px 0px 29px 3px rgba(0, 0 ,0, .15);
 		@media (min-width: $screen-sm) {
-			padding: $gutter * 2;		
+			padding: calc($gutter * 2);		
 		}
 	}
 	&__copy {
@@ -41,6 +41,13 @@
 			font-size: 18px;
 		}
 	}
+	.tech-list {
+		text-align: left;
+		padding-left: 1rem;
+		@media (min-width: $screen-sm) {
+			padding-left: 7rem;
+		}
+	}
 	&__companies {
 		padding: 0;
 		margin: 0;
@@ -50,12 +57,12 @@
 		position: relative;
 		li {
 			display: inline-block;
-			padding: $gutter / 1.5;
+			padding: calc($gutter / 1.5);
 			width: 33.3%;
 			padding: 10px;
 			@media (min-width: $screen-sm) {
 				width: auto;
-				padding: $gutter / 1.5;
+				padding: calc($gutter / 1.5);
 			}
 			img {
 				height: 35px;

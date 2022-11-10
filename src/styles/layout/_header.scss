@@ -3,7 +3,7 @@
     width: 100%;
     top: 0;
     left: 0;
-    z-index: 10;
+    z-index: 100;
     transition: all .4s;
     height: 55px;
     @media (min-width: $screen-sm) {
@@ -26,7 +26,7 @@
         position: absolute;
         left: 0;
         top: 0;
-        margin: $gutter / 2;
+        margin: calc($gutter / 2);
         overflow: hidden;
         @media (min-width: $screen-xsm) {
             margin: $gutter;
@@ -63,8 +63,8 @@
         .burger {
             cursor: pointer;
             position: absolute;
-            right: $gutter / 2;
-            top: $gutter / 2;
+            right: calc($gutter / 2);
+            top: calc($gutter / 2);
             width: 35px;
             margin-top: 9px;
             color: $white;
@@ -97,13 +97,13 @@
         position: fixed;
         right: 0;
         top: 0;
-        padding-top: $gutter / 4;
+        padding-top: calc($gutter / 4);
         transform: translateX(100%);
         width: 60%;
         height: 100vh;
         background-color: $brand-blue;
         @media (min-width: $screen-xsm) {
-            padding-top: $gutter / 2;
+            padding-top: calc($gutter / 2);
         }
         @media (min-width: $screen-sm) {
             margin: $gutter;
@@ -124,11 +124,11 @@
             }
             li {
                 overflow: hidden;
-                padding: $gutter / 2 $gutter;
+                padding: calc($gutter / 2) $gutter;
                 @media (min-width: $screen-sm) {
                     display: inline-block;
-                    margin-right: $gutter / 4;
-                    margin-left: $gutter / 4;
+                    margin-right: calc($gutter / 4);
+                    margin-left: calc($gutter / 4);
                     padding: 0;
                 }
                 a {
