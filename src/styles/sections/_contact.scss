@@ -177,7 +177,7 @@
             display: flex;
             flex-wrap: wrap;
             align-items: center;
-            .icon {
+            svg {
                 font-size: $h4-font-size;
                 margin-right: calc($gutter / 2);
             }

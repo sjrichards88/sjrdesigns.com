@@ -29,7 +29,7 @@
                 margin: $gutter 0;
             }
         }
-        .icon {
+        svg {
             font-size: $h1-font-size * 1.25;
             color: $grey-light-dark;
             @media (min-width: $screen-sm) {
