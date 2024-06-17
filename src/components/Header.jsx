@@ -84,7 +84,7 @@ class Header extends Component {
 		return(
 			<header className={`header ${navToggled === true ? 'active' : ''} ${navWhite === true ? 'header--white' : ''}`}>
 				<div className="header__logo">
-					<a href="#landing" onClick={(e) => this.scrollToSection(e, 'landing')}>simon richards</a>
+					<a href="#landing" onClick={(e) => this.scrollToSection(e, 'landing')}>sjrdesigns</a>
 				</div>
 				<div className="header__nav-toggle" onClick={this.toggleNav}>
 					<div className="burger">MENU</div>
