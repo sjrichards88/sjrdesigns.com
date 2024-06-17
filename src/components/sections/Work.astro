@@ -14,8 +14,7 @@ import imgChevron from '@/assets/images/chevron.jpg'
 import imgPnc from '@/assets/images/pnc.jpg'
 import imgBowwow from '@/assets/images/bowwowlondon.jpg'
 import imgJDL from '@/assets/images/just-dance-live.jpg'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faArrowRight } from '@fortawesome/free-solid-svg-icons'
+import { FaArrowRight } from "react-icons/fa6";
 
 const items = [
 {
@@ -169,12 +168,12 @@ Archive
             <div class="work__block-content">
               <span class="work__block-smallprint">{item.note}</span>
               <div class="work__block-icon">
-                <FontAwesomeIcon icon={faArrowRight} />
+                <FaArrowRight />
               </div>
             </div>
           </div>
           <div class="d-md-none text-right">
-            View website &nbsp; <FontAwesomeIcon icon={faArrowRight} />
+            View website &nbsp; <FaArrowRight />
           </div>
         </a>
       )

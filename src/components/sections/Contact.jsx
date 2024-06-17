@@ -1,8 +1,6 @@
 import { Component } from 'react'
 import ReCAPTCHA from "react-google-recaptcha";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faLinkedin } from "@fortawesome/free-brands-svg-icons"
-import { faEnvelope, faPhone } from '@fortawesome/free-solid-svg-icons';
+import { FaLinkedin, FaPhoneAlt, FaEnvelope } from "react-icons/fa";
 
 let recaptchaInstance;
 
@@ -248,17 +246,17 @@ class Contact extends Component {
             </div>
 
             <div className="contact__info-block">
-              <FontAwesomeIcon icon={faEnvelope} />
+              <FaEnvelope />
               sjrichards88@gmail.com
             </div>
 
             <div className="contact__info-block">
-              <FontAwesomeIcon icon={faPhone} />
+              <FaPhoneAlt />
               07850944628
             </div>
 
             <div className="contact__info-block">
-              <FontAwesomeIcon icon={faLinkedin} />
+              <FaLinkedin />
               <a href="https://www.linkedin.com/in/simon-richards-33874699/" target="_blank" rel="noreferrer">LinkedIn</a>
             </div>
           </div>

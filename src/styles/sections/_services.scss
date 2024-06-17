@@ -35,6 +35,7 @@
             @media (min-width: $screen-sm) {
                 font-size: $h1-font-size * 1.75;
             }
+            margin: 0 auto;
         }
         &-content {
             padding: 0 calc($gutter / 2);

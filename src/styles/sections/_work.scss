@@ -3,6 +3,9 @@
     &__wrap {
         display: flex;
         flex-wrap: wrap;
+        svg {
+            display: inline-block;
+        }
     }
     &__link {
         display: block;
@@ -12,10 +15,7 @@
             padding: calc($gutter / 2);
             margin-bottom: 0;
         }
-        // @media (min-width: $screen-md) {
-        //     width: 33.3%;
-        //     padding: $gutter;
-        // }
+
         @media (min-width: $screen-lg) {
             width: 33.3%;
             padding: $gutter;
@@ -125,6 +125,7 @@
             svg {
                 font-size: $h4-font-size;
                 color: $black-blue;
+                display: inline-block;
             }
         }
         &-smallprint {
