@@ -1,0 +1,8 @@
+/*
+  Access-Control-Allow-Origin: https://sjrdesigns.com
+  X-Frame-Options: SAMEORIGIN
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: no-referrer-when-downgrade
+  Permissions-Policy: document-domain=()
+  Strict-Transport-Security: max-age=31536000; includeSubDomains
+    # Content-Security-Policy: script-src 'self'; frame-ancestors 'none';
