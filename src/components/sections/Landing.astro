@@ -2,12 +2,52 @@
 
 ---
 <section class="section landing" id="landing">
-  <div id="landing-triangles" class="landing__triangles"></div>
-  
+  <div class="glow-container">
+    <div class="yellow glow"></div>
+    <div class="red glow"></div>
+    <div class="green glow"></div>
+    <div class="purple glow"></div>
+  </div>
   <div class="landing__content">
-    <h1>Simon Richards</h1>
-    <h2>Web Developer</h2>
+    <h1>
+      Simon Richards
+      <span>Fullstack Web Developer & Jamstack&nbsp;Specialist</span>
+    </h1>
+    <p class="max-w-[70%] mx-auto text-lg">
+      I build fast, secure, and scalable websites and web applications using modern technologies and best practices.
+    </p>
+
+    <div class="flex justify-center p-4 mt-4">
+      <a 
+        href="contact" 
+        class="px-8 py-4 mx-4 mt-4 text-black text-lg font-medium border-2 border-primary bg-primary hover:bg-transparent hover:text-white rounded-md uppercase scrollTo font-heading">
+        Contact me
+      </a>
+    </div>
   </div>
   
-  <a href="#about" class="scroll-mouse" aria-label="Scroll down"></a>
+  <a href="#about" class="scroll-mouse scrollTo" aria-label="Scroll down"></a>
 </section>
+
+<svg>
+  <filter id='noiseFilter'>
+    <feTurbulence 
+      type='fractalNoise' 
+      baseFrequency='0.6' 
+      stitchTiles='stitch'/>
+     <feColorMatrix in="colorNoise" type="matrix" values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 1 0" />
+      <feComposite operator="in" in2="SourceGraphic" result="monoNoise"/>
+      <feBlend in="SourceGraphic" in2="monoNoise" mode="screen" />
+  </filter>
+</svg>
+
+<script>
+  const scrollLinks = document.querySelectorAll('.scrollTo');
+  scrollLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      const id = e.target.getAttribute('href').replace('#', '');
+      document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+    });
+  });
+</script>

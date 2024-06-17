@@ -26,6 +26,8 @@
             font-size: $h5-font-size;
             color: $black-blue;
             position: relative;
+            padding-bottom: 1rem;
+
             &:after {
                 content: "";
                 position: absolute;
@@ -33,7 +35,7 @@
                 background-color: $black-blue;
                 width: 0;
                 left: 0;
-                bottom: -10px;
+                bottom: 0;
                 transition: $transition-base;
                 opacity: .8;
             }

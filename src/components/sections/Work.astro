@@ -1,19 +1,19 @@
 ---
-import imgFrameless from '@assets/images/frameless.jpg'
-import imgWinterwonderland from '@assets/images/winter-wonderland.jpg'
-import imgTaste from '@assets/images/taste.jpg'
-import imgEdgesport from '@assets/images/edgesport.jpg'
-import imgJacc from '@assets/images/jacc.jpg'
-import imgThewalk from '@assets/images/thewalk.jpg'
-import imgMubadala from '@assets/images/mubadala.jpg'
-import imgBows from '@assets/images/bows.jpg'
-import imgWsm from '@assets/images/wsm.jpg'
-import imgAtp from '@assets/images/atp.jpg'
-import imgWomensscottish from '@assets/images/womensscottish.jpg'
-import imgChevron from '@assets/images/chevron.jpg'
-import imgPnc from '@assets/images/pnc.jpg'
-import imgBowwow from '@assets/images/bowwowlondon.jpg'
-import imgJDL from '@assets/images/just-dance-live.jpg'
+import imgFrameless from '@/assets/images/frameless.jpg'
+import imgWinterwonderland from '@/assets/images/winter-wonderland.jpg'
+import imgTaste from '@/assets/images/taste.jpg'
+import imgEdgesport from '@/assets/images/edgesport.jpg'
+import imgJacc from '@/assets/images/jacc.jpg'
+import imgThewalk from '@/assets/images/thewalk.jpg'
+import imgMubadala from '@/assets/images/mubadala.jpg'
+import imgBows from '@/assets/images/bows.jpg'
+import imgWsm from '@/assets/images/wsm.jpg'
+import imgAtp from '@/assets/images/atp.jpg'
+import imgWomensscottish from '@/assets/images/womensscottish.jpg'
+import imgChevron from '@/assets/images/chevron.jpg'
+import imgPnc from '@/assets/images/pnc.jpg'
+import imgBowwow from '@/assets/images/bowwowlondon.jpg'
+import imgJDL from '@/assets/images/just-dance-live.jpg'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons'
 
@@ -36,12 +36,12 @@ const items = [
   url: 'https://london.tastefestivals.com/',
   note: 'developed at Dewynters'
 },
-{
-  title: 'Edgesport',
-  image: imgEdgesport,
-  url: 'https://edgesport.com/',
-  note: 'developed at Dewynters'
-},
+// {
+//   title: 'Edgesport',
+//   image: imgEdgesport,
+//   url: '',
+//   note: 'developed at Dewynters'
+// },
 {
   title: 'Walk With Amal',
   image: imgThewalk,
@@ -109,32 +109,6 @@ const items = [
   note: ''
 },
 ]
----
-
-<section class="section work" id="work">
-  <h2>Work</h2>
-  <div class="work__wrap">
-    {items.map((item) => {
-      return (
-        <a href={item.url} class="work__link" target="_blank" rel="noopener noreferrer">
-          <h3>{item.title}</h3>
-          <div class="work__block">
-            <img src={item.image} alt={`${item.title} website`} class="work__block-image" />
-            <div class="work__block-content">
-              <span class="work__block-smallprint">{item.note}</span>
-              <div class="work__block-icon">
-                <FontAwesomeIcon icon={faArrowRight} />
-              </div>
-            </div>
-          </div>
-          <div class="d-md-none text-right">
-            View website &nbsp; <FontAwesomeIcon icon={faArrowRight} />
-          </div>
-        </a>
-      )
-    })}
-  </div>
-</section>
 
 {/* 
 Archive
@@ -181,3 +155,29 @@ Archive
 //   note: 'developed at Dewynters'
 // },
 */}
+---
+
+<section class="section work" id="work">
+  <h2>Work</h2>
+  <div class="work__wrap">
+    {items.map((item) => {
+      return (
+        <a href={item.url} class="work__link" target="_blank" rel="noopener noreferrer">
+          <h3>{item.title}</h3>
+          <div class="work__block">
+            <img src={item.image.src} alt={`${item.title} website`} class="work__block-image" />
+            <div class="work__block-content">
+              <span class="work__block-smallprint">{item.note}</span>
+              <div class="work__block-icon">
+                <FontAwesomeIcon icon={faArrowRight} />
+              </div>
+            </div>
+          </div>
+          <div class="d-md-none text-right">
+            View website &nbsp; <FontAwesomeIcon icon={faArrowRight} />
+          </div>
+        </a>
+      )
+    })}
+  </div>
+</section>
