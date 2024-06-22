@@ -15,5 +15,11 @@ export default defineConfig({
   experimental: {
     actions: true
   },
-  adapter: cloudflare()
+  adapter: cloudflare(),
+  ssr: {
+    noExternal: [
+      'astro', // include other packages if necessary
+      'node:async_hooks'
+    ]
+  }
 });
