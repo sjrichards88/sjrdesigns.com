@@ -9,5 +9,9 @@ import tailwind from "@astrojs/tailwind";
 // https://astro.build/config
 export default defineConfig({
   site: "https://sjrdesigns.com",
-  integrations: [react(), sitemap(), tailwind()]
+  integrations: [react(), sitemap(), tailwind()],
+  output: "hybrid",
+  experimental: {
+    actions: true,
+  },
 });
