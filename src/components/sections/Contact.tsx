@@ -26,7 +26,7 @@ export default function Contact() {
 
   const onSubmit = async (data) => {
     if (data.honeypot === "") {
-      const result = await fetch("/api/email", {
+      const result = await fetch("https://sjrdesigns.com/api/email", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
