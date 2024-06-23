@@ -1,5 +1,4 @@
 import { useState } from "react"
-import { actions, getActionProps } from "astro:actions";
 import { useForm } from "react-hook-form"
 import { FaLinkedin, FaPhoneAlt, FaEnvelope } from "react-icons/fa";
 
@@ -8,7 +7,7 @@ export default function Contact() {
   const {
     register,
     handleSubmit,
-    watch,
+    reset,
     formState: { errors },
   } = useForm()
 
@@ -27,16 +26,30 @@ export default function Contact() {
 
   const onSubmit = async (data) => {
     if (data.honeypot === "") {
-      const result = await actions.contact(data);
-      if (result.data && !result.error) {
+      const result = await fetch("/api/email", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      })
+
+      let json = await result.json();
+  
+      if (json.errors) {
+        console.log(json.errors);
+        throw new Error('Failed to fetch API');
+      }
+
+      if (json.data && !json.error) {
         setSuccess(true);
+        reset()
       }
     }
-
   }
 
   return(
-    <section className="bg-darkNavy py-8 md:py-16 px-4 md:px-8">
+    <section className="bg-darkNavy py-8 md:py-16 px-4 md:px-8" id="contact">
       <h2 className="text-white text-center pb-8">Contact</h2>
 
       <div className="container max-w-screen-2xl flex flex-wrap justify-center">
@@ -46,8 +59,6 @@ export default function Contact() {
             onSubmit={handleSubmit(onSubmit)}
             className="flex flex-wrap -mx-4"
           >
-            <input {...getActionProps(actions.contact)} />
-
             <input type="text" name="honeypot" className="hidden" value="" {...register("honeypot")} />
 
             <div className="basis-full flex flex-col md:mb-4 md:basis-1/2 px-4 pb-4"> 
