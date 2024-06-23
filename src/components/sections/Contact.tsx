@@ -49,8 +49,8 @@ export default function Contact() {
   }
 
   return(
-    <section className="bg-darkNavy py-8 md:py-16 px-4 md:px-8" id="contact">
-      <h2 className="text-white text-center pb-8">Contact</h2>
+    <section className="bg-darkNavy py-8 md:py-20 px-4 md:px-8" id="contact">
+      <h2 className="text-white text-center pb-8 md:pb-12">Contact</h2>
 
       <div className="container max-w-screen-2xl flex flex-wrap justify-center">
         <div className="basis-full md:basis-1/2 pr-4">
