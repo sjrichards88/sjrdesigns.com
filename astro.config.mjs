@@ -11,6 +11,6 @@ import cloudflare from "@astrojs/cloudflare";
 export default defineConfig({
   site: "https://sjrdesigns.com",
   integrations: [react(), sitemap(), tailwind()],
-  output: "hybrid",
+  output: "server",
   adapter: cloudflare()
 });

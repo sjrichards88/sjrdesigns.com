@@ -1,7 +1,5 @@
 import { Resend } from 'resend';
 
-export const prerender = false;
-
 export async function POST({ request }) {
   const resend = new Resend(import.meta.env.RESEND_API_KEY);
   const body = await request.json();
