@@ -2,7 +2,7 @@ import { Resend } from 'resend';
 
 export async function POST(context) {
 
-  console.log(context)
+  console.log("context", context)
 
   // const resend = new Resend(context.env.RESEND_API_KEY);
   // const body = await request.json();
