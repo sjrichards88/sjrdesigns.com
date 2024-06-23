@@ -66,12 +66,15 @@ export default function Contact() {
                 <input 
                   type="text" 
                   placeholder="Name"
-                  {...register("name")} 
+                  {...register("name", { required: true })} 
                   onFocus={handleInputFocus}
                   onBlur={handleInputFocus}
                   className="w-full bg-inputBg border-transparent p-2 text-white relative z-[1] border-0 focus:outline-0 md:p-4"
                 />
               </div>
+              {errors.name && (
+                <p className="text-tertiary font-bold my-1 text-red">{errors.name.message ? `${errors.name.message}` : `Name is required`}</p>
+              )}
             </div>
             
             <div className="basis-full flex flex-col md:mb-4 md:basis-1/2 px-4 pb-4"> 
@@ -93,7 +96,7 @@ export default function Contact() {
             <div className="w-full flex flex-col md:mb-4 px-4 pb-4"> 
               <div className="input-wrap">
                 <textarea 
-                  {...register("message")} 
+                  {...register("message", { required: true })} 
                   placeholder="Message"
                   cols={30}
                   rows={10}
@@ -102,6 +105,9 @@ export default function Contact() {
                   className="w-full bg-inputBg border-transparent p-2 text-white relative z-[1] border-0 focus:outline-0 md:p-4"
                 />
               </div>
+              {errors.message && (
+                <p className="text-tertiary font-bold my-1 text-red">{errors.message.message ? `${errors.message.message}` : `Message is required`}</p>
+              )}
             </div>
             <div className="px-4 pb-4 self-end">
               <button className="bg-primary py-3 px-8 font-bold font-heading uppercase text-darkNavy border-2 border-primary border-solid transition duration-300 hover:bg-transparent hover:text-white">
