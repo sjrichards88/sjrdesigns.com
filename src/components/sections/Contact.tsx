@@ -124,7 +124,7 @@ export default function Contact() {
         <div className="basis-full md:basis-1/2 md:pl-12 pt-12 md:pt-0">
           <div className="pb-4 text-grey">
             <h4>Get in Touch!</h4>
-            <p>Interesting in working with me? Need a website? <br /> Don't hesitate to send me a message.</p>
+            <p>Let's discuss your next project! Fill out the form below or reach out directly via email or phone.</p>
           </div>
 
           <div className="pb-6 text-grey flex items-center">
