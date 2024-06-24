@@ -19,7 +19,7 @@ export default {
 				primary: '#67fff2',
 				darkNavy: '#0a0b0f',
 				inputBg: '#14171e',
-				grey: '#a0a0a1',
+				// grey: '#a0a0a1',
 				red: '#ED4337'
 			},
 			fontFamily: {

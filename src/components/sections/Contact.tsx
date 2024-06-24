@@ -122,24 +122,24 @@ export default function Contact() {
           </form>
         </div>
         <div className="basis-full md:basis-1/2 md:pl-12 pt-12 md:pt-0">
-          <div className="pb-4 text-grey">
+          <div className="pb-4 text-gray-400">
             <h4>Get in Touch!</h4>
             <p>Let's discuss your next project! Fill out the form below or reach out directly via email or phone.</p>
           </div>
 
-          <div className="pb-6 text-grey flex items-center">
+          <div className="pb-6 text-gray-400 flex items-center">
             <FaEnvelope className="mr-4 text-2xl" />
             sjrichards88@gmail.com
           </div>
 
-          <div className="pb-6 text-grey flex items-center">
+          <div className="pb-6 text-gray-400 flex items-center">
             <FaPhoneAlt className="mr-4 text-2xl" />
             07850944628
           </div>
 
-          <div className="pb-6 text-grey flex items-center">
+          <div className="pb-6 text-gray-400 flex items-center">
             <FaLinkedin className="mr-4 text-2xl" />
-            <a href="https://www.linkedin.com/in/simon-richards-33874699/" target="_blank" rel="noreferrer" className="text-grey">LinkedIn</a>
+            <a href="https://www.linkedin.com/in/simon-richards-33874699/" target="_blank" rel="noreferrer" className="text-gray-400">LinkedIn</a>
           </div>
         </div>
 
