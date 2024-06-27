@@ -1,1 +1,5 @@
+# Exclude the homepage from redirection
+/ /index.html 200
+
+# Redirect all other paths to the homepage
 /* / 301
