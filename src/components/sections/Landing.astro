@@ -1,53 +1,595 @@
 ---
-
+// Landing Section - Subtle white design with gentle glows and smooth transitions
 ---
-<section class="section landing" id="landing">
-  <div class="glow-container">
-    <div class="yellow glow"></div>
-    <div class="red glow"></div>
-    <div class="green glow"></div>
-    <div class="purple glow"></div>
-  </div>
-  <div class="landing__content">
-    <h1>
-      Simon Richards
-      <span>Fullstack Web Developer & Jamstack&nbsp;Specialist</span>
-    </h1>
-    <p class="md:max-w-[70%] mx-auto text-lg text-balance">
-      I build fast, secure, and scalable websites and web applications using modern technologies and best practices. Let's build something amazing together.
-    </p>
 
-    <div class="flex justify-center p-4 mt-4">
-      <a 
-        href="contact" 
-        class="px-8 py-4 mx-4 mt-4 text-black text-lg font-medium border-2 border-primary bg-primary hover:bg-transparent hover:text-white rounded-md uppercase scrollTo font-heading">
-        Get in Touch
-      </a>
-    </div>
+<section 
+  id="landing" 
+  class="relative min-h-screen w-full bg-gradient-to-br from-white via-slate-50 to-blue-50/30 overflow-hidden"
+>
+  <!-- Dot Pattern Background (like contact section) -->
+  <div class="absolute inset-0 opacity-[0.03]" style="background-image: radial-gradient(circle at 2px 2px, #3b82f6 1px, transparent 0); background-size: 50px 50px;"></div>
+  
+  <!-- Stronger Dynamic Background Gradients with Orangy Pink -->
+  <div class="absolute inset-0 bg-gradient-to-br from-blue-100/30 via-rose-100/20 to-cyan-100/40 animate-gradient-shift"></div>
+  
+  <!-- More Visible Glow Orbs with Orangy Pink Mix -->
+  <div class="absolute inset-0">
+    <!-- Primary soft orb -->
+    <div class="absolute -top-32 -left-32 w-[600px] h-[600px] bg-gradient-to-br from-blue-300/35 to-cyan-300/30 rounded-full blur-3xl animate-mega-float md:animate-mega-float animate-mega-float-mobile"></div>
+    <!-- Secondary orb with orange/pink -->
+    <div class="absolute top-1/4 -right-48 w-[500px] h-[500px] bg-gradient-to-br from-rose-300/32 to-orange-300/28 rounded-full blur-3xl animate-mega-float-delayed md:animate-mega-float-delayed animate-mega-float-delayed-mobile"></div>
+    <!-- Tertiary orb -->
+    <div class="absolute -bottom-48 left-1/3 w-[700px] h-[700px] bg-gradient-to-br from-teal-300/35 to-cyan-300/30 rounded-full blur-3xl animate-mega-spiral md:animate-mega-spiral animate-mega-spiral-mobile"></div>
+    <!-- Accent orb with subtle pink -->
+    <div class="absolute bottom-1/4 -right-32 w-[400px] h-[400px] bg-gradient-to-br from-pink-300/32 to-blue-300/28 rounded-full blur-3xl animate-mega-orbit md:animate-mega-orbit animate-mega-orbit-mobile"></div>
+    <!-- Center accent -->
+    <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-to-br from-cyan-300/28 to-rose-300/25 rounded-full blur-3xl animate-mega-pulse md:animate-mega-pulse animate-mega-pulse-mobile"></div>
   </div>
   
-  <a href="#about" class="scroll-mouse scrollTo" aria-label="Scroll down"></a>
+  <!-- More Visible Geometric Elements -->
+  <div class="absolute inset-0 opacity-30 md:opacity-30 opacity-15">
+    <!-- Large geometric shapes -->
+    <div class="absolute top-20 left-20 w-48 h-48 border border-blue-400/50 rounded-3xl rotate-45 animate-mega-spin md:animate-mega-spin animate-mega-spin-mobile"></div>
+    <div class="absolute bottom-32 right-32 w-32 h-32 border border-cyan-400/60 rounded-full animate-mega-bounce md:animate-mega-bounce animate-mega-bounce-mobile"></div>
+    <div class="absolute top-1/3 right-20 w-24 h-24 bg-gradient-to-r from-rose-400/40 to-orange-400/35 rounded-2xl rotate-12 animate-mega-rotate md:animate-mega-rotate animate-mega-rotate-mobile"></div>
+    <div class="absolute bottom-1/3 left-32 w-40 h-40 border-2 border-slate-400/45 rounded-xl animate-mega-drift md:animate-mega-drift animate-mega-drift-mobile"></div>
+    <!-- Additional floating elements -->
+    <div class="absolute top-1/4 left-1/4 w-16 h-16 bg-blue-400/35 rounded-full animate-mega-float-small md:animate-mega-float-small animate-mega-float-small-mobile"></div>
+    <div class="absolute bottom-1/4 right-1/4 w-20 h-20 border border-pink-400/50 rounded-lg rotate-45 animate-mega-sway md:animate-mega-sway animate-mega-sway-mobile"></div>
+  </div>
+  
+  <!-- Highly visible particle-like elements -->
+  <div class="absolute inset-0 opacity-40 md:opacity-40 opacity-20">
+    <div class="absolute top-1/6 left-1/5 w-2 h-2 bg-blue-500 rounded-full animate-mega-twinkle md:animate-mega-twinkle animate-mega-twinkle-mobile"></div>
+    <div class="absolute top-1/3 right-1/4 w-1.5 h-1.5 bg-cyan-500 rounded-full animate-mega-twinkle-delayed md:animate-mega-twinkle-delayed animate-mega-twinkle-delayed-mobile"></div>
+    <div class="absolute bottom-1/3 left-1/3 w-2.5 h-2.5 bg-teal-500 rounded-full animate-mega-twinkle-slow md:animate-mega-twinkle-slow animate-mega-twinkle-slow-mobile"></div>
+    <div class="absolute bottom-1/6 right-1/5 w-1 h-1 bg-rose-500 rounded-full animate-mega-twinkle-fast md:animate-mega-twinkle-fast animate-mega-twinkle-fast-mobile"></div>
+  </div>
+  
+  <!-- Main Content Container with proper spacing from nav -->
+  <div class="relative z-10 flex items-center justify-center min-h-screen px-4 sm:px-6 lg:px-8 py-24 sm:py-28">
+    <div class="max-w-7xl mx-auto w-full">
+      
+      <!-- Status Badge with proper spacing from nav -->
+      <div class="flex justify-center mb-8 sm:mb-10 opacity-0 animate-fade-in-up" style="animation-delay: 0.2s;">
+        <div class="relative inline-flex items-center gap-3 px-6 py-3 bg-emerald-50/80 border border-emerald-200/50 rounded-full backdrop-blur-sm shadow-lg">
+          <div class="absolute inset-0 bg-gradient-to-r from-emerald-100/30 to-green-100/20 rounded-full blur-xl"></div>
+          <div class="relative w-2.5 h-2.5 bg-emerald-500 rounded-full animate-pulse shadow-lg shadow-emerald-500/30"></div>
+          <span class="relative text-emerald-700 text-sm font-medium">Available for Projects</span>
+        </div>
+      </div>
+
+      <!-- Hero Content -->
+      <div class="text-center space-y-4 sm:space-y-6">
+        
+        <!-- Main Heading with Glowing Keywords -->
+        <div class="space-y-2 sm:space-y-3 opacity-0 animate-fade-in-up" style="animation-delay: 0.4s;">
+          <h1 class="font-heading font-bold leading-tight tracking-tight">
+            <span class="block text-slate-900 drop-shadow-sm" style="font-size: clamp(2rem, 8vw, 6rem);">
+              Simon Richards
+            </span>
+            <span class="block bg-gradient-to-r from-blue-600 via-cyan-600 to-teal-600 bg-clip-text text-transparent mt-1 sm:mt-2 drop-shadow-sm glow-text" style="font-size: clamp(1.25rem, 5vw, 4rem);">
+              Senior Developer
+            </span>
+          </h1>
+        </div>
+
+        <!-- Subtitle with Glowing Keywords -->
+        <div class="max-w-4xl mx-auto opacity-0 animate-fade-in-up" style="animation-delay: 0.6s;">
+          <p class="text-slate-700 leading-relaxed font-light drop-shadow-sm" style="font-size: clamp(1rem, 2.5vw, 1.5rem);">
+            Crafting <span class="text-blue-600 font-medium glow-text-subtle">exceptional digital experiences</span> that drive business growth. 
+            <span class="text-slate-900 font-medium glow-text-subtle">8+ years</span> building for industry leaders like 
+            <span class="text-cyan-600 font-medium glow-text-subtle">Disney, BBC & Barclays</span>.
+          </p>
+        </div>
+
+        <!-- CTA Buttons with Unified Colors -->
+        <div class="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4 sm:pt-6 opacity-0 animate-fade-in-up" style="animation-delay: 0.8s;">
+          <a 
+            href="#contact" 
+            class="group relative px-8 py-4 bg-gradient-to-r from-blue-500 to-cyan-600 text-white font-semibold rounded-xl hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-blue-500/25 overflow-hidden"
+          >
+            <div class="absolute inset-0 bg-gradient-to-r from-blue-400 to-cyan-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            <div class="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-cyan-600/20 blur-xl"></div>
+            <span class="relative z-10">Start Your Project</span>
+          </a>
+          
+          <a 
+            href="#work" 
+            class="group px-8 py-4 border border-slate-300/50 text-slate-700 font-medium rounded-xl hover:border-blue-400/50 hover:bg-blue-50/50 transition-all duration-300 backdrop-blur-sm"
+          >
+            View Portfolio
+            <span class="ml-2 group-hover:translate-x-1 transition-transform duration-300 inline-block">→</span>
+          </a>
+        </div>
+
+        <!-- Key Features Grid with Unified Colors -->
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 pt-8 sm:pt-12 max-w-4xl mx-auto opacity-0 animate-fade-in-up" style="animation-delay: 1s;">
+          <div class="group text-center p-4 sm:p-6 rounded-2xl bg-white/60 border border-blue-200/30 backdrop-blur-sm hover:bg-blue-50/60 transition-all duration-300 hover:scale-105">
+            <div class="absolute inset-0 bg-gradient-to-br from-blue-100/30 to-cyan-100/20 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            <div class="relative">
+              <div class="text-xl sm:text-2xl mb-2">⚡</div>
+              <h3 class="font-semibold text-slate-800 text-xs sm:text-sm">Lightning Fast</h3>
+              <p class="text-slate-600 text-xs mt-1">Optimized Performance</p>
+            </div>
+          </div>
+          
+          <div class="group text-center p-4 sm:p-6 rounded-2xl bg-white/60 border border-cyan-200/30 backdrop-blur-sm hover:bg-cyan-50/60 transition-all duration-300 hover:scale-105">
+            <div class="absolute inset-0 bg-gradient-to-br from-cyan-100/30 to-teal-100/20 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            <div class="relative">
+              <div class="text-xl sm:text-2xl mb-2">🛡️</div>
+              <h3 class="font-semibold text-slate-800 text-xs sm:text-sm">Enterprise Security</h3>
+              <p class="text-slate-600 text-xs mt-1">Bank-grade Protection</p>
+            </div>
+          </div>
+          
+          <div class="group text-center p-4 sm:p-6 rounded-2xl bg-white/60 border border-teal-200/30 backdrop-blur-sm hover:bg-teal-50/60 transition-all duration-300 hover:scale-105">
+            <div class="absolute inset-0 bg-gradient-to-br from-teal-100/30 to-blue-100/20 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            <div class="relative">
+              <div class="text-xl sm:text-2xl mb-2">🚀</div>
+              <h3 class="font-semibold text-slate-800 text-xs sm:text-sm">Scalable Solutions</h3>
+              <p class="text-slate-600 text-xs mt-1">Future-proof Architecture</p>
+            </div>
+          </div>
+          
+          <div class="group text-center p-4 sm:p-6 rounded-2xl bg-white/60 border border-slate-200/30 backdrop-blur-sm hover:bg-slate-50/60 transition-all duration-300 hover:scale-105">
+            <div class="absolute inset-0 bg-gradient-to-br from-slate-100/30 to-blue-100/20 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            <div class="relative">
+              <div class="text-xl sm:text-2xl mb-2">📱</div>
+              <h3 class="font-semibold text-slate-800 text-xs sm:text-sm">Mobile First</h3>
+              <p class="text-slate-600 text-xs mt-1">Responsive Design</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Stats Row with Unified Styling -->
+        <div class="flex flex-col sm:flex-row justify-center items-center gap-6 sm:gap-8 pt-8 sm:pt-12 pb-16 sm:pb-20 opacity-0 animate-fade-in-up" style="animation-delay: 1.2s;">
+          <div class="text-center group">
+            <div class="font-bold text-slate-800 drop-shadow-sm group-hover:text-blue-600 transition-colors duration-300 glow-text-subtle" style="font-size: clamp(1.5rem, 4vw, 2.5rem);">8+</div>
+            <div class="text-slate-600 text-sm">Years Experience</div>
+          </div>
+          <div class="hidden sm:block w-px h-8 sm:h-12 bg-gradient-to-b from-transparent via-slate-300/50 to-transparent"></div>
+          <div class="text-center group">
+            <div class="font-bold text-slate-800 drop-shadow-sm group-hover:text-cyan-600 transition-colors duration-300 glow-text-subtle" style="font-size: clamp(1.5rem, 4vw, 2.5rem);">50+</div>
+            <div class="text-slate-600 text-sm">Projects Delivered</div>
+          </div>
+          <div class="hidden sm:block w-px h-8 sm:h-12 bg-gradient-to-b from-transparent via-slate-300/50 to-transparent"></div>
+          <div class="text-center group">
+            <div class="font-bold text-slate-800 drop-shadow-sm group-hover:text-teal-600 transition-colors duration-300 glow-text-subtle" style="font-size: clamp(1.5rem, 4vw, 2.5rem);">100%</div>
+            <div class="text-slate-600 text-sm">Client Satisfaction</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Enhanced Scroll Indicator -->
+  <div class="absolute bottom-4 sm:bottom-8 left-1/2 transform -translate-x-1/2 z-50 opacity-0 animate-fade-in-up" style="animation-delay: 1.4s;">
+    <div class="flex flex-col items-center text-slate-500 group hover:text-blue-600 transition-colors duration-300">
+      <span class="text-xs uppercase tracking-wider mb-2">Scroll</span>
+      <div class="w-px h-6 sm:h-8 bg-gradient-to-b from-slate-400/50 to-transparent animate-bounce"></div>
+    </div>
+  </div>
 </section>
 
-<svg>
-  <filter id='noiseFilter'>
-    <feTurbulence 
-      type='fractalNoise' 
-      baseFrequency='0.6' 
-      stitchTiles='stitch'/>
-     <feColorMatrix in="colorNoise" type="matrix" values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 1 0" />
-      <feComposite operator="in" in2="SourceGraphic" result="monoNoise"/>
-      <feBlend in="SourceGraphic" in2="monoNoise" mode="screen" />
-  </filter>
-</svg>
+<style>
+  /* Subtle glow effects for key text */
+  .glow-text {
+    text-shadow: 0 0 20px rgba(59, 130, 246, 0.3), 0 0 40px rgba(34, 211, 238, 0.2);
+  }
+
+  .glow-text-subtle {
+    text-shadow: 0 0 10px rgba(59, 130, 246, 0.2), 0 0 20px rgba(34, 211, 238, 0.1);
+    transition: text-shadow 0.3s ease;
+  }
+
+  .glow-text-subtle:hover {
+    text-shadow: 0 0 15px rgba(59, 130, 246, 0.4), 0 0 30px rgba(34, 211, 238, 0.2);
+  }
+
+  /* More visible background animations */
+  @keyframes gradient-shift {
+    0%, 100% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+  }
+
+  @keyframes mega-float {
+    0%, 100% {
+      transform: translateY(0) translateX(0) scale(1) rotate(0deg);
+    }
+    25% {
+      transform: translateY(-80px) translateX(50px) scale(1.08) rotate(4deg);
+    }
+    50% {
+      transform: translateY(-40px) translateX(-25px) scale(0.92) rotate(-3deg);
+    }
+    75% {
+      transform: translateY(-60px) translateX(35px) scale(1.05) rotate(2deg);
+    }
+  }
+
+  @keyframes mega-float-delayed {
+    0%, 100% {
+      transform: translateY(0) rotate(0deg) scale(1);
+    }
+    33% {
+      transform: translateY(-90px) rotate(12deg) scale(1.15);
+    }
+    66% {
+      transform: translateY(-45px) rotate(-7deg) scale(0.85);
+    }
+  }
+
+  @keyframes mega-spiral {
+    0% {
+      transform: translateY(0) rotate(0deg);
+    }
+    25% {
+      transform: translateY(-50px) rotate(90deg);
+    }
+    50% {
+      transform: translateY(-25px) rotate(180deg);
+    }
+    75% {
+      transform: translateY(-75px) rotate(270deg);
+    }
+    100% {
+      transform: translateY(0) rotate(360deg);
+    }
+  }
+
+  @keyframes mega-orbit {
+    0% {
+      transform: translateX(0) translateY(0) scale(1);
+    }
+    25% {
+      transform: translateX(70px) translateY(-50px) scale(1.08);
+    }
+    50% {
+      transform: translateX(0) translateY(-100px) scale(0.92);
+    }
+    75% {
+      transform: translateX(-70px) translateY(-50px) scale(1.05);
+    }
+    100% {
+      transform: translateX(0) translateY(0) scale(1);
+    }
+  }
+
+  @keyframes mega-pulse {
+    0%, 100% {
+      transform: translate(-50%, -50%) scale(1);
+      opacity: 0.08;
+    }
+    50% {
+      transform: translate(-50%, -50%) scale(1.25);
+      opacity: 0.15;
+    }
+  }
+
+  @keyframes mega-spin {
+    0% {
+      transform: rotate(0deg) scale(1);
+    }
+    50% {
+      transform: rotate(180deg) scale(1.08);
+    }
+    100% {
+      transform: rotate(360deg) scale(1);
+    }
+  }
+
+  @keyframes mega-bounce {
+    0%, 100% {
+      transform: translateY(0) scale(1);
+    }
+    50% {
+      transform: translateY(-40px) scale(1.08);
+    }
+  }
+
+  @keyframes mega-rotate {
+    0%, 100% {
+      transform: rotate(0deg) scale(1);
+    }
+    33% {
+      transform: rotate(120deg) scale(1.15);
+    }
+    66% {
+      transform: rotate(240deg) scale(0.85);
+    }
+  }
+
+  @keyframes mega-drift {
+    0%, 100% {
+      transform: translateX(0) translateY(0);
+      opacity: 0.2;
+    }
+    50% {
+      transform: translateX(25px) translateY(-20px);
+      opacity: 0.35;
+    }
+  }
+
+  @keyframes mega-float-small {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-25px);
+    }
+  }
+
+  @keyframes mega-sway {
+    0%, 100% {
+      transform: rotate(0deg) translateY(0);
+    }
+    50% {
+      transform: rotate(8deg) translateY(-15px);
+    }
+  }
+
+  @keyframes mega-twinkle {
+    0%, 100% {
+      opacity: 0.3;
+      transform: scale(1);
+    }
+    50% {
+      opacity: 0.8;
+      transform: scale(1.4);
+    }
+  }
+
+  @keyframes mega-twinkle-delayed {
+    0%, 100% {
+      opacity: 0.25;
+      transform: scale(0.9);
+    }
+    50% {
+      opacity: 0.7;
+      transform: scale(1.3);
+    }
+  }
+
+  @keyframes mega-twinkle-slow {
+    0%, 100% {
+      opacity: 0.35;
+      transform: scale(1.1);
+    }
+    50% {
+      opacity: 0.8;
+      transform: scale(1.6);
+    }
+  }
+
+  @keyframes mega-twinkle-fast {
+    0%, 100% {
+      opacity: 0.2;
+      transform: scale(0.7);
+    }
+    50% {
+      opacity: 0.6;
+      transform: scale(1.1);
+    }
+  }
+
+  @keyframes fade-in-up {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Apply animations with more visible durations */
+  .animate-gradient-shift {
+    animation: gradient-shift 10s ease-in-out infinite;
+    background-size: 400% 400%;
+  }
+
+  .animate-mega-float {
+    animation: mega-float 12s ease-in-out infinite;
+  }
+
+  .animate-mega-float-delayed {
+    animation: mega-float-delayed 15s ease-in-out infinite;
+    animation-delay: 3s;
+  }
+
+  .animate-mega-spiral {
+    animation: mega-spiral 18s ease-in-out infinite;
+    animation-delay: 1.5s;
+  }
+
+  .animate-mega-orbit {
+    animation: mega-orbit 20s linear infinite;
+    animation-delay: 4s;
+  }
+
+  .animate-mega-pulse {
+    animation: mega-pulse 8s ease-in-out infinite;
+    animation-delay: 2s;
+  }
+
+  .animate-mega-spin {
+    animation: mega-spin 25s linear infinite;
+  }
+
+  .animate-mega-bounce {
+    animation: mega-bounce 4s ease-in-out infinite;
+  }
+
+  .animate-mega-rotate {
+    animation: mega-rotate 14s ease-in-out infinite;
+  }
+
+  .animate-mega-drift {
+    animation: mega-drift 6s ease-in-out infinite;
+  }
+
+  .animate-mega-float-small {
+    animation: mega-float-small 3s ease-in-out infinite;
+  }
+
+  .animate-mega-sway {
+    animation: mega-sway 5s ease-in-out infinite;
+  }
+
+  .animate-mega-twinkle {
+    animation: mega-twinkle 2.5s ease-in-out infinite;
+  }
+
+  .animate-mega-twinkle-delayed {
+    animation: mega-twinkle-delayed 3s ease-in-out infinite;
+    animation-delay: 1s;
+  }
+
+  .animate-mega-twinkle-slow {
+    animation: mega-twinkle-slow 4s ease-in-out infinite;
+    animation-delay: 2s;
+  }
+
+  .animate-mega-twinkle-fast {
+    animation: mega-twinkle-fast 1.8s ease-in-out infinite;
+    animation-delay: 0.5s;
+  }
+
+  .animate-fade-in-up {
+    animation: fade-in-up 0.8s ease-out forwards;
+  }
+
+  /* Mobile animations - slower and less intensive */
+  .animate-mega-float-mobile {
+    animation: mega-float 24s ease-in-out infinite;
+  }
+
+  .animate-mega-float-delayed-mobile {
+    animation: mega-float-delayed 30s ease-in-out infinite;
+    animation-delay: 3s;
+  }
+
+  .animate-mega-spiral-mobile {
+    animation: mega-spiral 36s ease-in-out infinite;
+    animation-delay: 1.5s;
+  }
+
+  .animate-mega-orbit-mobile {
+    animation: mega-orbit 40s linear infinite;
+    animation-delay: 4s;
+  }
+
+  .animate-mega-pulse-mobile {
+    animation: mega-pulse 16s ease-in-out infinite;
+    animation-delay: 2s;
+  }
+
+  .animate-mega-spin-mobile {
+    animation: mega-spin 50s linear infinite;
+  }
+
+  .animate-mega-bounce-mobile {
+    animation: mega-bounce 8s ease-in-out infinite;
+  }
+
+  .animate-mega-rotate-mobile {
+    animation: mega-rotate 28s ease-in-out infinite;
+  }
+
+  .animate-mega-drift-mobile {
+    animation: mega-drift 12s ease-in-out infinite;
+  }
+
+  .animate-mega-float-small-mobile {
+    animation: mega-float-small 6s ease-in-out infinite;
+  }
+
+  .animate-mega-sway-mobile {
+    animation: mega-sway 10s ease-in-out infinite;
+  }
+
+  .animate-mega-twinkle-mobile {
+    animation: mega-twinkle 5s ease-in-out infinite;
+  }
+
+  .animate-mega-twinkle-delayed-mobile {
+    animation: mega-twinkle-delayed 6s ease-in-out infinite;
+    animation-delay: 1s;
+  }
+
+  .animate-mega-twinkle-slow-mobile {
+    animation: mega-twinkle-slow 8s ease-in-out infinite;
+    animation-delay: 2s;
+  }
+
+  .animate-mega-twinkle-fast-mobile {
+    animation: mega-twinkle-fast 3.6s ease-in-out infinite;
+    animation-delay: 0.5s;
+  }
+
+  /* Ensure elements start hidden */
+  .opacity-0 {
+    opacity: 0;
+  }
+</style>
 
 <script>
-  const scrollLinks = document.querySelectorAll('.scrollTo');
-  scrollLinks.forEach(link => {
-    link.addEventListener('click', (e) => {
-      e.preventDefault();
-      const id = e.target.getAttribute('href').replace('#', '');
-      document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+  // Enhanced animations with intersection observer
+  document.addEventListener('DOMContentLoaded', function() {
+    // Trigger animations on load
+    const animatedElements = document.querySelectorAll('.animate-fade-in-up');
+    
+    animatedElements.forEach((element, index) => {
+      setTimeout(() => {
+        (element as HTMLElement).style.opacity = '1';
+        (element as HTMLElement).style.transform = 'translateY(0)';
+      }, index * 200);
     });
+
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+
+    // Enhanced parallax effect
+    let ticking = false;
+    
+    function updateParallax() {
+      const scrolled = window.pageYOffset;
+      const rate = scrolled * -0.12;
+      
+      const orbs = document.querySelectorAll('.absolute.top-0, .absolute.top-1\\/4, .absolute.bottom-0, .absolute.bottom-1\\/4');
+      orbs.forEach((orb, index) => {
+        const element = orb as HTMLElement;
+        const speed = (index + 1) * 0.04;
+        element.style.transform = `translateY(${rate * speed}px) translateX(${Math.sin(scrolled * 0.001) * 8}px)`;
+      });
+      
+      ticking = false;
+    }
+
+    function requestTick() {
+      if (!ticking) {
+        requestAnimationFrame(updateParallax);
+        ticking = true;
+      }
+    }
+
+    window.addEventListener('scroll', requestTick);
   });
 </script>

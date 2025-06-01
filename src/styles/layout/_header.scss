@@ -6,6 +6,9 @@
     z-index: 100;
     transition: all .4s ease;
     height: 55px;
+    // Default styling - transparent on hero
+    background-color: transparent;
+    backdrop-filter: none;
     @media (min-width: $screen-sm) {
         height: 80px;
     }
@@ -14,7 +17,7 @@
         bottom: -3px;
         height: 3px;
         width: 0;
-        background-color: $brand-blue;
+        background: linear-gradient(90deg, #0891b2, #0d9488, #06b6d4);
     }
     &.active {
         transform: translateX(-60%);
@@ -25,14 +28,15 @@
     &__logo {
         position: absolute;
         left: 0;
-        top: 0;
-        margin: calc($gutter / 2);
+        top: 50%;
+        transform: translateY(-50%);
+        margin-left: calc($gutter / 2);
         overflow: hidden;
         @media (min-width: $screen-xsm) {
-            margin: $gutter;
+            margin-left: $gutter;
         }
         a {
-            color: $white;
+            color: $black-blue; // Dark color for light hero
             font-family: $heading-font-family;
             font-size: $h5-font-size;
             text-decoration: none;
@@ -43,7 +47,7 @@
                 z-index: 1;
                 width: 100%;
                 height: 2px;
-                background-color: $white;
+                background-color: $black-blue; // Dark color for light hero
                 left: 0;
                 top: 52%;
                 transform: translateX(-100%) translateY(-50%);
@@ -64,17 +68,16 @@
             cursor: pointer;
             position: absolute;
             right: calc($gutter / 2);
-            top: calc($gutter / 2);
+            top: 50%;
+            transform: translateY(-50%);
             width: 35px;
-            margin-top: 9px;
-            color: $white;
+            color: $black-blue; // Dark color for light hero
             font-size: 12px;
             font-family: $heading-font-family;
             line-height: 1;
             text-align: center;
             z-index: 10;
             @media (min-width: $screen-xsm) {
-                margin: $gutter;
                 right: $gutter;
             }
             &:after,
@@ -82,7 +85,7 @@
                 content: '';
                 height: 3px;
                 width: 100%;
-                background-color: $white;
+                background-color: $black-blue; // Dark color for light hero
                 top: -6px;
                 left: 0;
                 position: absolute;
@@ -101,7 +104,7 @@
         transform: translateX(100%);
         width: 60%;
         height: 100vh;
-        background-color: $brand-blue;
+        background: linear-gradient(135deg, #0f172a, #1e293b, #334155);
         @media (min-width: $screen-xsm) {
             padding-top: calc($gutter / 2);
         }
@@ -111,14 +114,17 @@
             transform: none;
             width: auto;
             height: auto;
-            background-color: transparent;
+            background: transparent;
+            display: flex;
+            align-items: center;
         }
         ul {
             padding: 0;
             margin: 0;
             list-style: none;
             @media (min-width: $screen-sm) {
-                display: block;
+                display: flex;
+                align-items: center;
                 transform: none;
                 opacity: 1;
             }
@@ -143,7 +149,7 @@
                     display: inline-block;
                     overflow: hidden;
                     @media (min-width: $screen-sm) {
-                        color: $white;
+                        color: $black-blue; // Dark color for light hero
                         font-weight: $font-weight-regular;
                     }
                     &:after {
@@ -157,6 +163,9 @@
                         top: 52%;
                         transform: translateX(-101%) translateY(-50%);
                         transition: all 0.3s;
+                        @media (min-width: $screen-sm) {
+                            background-color: $black-blue; // Dark color for light hero
+                        }
                     }
                     &:hover, &.active {
                         &:after {
@@ -167,29 +176,42 @@
             }
         }
     }
+    
+    // Add white background when scrolled
+    &--scrolled {
+        background-color: rgba($white, .90);
+        backdrop-filter: blur(10px);
+    }
+    
+    // This class is for dark sections (contact) - changes text to white
     &--white {
-        background-color: rgba($white, .85);
+        background-color: transparent;
+        backdrop-filter: none;
+        
         a, ul li a {
             @media (min-width: $screen-sm) {
-                color: $black-blue;
+                color: $white;
             }
             &:after {
                 @media (min-width: $screen-sm) {
-                    background-color: $black-blue;
+                    background-color: $white;
                 }
             }
         }
         .header__logo {
             a {
-                color: $black-blue;
+                color: $white;
+                &:after {
+                    background-color: $white;
+                }
             }
         }
         .header__nav-toggle {
             .burger {
-                color: $black-blue;
+                color: $white;
                 &:after,
                 &:before {
-                    background-color: $black-blue;
+                    background-color: $white;
                 }
             }
         }

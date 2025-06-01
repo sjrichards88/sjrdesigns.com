@@ -2,23 +2,436 @@
 
 ---
 
-<section class="section about relative before:w-[90%] before:h-[70%] before:absolute before:z-[1] before:left-1/2 before:top-1/2 before:-translate-x-1/2 before:-translate-y-1/2 before:bg-gray-50" id="tech">
-  <div class="about__content">
-    <div class="about__copy">
-      <h2>Technologies</h2>
-      <p>Here are some of the technologies that I love to work with:</p>
-      <ul class="tech-list pl-4 list-disc">
-        <li>HTML5</li>
-        <li>CSS3 - Tailwind / Sass / Styled Components / Bootstrap</li>
-        <li>JavaScript - Vanilla / React / jQuery</li>
-        <li>Frameworks - Astro build / Nextjs / Gatsby /Remix run</li>
-        <li>PHP / Node</li>
-        <li>GraphQL / Mysql</li>
-        <li>WordPress / Contentful / Headless CMS's</li>
-        <li>AWS, Cloudflare, Netlify</li>
-        <li>Github / CI + CD</li>
-        <li>Figma, Adobe Suite</li>
-      </ul>
+<section class="section tech-modern" id="tech">
+  <div class="tech-modern__container">
+    <div class="section-header">
+      <h2>Modern Technology Stack</h2>
+      <div class="section-line"></div>
+      <p class="section-subtitle">I use cutting-edge technologies to build future-proof solutions that give your business a competitive edge. Every technology choice is made with your long-term success in mind.</p>
+    </div>
+    
+    <div class="tech-grid">
+      <div class="tech-category" data-category="frontend">
+        <div class="category-header">
+          <div class="category-icon frontend-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <polyline points="16,18 22,12 16,6"></polyline>
+              <polyline points="8,6 2,12 8,18"></polyline>
+            </svg>
+          </div>
+          <h3>Frontend Excellence</h3>
+        </div>
+        <p class="tech-desc">Lightning-fast, responsive interfaces that convert visitors into customers</p>
+        <ul class="tech-list">
+          <li>React & Next.js for dynamic web applications</li>
+          <li>Astro for blazing-fast static sites</li>
+          <li>Tailwind CSS for modern, maintainable styling</li>
+          <li>TypeScript for bulletproof code</li>
+        </ul>
+      </div>
+      
+      <div class="tech-category" data-category="backend">
+        <div class="category-header">
+          <div class="category-icon backend-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+              <line x1="8" y1="21" x2="16" y2="21"></line>
+              <line x1="12" y1="17" x2="12" y2="21"></line>
+            </svg>
+          </div>
+          <h3>Backend Power</h3>
+        </div>
+        <p class="tech-desc">Robust, scalable server architecture that grows with your business</p>
+        <ul class="tech-list">
+          <li>Node.js & PHP for reliable server-side logic</li>
+          <li>GraphQL & MySQL for efficient data management</li>
+          <li>Headless CMS integration for flexible content</li>
+          <li>RESTful APIs for seamless integrations</li>
+        </ul>
+      </div>
+      
+      <div class="tech-category" data-category="deployment">
+        <div class="category-header">
+          <div class="category-icon deployment-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <circle cx="12" cy="12" r="10"></circle>
+              <circle cx="12" cy="12" r="6"></circle>
+              <circle cx="12" cy="12" r="2"></circle>
+            </svg>
+          </div>
+          <h3>Deployment & Hosting</h3>
+        </div>
+        <p class="tech-desc">Enterprise-grade infrastructure ensuring 99.9% uptime and global performance</p>
+        <ul class="tech-list">
+          <li>AWS & Cloudflare for worldwide content delivery</li>
+          <li>Automated CI/CD pipelines for seamless updates</li>
+          <li>Advanced monitoring and security protocols</li>
+          <li>Performance optimization and caching strategies</li>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="tech-cta">
+      <div class="cta-content">
+        <h3>Perfect Tech Stack for Your Project?</h3>
+        <p>I'll recommend the ideal combination of technologies based on your specific needs and goals. Let's build something amazing together.</p>
+        <a href="#contact" class="cta-button">
+          <span>Discuss Your Requirements</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5-5 5M6 12h12"/>
+          </svg>
+        </a>
+      </div>
     </div>
   </div>
 </section>
+
+<style>
+  .tech-modern {
+    background: #ffffff;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .tech-modern::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+      radial-gradient(circle at 25% 25%, rgba(103, 255, 242, 0.05) 0%, transparent 50%),
+      radial-gradient(circle at 75% 75%, rgba(59, 130, 246, 0.05) 0%, transparent 50%);
+    pointer-events: none;
+  }
+  
+  .tech-modern__container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 4rem 1rem;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .section-header {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+  
+  .section-header h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #1f2937;
+    margin-bottom: 1rem;
+  }
+  
+  .section-line {
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, #67fff2, #3b82f6);
+    margin: 0 auto 1.5rem;
+    border-radius: 2px;
+  }
+  
+  .section-subtitle {
+    font-size: 1.125rem;
+    color: #6b7280;
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+  
+  .tech-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    margin-bottom: 4rem;
+  }
+  
+  @media (min-width: 768px) {
+    .tech-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .tech-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  
+  .tech-category {
+    background: white;
+    border-radius: 20px;
+    padding: 2rem;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  
+  .tech-category.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .tech-category::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #67fff2, #3b82f6);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s ease;
+  }
+  
+  .tech-category:hover::before {
+    transform: scaleX(1);
+  }
+  
+  .tech-category:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.15);
+    border-color: rgba(103, 255, 242, 0.2);
+  }
+  
+  .category-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  .category-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+  }
+  
+  .frontend-icon {
+    background: linear-gradient(135deg, #67fff2, #3b82f6);
+  }
+  
+  .backend-icon {
+    background: linear-gradient(135deg, #f59e0b, #d97706);
+  }
+  
+  .deployment-icon {
+    background: linear-gradient(135deg, #10b981, #059669);
+  }
+  
+  .tech-category:hover .category-icon {
+    transform: scale(1.1) rotate(5deg);
+    box-shadow: 0 8px 25px rgba(103, 255, 242, 0.3);
+  }
+  
+  .category-icon svg {
+    width: 20px;
+    height: 20px;
+  }
+  
+  .category-header h3 {
+    color: #1f2937;
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin: 0;
+    flex: 1;
+  }
+  
+  .tech-desc {
+    color: #6b7280;
+    font-size: 0.875rem;
+    margin-bottom: 1.5rem;
+    font-style: italic;
+    line-height: 1.5;
+  }
+  
+  .tech-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .tech-list li {
+    padding: 0.5rem 0;
+    position: relative;
+    padding-left: 1.5rem;
+    color: #4b5563;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    transition: all 0.3s ease;
+  }
+  
+  .tech-list li:before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: #22c55e;
+    font-weight: bold;
+    font-size: 0.875rem;
+  }
+  
+  .tech-category:hover .tech-list li {
+    transform: translateX(5px);
+    color: #1f2937;
+  }
+  
+  .tech-cta {
+    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+    border-radius: 20px;
+    padding: 3rem 2rem;
+    text-align: center;
+    border: 1px solid rgba(203, 213, 225, 0.5);
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .tech-cta::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+      radial-gradient(circle at 30% 70%, rgba(103, 255, 242, 0.1) 0%, transparent 50%),
+      radial-gradient(circle at 70% 30%, rgba(59, 130, 246, 0.1) 0%, transparent 50%);
+    pointer-events: none;
+  }
+  
+  .cta-content {
+    position: relative;
+    z-index: 1;
+  }
+  
+  .tech-cta h3 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: #1f2937;
+    margin-bottom: 1rem;
+  }
+  
+  .tech-cta p {
+    font-size: 1.125rem;
+    color: #6b7280;
+    margin-bottom: 2rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .cta-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: linear-gradient(135deg, #67fff2 0%, #3b82f6 100%);
+    color: #1f2937;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    font-size: 1rem;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .cta-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.6s;
+  }
+  
+  .cta-button:hover::before {
+    left: 100%;
+  }
+  
+  .cta-button:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 15px 40px rgba(103, 255, 242, 0.4);
+  }
+  
+  .cta-button svg {
+    width: 16px;
+    height: 16px;
+    transition: transform 0.3s ease;
+  }
+  
+  .cta-button:hover svg {
+    transform: translateX(3px);
+  }
+  
+  /* Animation delays for staggered effect */
+  .tech-category[data-category="frontend"] { 
+    transition: opacity 0.6s ease 0.1s, transform 0.6s ease 0.1s; 
+  }
+  .tech-category[data-category="backend"] { 
+    transition: opacity 0.6s ease 0.2s, transform 0.6s ease 0.2s; 
+  }
+  .tech-category[data-category="deployment"] { 
+    transition: opacity 0.6s ease 0.3s, transform 0.6s ease 0.3s; 
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 767px) {
+    .tech-modern__container {
+      padding: 2rem 1rem;
+    }
+    
+    .section-header h2 {
+      font-size: 2rem;
+    }
+    
+    .tech-category {
+      padding: 1.5rem;
+    }
+    
+    .category-header {
+      flex-direction: column;
+      text-align: center;
+      gap: 0.5rem;
+    }
+    
+    .tech-cta {
+      padding: 2rem 1rem;
+    }
+    
+    .tech-cta h3 {
+      font-size: 1.5rem;
+    }
+  }
+</style>
+
+<script>
+  // Add scroll animation
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const element = entry.target as HTMLElement;
+        element.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.tech-category').forEach(category => {
+    observer.observe(category);
+  });
+</script>

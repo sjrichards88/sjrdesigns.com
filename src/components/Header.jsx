@@ -7,6 +7,7 @@ class Header extends Component {
 
 		this.state = {
 			navWhite: false,
+			navScrolled: false,
       navToggled: false
 		}
 
@@ -39,13 +40,20 @@ class Header extends Component {
 
 	handleScroll() {
 		let scrollPosition = window.scrollY
-		let landingHeight = document.getElementById('landing').clientHeight
-		let navWhite = scrollPosition <= (landingHeight - 10) ? false : true
+		let contactSection = document.getElementById('contact')
+		let contactTop = contactSection ? contactSection.offsetTop : Infinity
+		
+		// Show white nav text when reaching the dark contact section
+		let navWhite = scrollPosition >= (contactTop - 100) ? true : false
+		
+		// Show white background when scrolling starts (after 10px)
+		let navScrolled = scrollPosition > 10 ? true : false
 
-		// Check its changed before updating state so we are not rendering on every scroll
-		if (this.state.navWhite !== navWhite) {
+		// Check if either state changed before updating to avoid unnecessary renders
+		if (this.state.navWhite !== navWhite || this.state.navScrolled !== navScrolled) {
 			this.setState({
-				navWhite
+				navWhite,
+				navScrolled
 			})
 		}
 	}
@@ -79,10 +87,10 @@ class Header extends Component {
 	}
 
 	render() {
-		const { navWhite, navToggled } = this.state
+		const { navWhite, navScrolled, navToggled } = this.state
 
 		return(
-			<header className={`header ${navToggled === true ? 'active' : ''} ${navWhite === true ? 'header--white' : ''}`}>
+			<header className={`header ${navToggled === true ? 'active' : ''} ${navScrolled === true ? 'header--scrolled' : ''} ${navWhite === true ? 'header--white' : ''}`}>
 				<div className="header__logo">
 					<a href="#landing" onClick={(e) => this.scrollToSection(e, 'landing')}>sjrdesigns</a>
 				</div>
