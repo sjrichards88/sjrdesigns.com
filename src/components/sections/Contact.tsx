@@ -133,18 +133,26 @@ export default function Contact() {
               <div className="space-y-4">
                 <div>
                   <label className="block text-sm font-medium text-neutral-300 mb-2">Project Budget</label>
-                  <select 
-                    {...register("budget", { required: "Please select a budget range" })} 
-                    className="w-full px-4 py-3 pr-8 bg-white/5 border border-white/20 rounded-xl text-white focus:outline-none focus:border-blue-400 focus:bg-white/10 transition-all duration-300"
-                  >
-                    <option value="" className="bg-neutral-800 text-neutral-300">Select your budget range</option>
-                    <option value="Under £2,500" className="bg-neutral-800 text-white">Under £2,500</option>
-                    <option value="£2,500 - £5,000" className="bg-neutral-800 text-white">£2,500 - £5,000</option>
-                    <option value="£5,000 - £10,000" className="bg-neutral-800 text-white">£5,000 - £10,000</option>
-                    <option value="£10,000 - £20,000" className="bg-neutral-800 text-white">£10,000 - £20,000</option>
-                    <option value="£20,000+" className="bg-neutral-800 text-white">£20,000+</option>
-                    <option value="Let's discuss" className="bg-neutral-800 text-white">Let's discuss</option>
-                  </select>
+                  <div className="relative">
+                    <select 
+                      {...register("budget", { required: "Please select a budget range" })} 
+                      className="w-full px-4 py-3 pr-10 bg-white/5 border border-white/20 rounded-xl text-white focus:outline-none focus:border-blue-400 focus:bg-white/10 transition-all duration-300 appearance-none cursor-pointer"
+                    >
+                      <option value="" className="bg-neutral-800 text-neutral-300">Select your budget range</option>
+                      <option value="Under £2,500" className="bg-neutral-800 text-white">Under £2,500</option>
+                      <option value="£2,500 - £5,000" className="bg-neutral-800 text-white">£2,500 - £5,000</option>
+                      <option value="£5,000 - £10,000" className="bg-neutral-800 text-white">£5,000 - £10,000</option>
+                      <option value="£10,000 - £20,000" className="bg-neutral-800 text-white">£10,000 - £20,000</option>
+                      <option value="£20,000+" className="bg-neutral-800 text-white">£20,000+</option>
+                      <option value="Let's discuss" className="bg-neutral-800 text-white">Let's discuss</option>
+                    </select>
+                    {/* Custom Arrow */}
+                    <div className="absolute inset-y-0 right-3 flex items-center pointer-events-none">
+                      <svg className="w-4 h-4 text-neutral-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"/>
+                      </svg>
+                    </div>
+                  </div>
                   {errors.budget && (
                     <p className="text-rose-300 text-sm mt-1">{errors.budget.message as string}</p>
                   )}
@@ -273,38 +281,38 @@ export default function Contact() {
 
         @keyframes mega-float {
           0%, 100% {
-            transform: translateY(0) translateX(0) scale(1) rotate(0deg);
+            transform: translateY(0px) translateX(0px) scale(1);
           }
           25% {
-            transform: translateY(-60px) translateX(40px) scale(1.05) rotate(3deg);
+            transform: translateY(-60px) translateX(40px) scale(1.05);
           }
           50% {
-            transform: translateY(-30px) translateX(-20px) scale(0.95) rotate(-2deg);
+            transform: translateY(-30px) translateX(-20px) scale(0.95);
           }
           75% {
-            transform: translateY(-45px) translateX(25px) scale(1.02) rotate(1deg);
+            transform: translateY(-45px) translateX(25px) scale(1.02);
           }
         }
 
         @keyframes mega-float-delayed {
           0%, 100% {
-            transform: translateY(0) rotate(0deg) scale(1);
+            transform: translateY(0px) scale(1);
           }
           33% {
-            transform: translateY(-70px) rotate(8deg) scale(1.1);
+            transform: translateY(-70px) scale(1.1);
           }
           66% {
-            transform: translateY(-35px) rotate(-5deg) scale(0.9);
+            transform: translateY(-35px) scale(0.9);
           }
         }
 
         @keyframes mega-pulse {
           0%, 100% {
-            transform: translate(-50%, -50%) scale(1) rotate(0deg);
+            transform: translate(-50%, -50%) scale(1);
             opacity: 0.12;
           }
           50% {
-            transform: translate(-50%, -50%) scale(1.15) rotate(120deg);
+            transform: translate(-50%, -50%) scale(1.15);
             opacity: 0.2;
           }
         }
@@ -330,6 +338,20 @@ export default function Contact() {
 
         .animate-mega-pulse {
           animation: mega-pulse 12s ease-in-out infinite;
+        }
+
+        /* Firefox-specific optimizations */
+        @-moz-document url-prefix() {
+          .animate-gradient-shift,
+          .animate-gradient-shift-reverse {
+            animation-duration: 12s;
+          }
+          
+          .animate-mega-float,
+          .animate-mega-float-delayed,
+          .animate-mega-pulse {
+            animation-duration: 20s;
+          }
         }
       `}</style>
     </section>

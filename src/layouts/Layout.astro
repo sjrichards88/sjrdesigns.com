@@ -8,62 +8,105 @@ export interface Props {
 }
 
 const { title } = Astro.props;
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 ---
 <!DOCTYPE html>
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<meta name="generator" content={Astro.generator} />
+		
+		<!-- SEO Meta Tags -->
 		<title>{title}</title>
 		<meta name="description" content="Senior freelance web developer Simon Richards, available for new projects. 8+ years experience building premium websites for Disney, BBC & Barclays. Get fast, secure, results-driven web solutions." />
 		<meta name="keywords" content="freelance web developer, senior web developer, web development services, custom websites, React developer, available for hire, London web design, Basingstoke developer, premium web solutions" />
-		<link rel="canonical" href={`${Astro.url.pathname !== "/" ? "https://sjrdesigns.com/404.html" : `https://sjrdesigns.com${Astro.url.pathname}`}`} />
-		<link href="https://fonts.googleapis.com/css?family=Poppins:400,500,600,700|Lato:400,700&display=swap" rel="stylesheet"/>
-		<meta name="google-site-verification" content="8pUgVl34mzJdzrW7d4EivXrpFyEhgGdrfWfIl4c2bNo" />
-		<link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png" />
-		<link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png" />
-		<link rel="icon" type="image/png" sizes="16x16" href="./favicon-16x16.png" />
-		<link rel="manifest" href="./site.webmanifest" />
-		<link rel="mask-icon" href="./safari-pinned-tab.svg" color="#000000" />
+		<meta name="author" content="Simon Richards" />
+		<meta name="robots" content="index, follow" />
+		
+		<!-- Canonical URL -->
+		<link rel="canonical" href={canonicalURL} />
+		
+		<!-- Performance Optimizations -->
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Lato:wght@400;700&display=swap" rel="stylesheet"/>
+		
+		<!-- Favicons -->
+		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+		<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+		<link rel="manifest" href="/site.webmanifest" />
+		<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#000000" />
 		<meta name="msapplication-TileColor" content="#000000" />
 		<meta name="theme-color" content="#ffffff" />
-		{/* Schema */}
+		
+		<!-- Open Graph / Social Media -->
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content={canonicalURL} />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content="Senior freelance web developer Simon Richards, available for new projects. 8+ years experience building premium websites for Disney, BBC & Barclays." />
+		<meta property="og:image" content="https://sjrdesigns.com/android-chrome-384x384.png" />
+		<meta property="twitter:card" content="summary_large_image" />
+		<meta property="twitter:url" content={canonicalURL} />
+		<meta property="twitter:title" content={title} />
+		<meta property="twitter:description" content="Senior freelance web developer Simon Richards, available for new projects. 8+ years experience building premium websites for Disney, BBC & Barclays." />
+		<meta property="twitter:image" content="https://sjrdesigns.com/android-chrome-384x384.png" />
+		
+		<!-- Search Console Verification -->
+		<meta name="google-site-verification" content="8pUgVl34mzJdzrW7d4EivXrpFyEhgGdrfWfIl4c2bNo" />
+		
+		<!-- Structured Data -->
 		<script type="application/ld+json">
-			[{ 
-				"@context": "http://schema.org", 
-				"@type": "Organization", 
-				"url": "https://sjrdesigns.com", 
-				"logo": "https://sjrdesigns.com/android-chrome-384x384.png", 
-				"contactPoint": [{ 
-					"@type": "ContactPoint", 
-					"telephone": "+447850944628", 
-					"email": "sjrichards88@gmail.com", 
-					"contactType": "customer service", 
-					"areaServed": "GB", 
-					"availableLanguage": "English" 
-				}]
-			},
 			{
-				"@context" : "http://schema.org",
-				"@type" : "WebSite",
-				"name" : "London and Basingstoke based Web Developer",
-				"url" : "https://sjrdesigns.com"
-			},
-			{
-				"@context": "http://schema.org",
+				"@context": "https://schema.org",
 				"@type": "Person",
 				"name": "Simon Richards",
-				"url": "https://sjrdesigns.com"
-			}]	
+				"jobTitle": "Senior Web Developer",
+				"url": "https://sjrdesigns.com",
+				"image": "https://sjrdesigns.com/android-chrome-384x384.png",
+				"sameAs": [
+					"https://www.linkedin.com/in/simon-richards-33874699/"
+				],
+				"worksFor": {
+					"@type": "Organization",
+					"name": "SJR Designs",
+					"url": "https://sjrdesigns.com",
+					"logo": "https://sjrdesigns.com/android-chrome-384x384.png",
+					"contactPoint": {
+						"@type": "ContactPoint",
+						"telephone": "+447850944628",
+						"email": "sjrichards88@gmail.com",
+						"contactType": "customer service",
+						"areaServed": "GB",
+						"availableLanguage": "English"
+					}
+				},
+				"address": {
+					"@type": "PostalAddress",
+					"addressRegion": "Hampshire",
+					"addressCountry": "GB"
+				},
+				"knowsAbout": [
+					"Web Development",
+					"React",
+					"JavaScript",
+					"Frontend Development",
+					"Full Stack Development"
+				]
+			}
 		</script>
-		<!-- Google tag (gtag.js) -->
-		<script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-5X15WHBMFB"></script>
+		
+		<!-- Analytics -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=G-5X15WHBMFB"></script>
 		<script is:inline>
 			window.dataLayer = window.dataLayer || [];
 			function gtag(){dataLayer.push(arguments);}
 			gtag('js', new Date());
-			gtag('config', 'G-5X15WHBMFB');
+			gtag('config', 'G-5X15WHBMFB', {
+				page_title: document.title,
+				page_location: window.location.href
+			});
 		</script>
 	</head>
 	<body>
@@ -72,10 +115,3 @@ const { title } = Astro.props;
 		<Footer />
 	</body>
 </html>
-
-<script>
-navigator.serviceWorker.getRegistrations().then(function(registrations) {
- for(let registration of registrations) {
-  registration.unregister()
-} })
-</script>
