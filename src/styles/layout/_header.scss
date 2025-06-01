@@ -182,40 +182,6 @@
         background-color: rgba($white, .90);
         backdrop-filter: blur(10px);
     }
-    
-    // This class is for dark sections (contact) - changes text to white
-    &--white {
-        background-color: transparent;
-        backdrop-filter: none;
-        
-        a, ul li a {
-            @media (min-width: $screen-sm) {
-                color: $white;
-            }
-            &:after {
-                @media (min-width: $screen-sm) {
-                    background-color: $white;
-                }
-            }
-        }
-        .header__logo {
-            a {
-                color: $white;
-                &:after {
-                    background-color: $white;
-                }
-            }
-        }
-        .header__nav-toggle {
-            .burger {
-                color: $white;
-                &:after,
-                &:before {
-                    background-color: $white;
-                }
-            }
-        }
-    }
 }
 
 .content-wrap {
