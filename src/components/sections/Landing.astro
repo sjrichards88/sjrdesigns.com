@@ -1,49 +1,50 @@
 ---
-// Landing Section - Subtle white design with gentle glows and smooth transitions
+// Landing Section - Dark cinematic design with animated background gradients
 ---
 
 <section 
   id="landing" 
-  class="relative min-h-screen w-full bg-gradient-to-br from-white via-slate-50 to-blue-50/30 overflow-hidden"
+  class="relative min-h-screen w-full bg-gradient-to-br from-neutral-900 via-neutral-800 to-neutral-900 overflow-hidden"
 >
   <!-- Dot Pattern Background (like contact section) -->
-  <div class="absolute inset-0 opacity-[0.03]" style="background-image: radial-gradient(circle at 2px 2px, #3b82f6 1px, transparent 0); background-size: 50px 50px;"></div>
+  <div class="absolute inset-0 opacity-5" style="background-image: radial-gradient(circle at 2px 2px, white 1px, transparent 0); background-size: 40px 40px;"></div>
   
-  <!-- Stronger Dynamic Background Gradients with Orangy Pink -->
-  <div class="absolute inset-0 bg-gradient-to-br from-blue-100/30 via-rose-100/20 to-cyan-100/40 animate-gradient-shift"></div>
+  <!-- Dynamic Animated Background Gradients -->
+  <div class="absolute inset-0 bg-gradient-to-br from-blue-900/20 via-purple-900/15 to-teal-900/20 animate-gradient-shift"></div>
+  <div class="absolute inset-0 bg-gradient-to-tr from-emerald-900/10 via-transparent to-cyan-900/15 animate-gradient-shift-reverse"></div>
   
-  <!-- More Visible Glow Orbs with Orangy Pink Mix -->
+  <!-- Cinematic Glow Orbs -->
   <div class="absolute inset-0">
-    <!-- Primary soft orb -->
-    <div class="absolute -top-32 -left-32 w-[600px] h-[600px] bg-gradient-to-br from-blue-300/35 to-cyan-300/30 rounded-full blur-3xl animate-mega-float md:animate-mega-float animate-mega-float-mobile"></div>
-    <!-- Secondary orb with orange/pink -->
-    <div class="absolute top-1/4 -right-48 w-[500px] h-[500px] bg-gradient-to-br from-rose-300/32 to-orange-300/28 rounded-full blur-3xl animate-mega-float-delayed md:animate-mega-float-delayed animate-mega-float-delayed-mobile"></div>
+    <!-- Primary orb -->
+    <div class="absolute -top-32 -left-32 w-[600px] h-[600px] bg-gradient-to-br from-blue-500/20 to-cyan-500/15 rounded-full blur-3xl animate-mega-float md:animate-mega-float animate-mega-float-mobile"></div>
+    <!-- Secondary orb -->
+    <div class="absolute top-1/4 -right-48 w-[500px] h-[500px] bg-gradient-to-br from-purple-500/18 to-pink-500/12 rounded-full blur-3xl animate-mega-float-delayed md:animate-mega-float-delayed animate-mega-float-delayed-mobile"></div>
     <!-- Tertiary orb -->
-    <div class="absolute -bottom-48 left-1/3 w-[700px] h-[700px] bg-gradient-to-br from-teal-300/35 to-cyan-300/30 rounded-full blur-3xl animate-mega-spiral md:animate-mega-spiral animate-mega-spiral-mobile"></div>
-    <!-- Accent orb with subtle pink -->
-    <div class="absolute bottom-1/4 -right-32 w-[400px] h-[400px] bg-gradient-to-br from-pink-300/32 to-blue-300/28 rounded-full blur-3xl animate-mega-orbit md:animate-mega-orbit animate-mega-orbit-mobile"></div>
+    <div class="absolute -bottom-48 left-1/3 w-[700px] h-[700px] bg-gradient-to-br from-teal-500/20 to-emerald-500/15 rounded-full blur-3xl animate-mega-spiral md:animate-mega-spiral animate-mega-spiral-mobile"></div>
+    <!-- Accent orb -->
+    <div class="absolute bottom-1/4 -right-32 w-[400px] h-[400px] bg-gradient-to-br from-indigo-500/18 to-blue-500/12 rounded-full blur-3xl animate-mega-orbit md:animate-mega-orbit animate-mega-orbit-mobile"></div>
     <!-- Center accent -->
-    <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-to-br from-cyan-300/28 to-rose-300/25 rounded-full blur-3xl animate-mega-pulse md:animate-mega-pulse animate-mega-pulse-mobile"></div>
+    <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-to-br from-cyan-500/15 to-purple-500/10 rounded-full blur-3xl animate-mega-pulse md:animate-mega-pulse animate-mega-pulse-mobile"></div>
   </div>
   
-  <!-- More Visible Geometric Elements -->
-  <div class="absolute inset-0 opacity-30 md:opacity-30 opacity-15">
+  <!-- Geometric Elements -->
+  <div class="absolute inset-0 opacity-20 md:opacity-20 opacity-10">
     <!-- Large geometric shapes -->
-    <div class="absolute top-20 left-20 w-48 h-48 border border-blue-400/50 rounded-3xl rotate-45 animate-mega-spin md:animate-mega-spin animate-mega-spin-mobile"></div>
-    <div class="absolute bottom-32 right-32 w-32 h-32 border border-cyan-400/60 rounded-full animate-mega-bounce md:animate-mega-bounce animate-mega-bounce-mobile"></div>
-    <div class="absolute top-1/3 right-20 w-24 h-24 bg-gradient-to-r from-rose-400/40 to-orange-400/35 rounded-2xl rotate-12 animate-mega-rotate md:animate-mega-rotate animate-mega-rotate-mobile"></div>
-    <div class="absolute bottom-1/3 left-32 w-40 h-40 border-2 border-slate-400/45 rounded-xl animate-mega-drift md:animate-mega-drift animate-mega-drift-mobile"></div>
+    <div class="absolute top-20 left-20 w-48 h-48 border border-blue-400/30 rounded-3xl rotate-45 animate-mega-spin md:animate-mega-spin animate-mega-spin-mobile"></div>
+    <div class="absolute bottom-32 right-32 w-32 h-32 border border-cyan-400/40 rounded-full animate-mega-bounce md:animate-mega-bounce animate-mega-bounce-mobile"></div>
+    <div class="absolute top-1/3 right-20 w-24 h-24 bg-gradient-to-r from-purple-400/30 to-pink-400/25 rounded-2xl rotate-12 animate-mega-rotate md:animate-mega-rotate animate-mega-rotate-mobile"></div>
+    <div class="absolute bottom-1/3 left-32 w-40 h-40 border-2 border-teal-400/35 rounded-xl animate-mega-drift md:animate-mega-drift animate-mega-drift-mobile"></div>
     <!-- Additional floating elements -->
-    <div class="absolute top-1/4 left-1/4 w-16 h-16 bg-blue-400/35 rounded-full animate-mega-float-small md:animate-mega-float-small animate-mega-float-small-mobile"></div>
-    <div class="absolute bottom-1/4 right-1/4 w-20 h-20 border border-pink-400/50 rounded-lg rotate-45 animate-mega-sway md:animate-mega-sway animate-mega-sway-mobile"></div>
+    <div class="absolute top-1/4 left-1/4 w-16 h-16 bg-blue-400/25 rounded-full animate-mega-float-small md:animate-mega-float-small animate-mega-float-small-mobile"></div>
+    <div class="absolute bottom-1/4 right-1/4 w-20 h-20 border border-indigo-400/40 rounded-lg rotate-45 animate-mega-sway md:animate-mega-sway animate-mega-sway-mobile"></div>
   </div>
   
-  <!-- Highly visible particle-like elements -->
-  <div class="absolute inset-0 opacity-40 md:opacity-40 opacity-20">
-    <div class="absolute top-1/6 left-1/5 w-2 h-2 bg-blue-500 rounded-full animate-mega-twinkle md:animate-mega-twinkle animate-mega-twinkle-mobile"></div>
-    <div class="absolute top-1/3 right-1/4 w-1.5 h-1.5 bg-cyan-500 rounded-full animate-mega-twinkle-delayed md:animate-mega-twinkle-delayed animate-mega-twinkle-delayed-mobile"></div>
-    <div class="absolute bottom-1/3 left-1/3 w-2.5 h-2.5 bg-teal-500 rounded-full animate-mega-twinkle-slow md:animate-mega-twinkle-slow animate-mega-twinkle-slow-mobile"></div>
-    <div class="absolute bottom-1/6 right-1/5 w-1 h-1 bg-rose-500 rounded-full animate-mega-twinkle-fast md:animate-mega-twinkle-fast animate-mega-twinkle-fast-mobile"></div>
+  <!-- Particle-like elements -->
+  <div class="absolute inset-0 opacity-30 md:opacity-30 opacity-15">
+    <div class="absolute top-1/6 left-1/5 w-2 h-2 bg-blue-400 rounded-full animate-mega-twinkle md:animate-mega-twinkle animate-mega-twinkle-mobile"></div>
+    <div class="absolute top-1/3 right-1/4 w-1.5 h-1.5 bg-cyan-400 rounded-full animate-mega-twinkle-delayed md:animate-mega-twinkle-delayed animate-mega-twinkle-delayed-mobile"></div>
+    <div class="absolute bottom-1/3 left-1/3 w-2.5 h-2.5 bg-teal-400 rounded-full animate-mega-twinkle-slow md:animate-mega-twinkle-slow animate-mega-twinkle-slow-mobile"></div>
+    <div class="absolute bottom-1/6 right-1/5 w-1 h-1 bg-purple-400 rounded-full animate-mega-twinkle-fast md:animate-mega-twinkle-fast animate-mega-twinkle-fast-mobile"></div>
   </div>
   
   <!-- Main Content Container with proper spacing from nav -->
@@ -51,11 +52,11 @@
     <div class="max-w-7xl mx-auto w-full">
       
       <!-- Status Badge with proper spacing from nav -->
-      <div class="flex justify-center mb-8 sm:mb-10 opacity-0 animate-fade-in-up" style="animation-delay: 0.2s;">
-        <div class="relative inline-flex items-center gap-3 px-6 py-3 bg-emerald-50/80 border border-emerald-200/50 rounded-full backdrop-blur-sm shadow-lg">
-          <div class="absolute inset-0 bg-gradient-to-r from-emerald-100/30 to-green-100/20 rounded-full blur-xl"></div>
-          <div class="relative w-2.5 h-2.5 bg-emerald-500 rounded-full animate-pulse shadow-lg shadow-emerald-500/30"></div>
-          <span class="relative text-emerald-700 text-sm font-medium">Available for Projects</span>
+      <div class="flex justify-center mb-8 sm:mb-10 fade-in-element" style="animation-delay: 0.2s;">
+        <div class="relative inline-flex items-center gap-3 px-6 py-3 bg-emerald-500/20 border border-emerald-500/30 rounded-full backdrop-blur-sm shadow-lg">
+          <div class="absolute inset-0 bg-gradient-to-r from-emerald-500/10 to-green-500/5 rounded-full blur-xl"></div>
+          <div class="relative w-2.5 h-2.5 bg-emerald-400 rounded-full animate-pulse shadow-lg shadow-emerald-400/50"></div>
+          <span class="relative text-emerald-400 text-sm font-medium">Available for Projects</span>
         </div>
       </div>
 
@@ -63,28 +64,28 @@
       <div class="text-center space-y-4 sm:space-y-6">
         
         <!-- Main Heading with Glowing Keywords -->
-        <div class="space-y-2 sm:space-y-3 opacity-0 animate-fade-in-up" style="animation-delay: 0.4s;">
+        <div class="space-y-2 sm:space-y-3 fade-in-element" style="animation-delay: 0.4s;">
           <h1 class="font-heading font-bold leading-tight tracking-tight">
-            <span class="block text-slate-900 drop-shadow-sm" style="font-size: clamp(2rem, 8vw, 6rem);">
+            <span class="block text-white drop-shadow-lg" style="font-size: clamp(2rem, 8vw, 6rem);">
               Simon Richards
             </span>
-            <span class="block bg-gradient-to-r from-blue-600 via-cyan-600 to-teal-600 bg-clip-text text-transparent mt-1 sm:mt-2 drop-shadow-sm glow-text" style="font-size: clamp(1.25rem, 5vw, 4rem);">
+            <span class="block bg-gradient-to-r from-blue-400 via-cyan-400 to-teal-400 bg-clip-text text-transparent mt-1 sm:mt-2 drop-shadow-lg glow-text" style="font-size: clamp(1.25rem, 5vw, 4rem);">
               Senior Developer
             </span>
           </h1>
         </div>
 
         <!-- Subtitle with Glowing Keywords -->
-        <div class="max-w-4xl mx-auto opacity-0 animate-fade-in-up" style="animation-delay: 0.6s;">
-          <p class="text-slate-700 leading-relaxed font-light drop-shadow-sm" style="font-size: clamp(1rem, 2.5vw, 1.5rem);">
-            Crafting <span class="text-blue-600 font-medium glow-text-subtle">exceptional digital experiences</span> that drive business growth. 
-            <span class="text-slate-900 font-medium glow-text-subtle">8+ years</span> building for industry leaders like 
-            <span class="text-cyan-600 font-medium glow-text-subtle">Disney, BBC & Barclays</span>.
+        <div class="max-w-4xl mx-auto fade-in-element" style="animation-delay: 0.6s;">
+          <p class="text-neutral-300 leading-relaxed font-light drop-shadow-sm" style="font-size: clamp(1rem, 2.5vw, 1.5rem);">
+            Crafting <span class="text-blue-400 font-medium glow-text-subtle">exceptional digital experiences</span> that drive business growth. 
+            <span class="text-white font-medium glow-text-subtle">8+ years</span> building for industry leaders like 
+            <span class="text-cyan-400 font-medium glow-text-subtle">Disney, BBC & Barclays</span>.
           </p>
         </div>
 
         <!-- CTA Buttons with Unified Colors -->
-        <div class="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4 sm:pt-6 opacity-0 animate-fade-in-up" style="animation-delay: 0.8s;">
+        <div class="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4 sm:pt-6 fade-in-element" style="animation-delay: 0.8s;">
           <a 
             href="#contact" 
             class="group relative px-8 py-4 bg-gradient-to-r from-blue-500 to-cyan-600 text-white font-semibold rounded-xl hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-blue-500/25 overflow-hidden"
@@ -96,7 +97,7 @@
           
           <a 
             href="#work" 
-            class="group px-8 py-4 border border-slate-300/50 text-slate-700 font-medium rounded-xl hover:border-blue-400/50 hover:bg-blue-50/50 transition-all duration-300 backdrop-blur-sm"
+            class="group px-8 py-4 border border-white/20 text-white font-medium rounded-xl hover:border-blue-400/50 hover:bg-white/5 transition-all duration-300 backdrop-blur-sm"
           >
             View Portfolio
             <span class="ml-2 group-hover:translate-x-1 transition-transform duration-300 inline-block">→</span>
@@ -104,59 +105,59 @@
         </div>
 
         <!-- Key Features Grid with Unified Colors -->
-        <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 pt-8 sm:pt-12 max-w-4xl mx-auto opacity-0 animate-fade-in-up" style="animation-delay: 1s;">
-          <div class="group text-center p-4 sm:p-6 rounded-2xl bg-white/60 border border-blue-200/30 backdrop-blur-sm hover:bg-blue-50/60 transition-all duration-300 hover:scale-105">
-            <div class="absolute inset-0 bg-gradient-to-br from-blue-100/30 to-cyan-100/20 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 pt-8 sm:pt-12 max-w-4xl mx-auto fade-in-element" style="animation-delay: 1s;">
+          <div class="group text-center p-4 sm:p-6 rounded-2xl bg-white/5 border border-blue-400/20 backdrop-blur-sm hover:bg-blue-500/10 transition-all duration-300 hover:scale-105">
+            <div class="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-cyan-500/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             <div class="relative">
               <div class="text-xl sm:text-2xl mb-2">⚡</div>
-              <h3 class="font-semibold text-slate-800 text-xs sm:text-sm">Lightning Fast</h3>
-              <p class="text-slate-600 text-xs mt-1">Optimized Performance</p>
+              <h3 class="font-semibold text-white text-xs sm:text-sm">Lightning Fast</h3>
+              <p class="text-neutral-400 text-xs mt-1">Optimized Performance</p>
             </div>
           </div>
           
-          <div class="group text-center p-4 sm:p-6 rounded-2xl bg-white/60 border border-cyan-200/30 backdrop-blur-sm hover:bg-cyan-50/60 transition-all duration-300 hover:scale-105">
-            <div class="absolute inset-0 bg-gradient-to-br from-cyan-100/30 to-teal-100/20 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          <div class="group text-center p-4 sm:p-6 rounded-2xl bg-white/5 border border-cyan-400/20 backdrop-blur-sm hover:bg-cyan-500/10 transition-all duration-300 hover:scale-105">
+            <div class="absolute inset-0 bg-gradient-to-br from-cyan-500/10 to-teal-500/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             <div class="relative">
               <div class="text-xl sm:text-2xl mb-2">🛡️</div>
-              <h3 class="font-semibold text-slate-800 text-xs sm:text-sm">Enterprise Security</h3>
-              <p class="text-slate-600 text-xs mt-1">Bank-grade Protection</p>
+              <h3 class="font-semibold text-white text-xs sm:text-sm">Enterprise Security</h3>
+              <p class="text-neutral-400 text-xs mt-1">Bank-grade Protection</p>
             </div>
           </div>
           
-          <div class="group text-center p-4 sm:p-6 rounded-2xl bg-white/60 border border-teal-200/30 backdrop-blur-sm hover:bg-teal-50/60 transition-all duration-300 hover:scale-105">
-            <div class="absolute inset-0 bg-gradient-to-br from-teal-100/30 to-blue-100/20 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          <div class="group text-center p-4 sm:p-6 rounded-2xl bg-white/5 border border-teal-400/20 backdrop-blur-sm hover:bg-teal-500/10 transition-all duration-300 hover:scale-105">
+            <div class="absolute inset-0 bg-gradient-to-br from-teal-500/10 to-blue-500/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             <div class="relative">
               <div class="text-xl sm:text-2xl mb-2">🚀</div>
-              <h3 class="font-semibold text-slate-800 text-xs sm:text-sm">Scalable Solutions</h3>
-              <p class="text-slate-600 text-xs mt-1">Future-proof Architecture</p>
+              <h3 class="font-semibold text-white text-xs sm:text-sm">Scalable Solutions</h3>
+              <p class="text-neutral-400 text-xs mt-1">Future-proof Architecture</p>
             </div>
           </div>
           
-          <div class="group text-center p-4 sm:p-6 rounded-2xl bg-white/60 border border-slate-200/30 backdrop-blur-sm hover:bg-slate-50/60 transition-all duration-300 hover:scale-105">
-            <div class="absolute inset-0 bg-gradient-to-br from-slate-100/30 to-blue-100/20 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          <div class="group text-center p-4 sm:p-6 rounded-2xl bg-white/5 border border-neutral-400/20 backdrop-blur-sm hover:bg-neutral-500/10 transition-all duration-300 hover:scale-105">
+            <div class="absolute inset-0 bg-gradient-to-br from-neutral-500/10 to-blue-500/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             <div class="relative">
               <div class="text-xl sm:text-2xl mb-2">📱</div>
-              <h3 class="font-semibold text-slate-800 text-xs sm:text-sm">Mobile First</h3>
-              <p class="text-slate-600 text-xs mt-1">Responsive Design</p>
+              <h3 class="font-semibold text-white text-xs sm:text-sm">Mobile First</h3>
+              <p class="text-neutral-400 text-xs mt-1">Responsive Design</p>
             </div>
           </div>
         </div>
 
         <!-- Stats Row with Unified Styling -->
-        <div class="flex flex-col sm:flex-row justify-center items-center gap-6 sm:gap-8 pt-8 sm:pt-12 pb-16 sm:pb-20 opacity-0 animate-fade-in-up" style="animation-delay: 1.2s;">
+        <div class="flex flex-col sm:flex-row justify-center items-center gap-6 sm:gap-8 pt-8 sm:pt-12 pb-16 sm:pb-20 fade-in-element" style="animation-delay: 1.2s;">
           <div class="text-center group">
-            <div class="font-bold text-slate-800 drop-shadow-sm group-hover:text-blue-600 transition-colors duration-300 glow-text-subtle" style="font-size: clamp(1.5rem, 4vw, 2.5rem);">8+</div>
-            <div class="text-slate-600 text-sm">Years Experience</div>
+            <div class="font-bold text-white drop-shadow-lg group-hover:text-blue-400 transition-colors duration-300 glow-text-subtle" style="font-size: clamp(1.5rem, 4vw, 2.5rem);">8+</div>
+            <div class="text-neutral-400 text-sm">Years Experience</div>
           </div>
-          <div class="hidden sm:block w-px h-8 sm:h-12 bg-gradient-to-b from-transparent via-slate-300/50 to-transparent"></div>
+          <div class="hidden sm:block w-px h-8 sm:h-12 bg-gradient-to-b from-transparent via-white/20 to-transparent"></div>
           <div class="text-center group">
-            <div class="font-bold text-slate-800 drop-shadow-sm group-hover:text-cyan-600 transition-colors duration-300 glow-text-subtle" style="font-size: clamp(1.5rem, 4vw, 2.5rem);">50+</div>
-            <div class="text-slate-600 text-sm">Projects Delivered</div>
+            <div class="font-bold text-white drop-shadow-lg group-hover:text-cyan-400 transition-colors duration-300 glow-text-subtle" style="font-size: clamp(1.5rem, 4vw, 2.5rem);">50+</div>
+            <div class="text-neutral-400 text-sm">Projects Delivered</div>
           </div>
-          <div class="hidden sm:block w-px h-8 sm:h-12 bg-gradient-to-b from-transparent via-slate-300/50 to-transparent"></div>
+          <div class="hidden sm:block w-px h-8 sm:h-12 bg-gradient-to-b from-transparent via-white/20 to-transparent"></div>
           <div class="text-center group">
-            <div class="font-bold text-slate-800 drop-shadow-sm group-hover:text-teal-600 transition-colors duration-300 glow-text-subtle" style="font-size: clamp(1.5rem, 4vw, 2.5rem);">100%</div>
-            <div class="text-slate-600 text-sm">Client Satisfaction</div>
+            <div class="font-bold text-white drop-shadow-lg group-hover:text-teal-400 transition-colors duration-300 glow-text-subtle" style="font-size: clamp(1.5rem, 4vw, 2.5rem);">100%</div>
+            <div class="text-neutral-400 text-sm">Client Satisfaction</div>
           </div>
         </div>
       </div>
@@ -164,10 +165,10 @@
   </div>
 
   <!-- Enhanced Scroll Indicator -->
-  <div class="absolute bottom-4 sm:bottom-8 left-1/2 transform -translate-x-1/2 z-50 opacity-0 animate-fade-in-up" style="animation-delay: 1.4s;">
-    <div class="flex flex-col items-center text-slate-500 group hover:text-blue-600 transition-colors duration-300">
+  <div class="absolute bottom-4 sm:bottom-8 left-1/2 transform -translate-x-1/2 z-50 fade-in-element" style="animation-delay: 1.4s;">
+    <div class="flex flex-col items-center text-neutral-400 group hover:text-blue-400 transition-colors duration-300">
       <span class="text-xs uppercase tracking-wider mb-2">Scroll</span>
-      <div class="w-px h-6 sm:h-8 bg-gradient-to-b from-slate-400/50 to-transparent animate-bounce"></div>
+      <div class="w-px h-6 sm:h-8 bg-gradient-to-b from-white/30 to-transparent animate-bounce"></div>
     </div>
   </div>
 </section>
@@ -187,13 +188,22 @@
     text-shadow: 0 0 15px rgba(59, 130, 246, 0.4), 0 0 30px rgba(34, 211, 238, 0.2);
   }
 
-  /* More visible background animations */
+  /* Background animations */
   @keyframes gradient-shift {
     0%, 100% {
       background-position: 0% 50%;
     }
     50% {
       background-position: 100% 50%;
+    }
+  }
+
+  @keyframes gradient-shift-reverse {
+    0%, 100% {
+      background-position: 100% 50%;
+    }
+    50% {
+      background-position: 0% 50%;
     }
   }
 
@@ -244,42 +254,33 @@
 
   @keyframes mega-orbit {
     0% {
-      transform: translateX(0) translateY(0) scale(1);
-    }
-    25% {
-      transform: translateX(70px) translateY(-50px) scale(1.08);
-    }
-    50% {
-      transform: translateX(0) translateY(-100px) scale(0.92);
-    }
-    75% {
-      transform: translateX(-70px) translateY(-50px) scale(1.05);
+      transform: rotate(0deg) translateX(100px) rotate(0deg);
     }
     100% {
-      transform: translateX(0) translateY(0) scale(1);
+      transform: rotate(360deg) translateX(100px) rotate(-360deg);
     }
   }
 
   @keyframes mega-pulse {
     0%, 100% {
-      transform: translate(-50%, -50%) scale(1);
-      opacity: 0.08;
+      transform: translate(-50%, -50%) scale(1) rotate(0deg);
+      opacity: 0.15;
     }
     50% {
-      transform: translate(-50%, -50%) scale(1.25);
-      opacity: 0.15;
+      transform: translate(-50%, -50%) scale(1.2) rotate(180deg);
+      opacity: 0.25;
     }
   }
 
   @keyframes mega-spin {
     0% {
-      transform: rotate(0deg) scale(1);
+      transform: rotate(45deg) scale(1);
     }
     50% {
-      transform: rotate(180deg) scale(1.08);
+      transform: rotate(225deg) scale(1.1);
     }
     100% {
-      transform: rotate(360deg) scale(1);
+      transform: rotate(405deg) scale(1);
     }
   }
 
@@ -288,48 +289,52 @@
       transform: translateY(0) scale(1);
     }
     50% {
-      transform: translateY(-40px) scale(1.08);
+      transform: translateY(-30px) scale(1.1);
     }
   }
 
   @keyframes mega-rotate {
-    0%, 100% {
-      transform: rotate(0deg) scale(1);
+    0% {
+      transform: rotate(12deg) scale(1);
     }
-    33% {
-      transform: rotate(120deg) scale(1.15);
+    50% {
+      transform: rotate(192deg) scale(1.15);
     }
-    66% {
-      transform: rotate(240deg) scale(0.85);
+    100% {
+      transform: rotate(372deg) scale(1);
     }
   }
 
   @keyframes mega-drift {
     0%, 100% {
-      transform: translateX(0) translateY(0);
-      opacity: 0.2;
+      transform: translateX(0) translateY(0) rotate(0deg);
+    }
+    25% {
+      transform: translateX(30px) translateY(-20px) rotate(5deg);
     }
     50% {
-      transform: translateX(25px) translateY(-20px);
-      opacity: 0.35;
+      transform: translateX(-20px) translateY(-40px) rotate(-3deg);
+    }
+    75% {
+      transform: translateX(40px) translateY(-10px) rotate(7deg);
     }
   }
 
   @keyframes mega-float-small {
     0%, 100% {
-      transform: translateY(0);
+      transform: translateY(0) scale(1);
     }
     50% {
-      transform: translateY(-25px);
+      transform: translateY(-20px) scale(1.1);
     }
   }
 
   @keyframes mega-sway {
     0%, 100% {
-      transform: rotate(0deg) translateY(0);
+      transform: rotate(45deg) translateX(0);
     }
     50% {
-      transform: rotate(8deg) translateY(-15px);
+      transform: rotate(45deg) translateX(20px);
     }
   }
 
@@ -339,41 +344,41 @@
       transform: scale(1);
     }
     50% {
-      opacity: 0.8;
-      transform: scale(1.4);
+      opacity: 1;
+      transform: scale(1.5);
     }
   }
 
   @keyframes mega-twinkle-delayed {
     0%, 100% {
-      opacity: 0.25;
-      transform: scale(0.9);
+      opacity: 0.2;
+      transform: scale(0.8);
     }
     50% {
-      opacity: 0.7;
+      opacity: 0.8;
       transform: scale(1.3);
     }
   }
 
   @keyframes mega-twinkle-slow {
     0%, 100% {
-      opacity: 0.35;
-      transform: scale(1.1);
+      opacity: 0.4;
+      transform: scale(1.2);
     }
     50% {
-      opacity: 0.8;
-      transform: scale(1.6);
+      opacity: 1;
+      transform: scale(1.8);
     }
   }
 
   @keyframes mega-twinkle-fast {
     0%, 100% {
-      opacity: 0.2;
-      transform: scale(0.7);
+      opacity: 0.1;
+      transform: scale(0.5);
     }
     50% {
       opacity: 0.6;
-      transform: scale(1.1);
+      transform: scale(1);
     }
   }
 
@@ -388,164 +393,182 @@
     }
   }
 
-  /* Apply animations with more visible durations */
+  /* Animation classes */
   .animate-gradient-shift {
-    animation: gradient-shift 10s ease-in-out infinite;
+    animation: gradient-shift 8s ease-in-out infinite;
+    background-size: 400% 400%;
+  }
+
+  .animate-gradient-shift-reverse {
+    animation: gradient-shift-reverse 10s ease-in-out infinite;
     background-size: 400% 400%;
   }
 
   .animate-mega-float {
-    animation: mega-float 12s ease-in-out infinite;
+    animation: mega-float 20s ease-in-out infinite;
   }
 
   .animate-mega-float-delayed {
-    animation: mega-float-delayed 15s ease-in-out infinite;
-    animation-delay: 3s;
-  }
-
-  .animate-mega-spiral {
-    animation: mega-spiral 18s ease-in-out infinite;
-    animation-delay: 1.5s;
-  }
-
-  .animate-mega-orbit {
-    animation: mega-orbit 20s linear infinite;
-    animation-delay: 4s;
-  }
-
-  .animate-mega-pulse {
-    animation: mega-pulse 8s ease-in-out infinite;
+    animation: mega-float-delayed 25s ease-in-out infinite;
     animation-delay: 2s;
   }
 
+  .animate-mega-spiral {
+    animation: mega-spiral 30s linear infinite;
+  }
+
+  .animate-mega-orbit {
+    animation: mega-orbit 35s linear infinite;
+  }
+
+  .animate-mega-pulse {
+    animation: mega-pulse 15s ease-in-out infinite;
+  }
+
   .animate-mega-spin {
-    animation: mega-spin 25s linear infinite;
+    animation: mega-spin 20s linear infinite;
   }
 
   .animate-mega-bounce {
-    animation: mega-bounce 4s ease-in-out infinite;
+    animation: mega-bounce 6s ease-in-out infinite;
   }
 
   .animate-mega-rotate {
-    animation: mega-rotate 14s ease-in-out infinite;
+    animation: mega-rotate 25s linear infinite;
   }
 
   .animate-mega-drift {
-    animation: mega-drift 6s ease-in-out infinite;
+    animation: mega-drift 18s ease-in-out infinite;
   }
 
   .animate-mega-float-small {
-    animation: mega-float-small 3s ease-in-out infinite;
+    animation: mega-float-small 8s ease-in-out infinite;
   }
 
   .animate-mega-sway {
-    animation: mega-sway 5s ease-in-out infinite;
+    animation: mega-sway 12s ease-in-out infinite;
   }
 
   .animate-mega-twinkle {
-    animation: mega-twinkle 2.5s ease-in-out infinite;
+    animation: mega-twinkle 3s ease-in-out infinite;
   }
 
   .animate-mega-twinkle-delayed {
-    animation: mega-twinkle-delayed 3s ease-in-out infinite;
+    animation: mega-twinkle-delayed 4s ease-in-out infinite;
     animation-delay: 1s;
   }
 
   .animate-mega-twinkle-slow {
-    animation: mega-twinkle-slow 4s ease-in-out infinite;
+    animation: mega-twinkle-slow 5s ease-in-out infinite;
     animation-delay: 2s;
   }
 
   .animate-mega-twinkle-fast {
-    animation: mega-twinkle-fast 1.8s ease-in-out infinite;
-    animation-delay: 0.5s;
+    animation: mega-twinkle-fast 2s ease-in-out infinite;
   }
 
   .animate-fade-in-up {
-    animation: fade-in-up 0.8s ease-out forwards;
+    animation: fade-in-up 1s ease-out forwards;
   }
-
-  /* Mobile animations - slower and less intensive */
-  .animate-mega-float-mobile {
-    animation: mega-float 24s ease-in-out infinite;
-  }
-
-  .animate-mega-float-delayed-mobile {
-    animation: mega-float-delayed 30s ease-in-out infinite;
-    animation-delay: 3s;
-  }
-
-  .animate-mega-spiral-mobile {
-    animation: mega-spiral 36s ease-in-out infinite;
-    animation-delay: 1.5s;
-  }
-
-  .animate-mega-orbit-mobile {
-    animation: mega-orbit 40s linear infinite;
-    animation-delay: 4s;
-  }
-
-  .animate-mega-pulse-mobile {
-    animation: mega-pulse 16s ease-in-out infinite;
-    animation-delay: 2s;
-  }
-
-  .animate-mega-spin-mobile {
-    animation: mega-spin 50s linear infinite;
-  }
-
-  .animate-mega-bounce-mobile {
-    animation: mega-bounce 8s ease-in-out infinite;
-  }
-
-  .animate-mega-rotate-mobile {
-    animation: mega-rotate 28s ease-in-out infinite;
-  }
-
-  .animate-mega-drift-mobile {
-    animation: mega-drift 12s ease-in-out infinite;
-  }
-
-  .animate-mega-float-small-mobile {
-    animation: mega-float-small 6s ease-in-out infinite;
-  }
-
-  .animate-mega-sway-mobile {
-    animation: mega-sway 10s ease-in-out infinite;
-  }
-
-  .animate-mega-twinkle-mobile {
-    animation: mega-twinkle 5s ease-in-out infinite;
-  }
-
-  .animate-mega-twinkle-delayed-mobile {
-    animation: mega-twinkle-delayed 6s ease-in-out infinite;
-    animation-delay: 1s;
-  }
-
-  .animate-mega-twinkle-slow-mobile {
-    animation: mega-twinkle-slow 8s ease-in-out infinite;
-    animation-delay: 2s;
-  }
-
-  .animate-mega-twinkle-fast-mobile {
-    animation: mega-twinkle-fast 3.6s ease-in-out infinite;
-    animation-delay: 0.5s;
-  }
-
-  /* Ensure elements start hidden */
-  .opacity-0 {
+  
+  /* Fixed animation flash - proper initial state */
+  .fade-in-element {
     opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s ease;
+  }
+  
+  .fade-in-element.animate-in {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Mobile versions with slower animations */
+  @media (max-width: 768px) {
+    .animate-mega-float-mobile {
+      animation: mega-float 40s ease-in-out infinite;
+    }
+
+    .animate-mega-float-delayed-mobile {
+      animation: mega-float-delayed 50s ease-in-out infinite;
+      animation-delay: 4s;
+    }
+
+    .animate-mega-spiral-mobile {
+      animation: mega-spiral 60s linear infinite;
+    }
+
+    .animate-mega-orbit-mobile {
+      animation: mega-orbit 70s linear infinite;
+    }
+
+    .animate-mega-pulse-mobile {
+      animation: mega-pulse 30s ease-in-out infinite;
+    }
+
+    .animate-mega-spin-mobile {
+      animation: mega-spin 40s linear infinite;
+    }
+
+    .animate-mega-bounce-mobile {
+      animation: mega-bounce 12s ease-in-out infinite;
+    }
+
+    .animate-mega-rotate-mobile {
+      animation: mega-rotate 50s linear infinite;
+    }
+
+    .animate-mega-drift-mobile {
+      animation: mega-drift 36s ease-in-out infinite;
+    }
+
+    .animate-mega-float-small-mobile {
+      animation: mega-float-small 16s ease-in-out infinite;
+    }
+
+    .animate-mega-sway-mobile {
+      animation: mega-sway 24s ease-in-out infinite;
+    }
+
+    .animate-mega-twinkle-mobile {
+      animation: mega-twinkle 6s ease-in-out infinite;
+    }
+
+    .animate-mega-twinkle-delayed-mobile {
+      animation: mega-twinkle-delayed 8s ease-in-out infinite;
+      animation-delay: 2s;
+    }
+
+    .animate-mega-twinkle-slow-mobile {
+      animation: mega-twinkle-slow 10s ease-in-out infinite;
+      animation-delay: 4s;
+    }
+
+    .animate-mega-twinkle-fast-mobile {
+      animation: mega-twinkle-fast 4s ease-in-out infinite;
+    }
   }
 </style>
 
 <script>
   // Enhanced animations with intersection observer
   document.addEventListener('DOMContentLoaded', function() {
-    // Trigger animations on load
-    const animatedElements = document.querySelectorAll('.animate-fade-in-up');
+    // Fixed animation system - no more flash
+    const animatedElements = document.querySelectorAll('.fade-in-element');
     
+    // Use setTimeout with proper staggered delays
     animatedElements.forEach((element, index) => {
+      const delay = element.getAttribute('style')?.match(/animation-delay:\s*([\d.]+)s/);
+      const animationDelay = delay ? parseFloat(delay[1]) * 1000 : index * 200;
+      
+      setTimeout(() => {
+        (element as HTMLElement).classList.add('animate-in');
+      }, animationDelay);
+    });
+
+    // Keep legacy support for old animate-fade-in-up elements
+    const legacyElements = document.querySelectorAll('.animate-fade-in-up');
+    legacyElements.forEach((element, index) => {
       setTimeout(() => {
         (element as HTMLElement).style.opacity = '1';
         (element as HTMLElement).style.transform = 'translateY(0)';

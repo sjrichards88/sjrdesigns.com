@@ -90,26 +90,25 @@ const workItems = [
   }
 ];
 
-function throttle(func, limit) {
-  let inThrottle;
-  return function() {
-    const args = arguments;
-    const context = this;
-    if (!inThrottle) {
-      func.apply(context, args);
-      inThrottle = true;
-      setTimeout(() => inThrottle = false, limit);
-    }
-  }
+function debounce(func, wait) {
+  let timeout;
+  return function executedFunction(...args) {
+    const later = () => {
+      clearTimeout(timeout);
+      func(...args);
+    };
+    clearTimeout(timeout);
+    timeout = setTimeout(later, wait);
+  };
 }
 
 const WorkCard = ({ item }) => (
-  <div className="px-4">
+  <div className="px-4 py-2">
     <a 
       href={item.url} 
       target="_blank" 
       rel="noopener noreferrer"
-      className="block w-full h-64 relative group rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:scale-105"
+      className="block w-full h-64 relative group rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:scale-105 cursor-pointer"
     >
       <img 
         src={item.image} 
@@ -123,7 +122,7 @@ const WorkCard = ({ item }) => (
       </div>
       <div className="absolute top-4 right-4 w-10 h-10 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
         <svg className="w-4 h-4 text-neutral-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002-2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
         </svg>
       </div>
     </a>
@@ -133,37 +132,66 @@ const WorkCard = ({ item }) => (
 export default function WorkSlider() {
   const [direction, setDirection] = useState('ltr');
   const [lastScrollY, setLastScrollY] = useState(0);
+  const [scrollVelocity, setScrollVelocity] = useState(0);
 
   useEffect(() => {
+    let requestId = null;
+    let lastTime = Date.now();
+
     const handleScroll = () => {
+      const currentTime = Date.now();
       const currentScrollY = window.scrollY;
-      const scrollDelta = Math.abs(currentScrollY - lastScrollY);
+      const timeDelta = currentTime - lastTime;
+      const scrollDelta = currentScrollY - lastScrollY;
       
-      if (scrollDelta > 50) {
-        const newDirection = currentScrollY > lastScrollY ? 'ltr' : 'rtl';
-        if (newDirection !== direction) {
+      if (timeDelta > 0) {
+        const velocity = Math.abs(scrollDelta) / timeDelta;
+        setScrollVelocity(velocity);
+        
+        // Only change direction if there's significant scroll movement
+        if (Math.abs(scrollDelta) > 30 && velocity > 0.1) {
+          const newDirection = scrollDelta > 0 ? 'ltr' : 'rtl';
           setDirection(newDirection);
         }
+        
         setLastScrollY(currentScrollY);
+        lastTime = currentTime;
       }
     };
 
-    const throttledScroll = throttle(handleScroll, 100);
-    window.addEventListener('scroll', throttledScroll);
+    const debouncedScroll = debounce(handleScroll, 150);
     
-    return () => window.removeEventListener('scroll', throttledScroll);
-  }, [direction, lastScrollY]);
+    const onScroll = () => {
+      if (requestId) {
+        cancelAnimationFrame(requestId);
+      }
+      requestId = requestAnimationFrame(debouncedScroll);
+    };
 
-  const settings1 = {
+    window.addEventListener('scroll', onScroll, { passive: true });
+    
+    return () => {
+      window.removeEventListener('scroll', onScroll);
+      if (requestId) {
+        cancelAnimationFrame(requestId);
+      }
+    };
+  }, [lastScrollY]);
+
+  const baseSettings = {
     dots: false,
     infinite: true,
-    speed: 3000,
+    speed: 8000, // Much slower speed
     slidesToShow: 4,
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 0,
     cssEase: 'linear',
-    rtl: direction === 'rtl',
+    pauseOnHover: false, // Keep moving on hover to prevent jerkiness
+    draggable: false, // Disable dragging to prevent conflicts
+    swipe: false, // Disable swipe to prevent conflicts
+    touchMove: false, // Disable touch to prevent conflicts
+    arrows: false,
     responsive: [
       {
         breakpoint: 1024,
@@ -184,55 +212,37 @@ export default function WorkSlider() {
         }
       }
     ]
+  };
+
+  const settings1 = {
+    ...baseSettings,
+    rtl: direction === 'rtl',
   };
 
   const settings2 = {
-    dots: false,
-    infinite: true,
-    speed: 3000,
-    slidesToShow: 4,
-    slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 0,
-    cssEase: 'linear',
-    rtl: direction === 'ltr',
-    responsive: [
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 3,
-        }
-      },
-      {
-        breakpoint: 768,
-        settings: {
-          slidesToShow: 2,
-        }
-      },
-      {
-        breakpoint: 480,
-        settings: {
-          slidesToShow: 1,
-        }
-      }
-    ]
+    ...baseSettings,
+    rtl: direction === 'ltr', // Opposite direction
   };
 
   return (
-    <div className="w-full space-y-8">
+    <div className="w-full space-y-8 overflow-visible">
       {/* First Row */}
-      <Slider {...settings1}>
-        {workItems.map((item, index) => (
-          <WorkCard key={`row1-${index}`} item={item} />
-        ))}
-      </Slider>
+      <div className="work-slider-container">
+        <Slider {...settings1}>
+          {workItems.map((item, index) => (
+            <WorkCard key={`row1-${index}`} item={item} />
+          ))}
+        </Slider>
+      </div>
       
       {/* Second Row */}
-      <Slider {...settings2}>
-        {workItems.slice().reverse().map((item, index) => (
-          <WorkCard key={`row2-${index}`} item={item} />
-        ))}
-      </Slider>
+      <div className="work-slider-container">
+        <Slider {...settings2}>
+          {workItems.slice().reverse().map((item, index) => (
+            <WorkCard key={`row2-${index}`} item={item} />
+          ))}
+        </Slider>
+      </div>
     </div>
   );
 } 

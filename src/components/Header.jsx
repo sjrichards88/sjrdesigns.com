@@ -7,13 +7,15 @@ class Header extends Component {
 
 		this.state = {
 			navScrolled: false,
-      navToggled: false
+			navToggled: false,
+			navVisible: true,
+			lastScrollTop: 0
 		}
 
 		this.handleScroll = this.handleScroll.bind(this)
 		this.scrollToSection = this.scrollToSection.bind(this)
 		this.horizontalScrollBar = this.horizontalScrollBar.bind(this)
-    this.toggleNav = this.toggleNav.bind(this)
+		this.toggleNav = this.toggleNav.bind(this)
 	}
 
 	componentDidMount() {
@@ -43,12 +45,36 @@ class Header extends Component {
 		// Show white background when scrolling starts (after 10px)
 		let navScrolled = scrollPosition > 10 ? true : false
 
-		// Check if state changed before updating to avoid unnecessary renders
-		if (this.state.navScrolled !== navScrolled) {
-			this.setState({
-				navScrolled
-			})
+		// Modern scroll behavior - hide nav when scrolling down, show when scrolling up
+		let navVisible = true
+		const scrollThreshold = 50 // Reduced threshold for earlier hide/show
+		const scrollDelta = 3 // Reduced delta for more responsive hide/show
+		
+		if (scrollPosition > scrollThreshold) {
+			// Only hide/show if we've scrolled enough to avoid jitter
+			if (Math.abs(scrollPosition - this.state.lastScrollTop) > scrollDelta) {
+				if (scrollPosition > this.state.lastScrollTop && scrollPosition > this.state.lastScrollTop + scrollDelta) {
+					// Scrolling down - hide nav
+					navVisible = false
+				} else if (scrollPosition < this.state.lastScrollTop - scrollDelta) {
+					// Scrolling up - show nav
+					navVisible = true
+				}
+			} else {
+				// Keep current state if scroll delta is too small
+				navVisible = this.state.navVisible
+			}
+		} else {
+			// Always show nav when at top of page
+			navVisible = true
 		}
+
+		// Always update lastScrollTop for accurate scroll direction detection
+		this.setState({
+			navScrolled,
+			navVisible,
+			lastScrollTop: scrollPosition
+		})
 	}
 
 	scrollToSection(e, sectionName) {
@@ -80,10 +106,10 @@ class Header extends Component {
 	}
 
 	render() {
-		const { navScrolled, navToggled } = this.state
+		const { navScrolled, navToggled, navVisible } = this.state
 
 		return(
-			<header className={`header ${navToggled === true ? 'active' : ''} ${navScrolled === true ? 'header--scrolled' : ''}`}>
+			<header className={`header ${navToggled === true ? 'active' : ''} ${navScrolled === true ? 'header--scrolled' : ''} ${navVisible === false ? 'header--hidden' : ''}`}>
 				<div className="header__logo">
 					<a href="#landing" onClick={(e) => this.scrollToSection(e, 'landing')}>sjrdesigns</a>
 				</div>

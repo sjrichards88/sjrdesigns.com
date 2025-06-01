@@ -6,9 +6,10 @@
     z-index: 100;
     transition: all .4s ease;
     height: 55px;
-    // Default styling - transparent on hero
+    // Default styling - transparent on dark hero
     background-color: transparent;
     backdrop-filter: none;
+    transform: translateY(0);
     @media (min-width: $screen-sm) {
         height: 80px;
     }
@@ -25,6 +26,18 @@
             transform: none;
         }
     }
+    
+    // Modern scroll behavior - hide/show nav
+    &.header--hidden {
+        transform: translateY(-100%);
+        &.active {
+            transform: translateX(-60%) translateY(-100%);
+            @media (min-width: $screen-sm) {
+                transform: translateY(-100%);
+            }
+        }
+    }
+    
     &__logo {
         position: absolute;
         left: 0;
@@ -36,7 +49,7 @@
             margin-left: $gutter;
         }
         a {
-            color: $black-blue; // Dark color for light hero
+            color: $white; // White color for dark hero
             font-family: $heading-font-family;
             font-size: $h5-font-size;
             text-decoration: none;
@@ -47,7 +60,7 @@
                 z-index: 1;
                 width: 100%;
                 height: 2px;
-                background-color: $black-blue; // Dark color for light hero
+                background-color: $white; // White color for dark hero
                 left: 0;
                 top: 52%;
                 transform: translateX(-100%) translateY(-50%);
@@ -71,7 +84,7 @@
             top: 50%;
             transform: translateY(-50%);
             width: 35px;
-            color: $black-blue; // Dark color for light hero
+            color: $white; // White color for dark hero
             font-size: 12px;
             font-family: $heading-font-family;
             line-height: 1;
@@ -85,7 +98,7 @@
                 content: '';
                 height: 3px;
                 width: 100%;
-                background-color: $black-blue; // Dark color for light hero
+                background-color: $white; // White color for dark hero
                 top: -6px;
                 left: 0;
                 position: absolute;
@@ -149,7 +162,7 @@
                     display: inline-block;
                     overflow: hidden;
                     @media (min-width: $screen-sm) {
-                        color: $black-blue; // Dark color for light hero
+                        color: $white; // White color for dark hero  
                         font-weight: $font-weight-regular;
                     }
                     &:after {
@@ -164,7 +177,7 @@
                         transform: translateX(-101%) translateY(-50%);
                         transition: all 0.3s;
                         @media (min-width: $screen-sm) {
-                            background-color: $black-blue; // Dark color for light hero
+                            background-color: $white; // White color for dark hero
                         }
                     }
                     &:hover, &.active {
@@ -181,6 +194,33 @@
     &--scrolled {
         background-color: rgba($white, .90);
         backdrop-filter: blur(10px);
+        
+        // When scrolled, switch to dark text colors
+        .header__logo a {
+            color: $black-blue;
+            &:after {
+                background-color: $black-blue;
+            }
+        }
+        
+        .header__nav-toggle .burger {
+            color: $black-blue;
+            &:after,
+            &:before {
+                background-color: $black-blue;
+            }
+        }
+        
+        .header__nav {
+            @media (min-width: $screen-sm) {
+                ul li a {
+                    color: $black-blue;
+                    &:after {
+                        background-color: $black-blue;
+                    }
+                }
+            }
+        }
     }
 }
 
