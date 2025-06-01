@@ -91,7 +91,7 @@ export default function Contact() {
                     placeholder="Your full name"
                   />
                   {errors.name && (
-                    <p className="text-red-400 text-sm mt-1">{errors.name.message as string}</p>
+                    <p className="text-rose-300 text-sm mt-1">{errors.name.message as string}</p>
                   )}
                 </div>
                 
@@ -110,7 +110,7 @@ export default function Contact() {
                     placeholder="your@email.com"
                   />
                   {errors.email && (
-                    <p className="text-red-400 text-sm mt-1">{errors.email.message as string}</p>
+                    <p className="text-rose-300 text-sm mt-1">{errors.email.message as string}</p>
                   )}
                 </div>
               </div>
@@ -125,8 +125,43 @@ export default function Contact() {
                   placeholder="Tell me about your project..."
                 />
                 {errors.message && (
-                  <p className="text-red-400 text-sm mt-1">{errors.message.message as string}</p>
+                  <p className="text-rose-300 text-sm mt-1">{errors.message.message as string}</p>
                 )}
+              </div>
+
+              {/* Budget Section */}
+              <div className="space-y-4">
+                <div>
+                  <label className="block text-sm font-medium text-neutral-300 mb-2">Project Budget</label>
+                  <select 
+                    {...register("budget", { required: "Please select a budget range" })} 
+                    className="w-full px-4 py-3 pr-8 bg-white/5 border border-white/20 rounded-xl text-white focus:outline-none focus:border-blue-400 focus:bg-white/10 transition-all duration-300"
+                  >
+                    <option value="" className="bg-neutral-800 text-neutral-300">Select your budget range</option>
+                    <option value="Under £2,500" className="bg-neutral-800 text-white">Under £2,500</option>
+                    <option value="£2,500 - £5,000" className="bg-neutral-800 text-white">£2,500 - £5,000</option>
+                    <option value="£5,000 - £10,000" className="bg-neutral-800 text-white">£5,000 - £10,000</option>
+                    <option value="£10,000 - £20,000" className="bg-neutral-800 text-white">£10,000 - £20,000</option>
+                    <option value="£20,000+" className="bg-neutral-800 text-white">£20,000+</option>
+                    <option value="Let's discuss" className="bg-neutral-800 text-white">Let's discuss</option>
+                  </select>
+                  {errors.budget && (
+                    <p className="text-rose-300 text-sm mt-1">{errors.budget.message as string}</p>
+                  )}
+                </div>
+
+                {/* Monthly Payment Option */}
+                <div className="flex items-start gap-3">
+                  <input 
+                    type="checkbox" 
+                    id="monthlyPayments"
+                    {...register("monthlyPayments")}
+                    className="mt-1 w-4 h-4 bg-white/5 border border-white/20 rounded focus:outline-none focus:border-blue-400 accent-blue-500"
+                  />
+                  <label htmlFor="monthlyPayments" className="text-sm text-neutral-300 leading-relaxed">
+                    I would prefer to pay on a monthly basis rather than a lump sum
+                  </label>
+                </div>
               </div>
 
               {/* Submit Button */}
@@ -210,7 +245,7 @@ export default function Contact() {
                 <span className="text-emerald-400 font-semibold">Available for New Projects</span>
               </div>
               <p className="text-neutral-300 text-sm">
-                I'm currently accepting new clients for Q1 2024. Let's discuss your project timeline and requirements.
+                Let's discuss your project timeline and requirements.
               </p>
             </div>
           </div>

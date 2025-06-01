@@ -42,8 +42,8 @@ class Header extends Component {
 	handleScroll() {
 		let scrollPosition = window.scrollY
 		
-		// Show white background when scrolling starts (after 10px)
-		let navScrolled = scrollPosition > 10 ? true : false
+		// Show white background only after passing the hero section (full viewport height)
+		let navScrolled = scrollPosition > window.innerHeight ? true : false
 
 		// Modern scroll behavior - hide nav when scrolling down, show when scrolling up
 		let navVisible = true
