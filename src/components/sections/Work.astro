@@ -1,12 +1,23 @@
 ---
-// No imports needed for this interactive approach
+// Import all project images for proper Astro asset processing
+import framelessImg from '@/assets/images/frameless.jpg'
+import winterWonderlandImg from '@/assets/images/winter-wonderland.jpg'
+import tasteImg from '@/assets/images/taste.jpg'
+import thewalkImg from '@/assets/images/thewalk.jpg'
+import bowsImg from '@/assets/images/bows.jpg'
+import wsmImg from '@/assets/images/wsm.jpg'
+import womensScottishImg from '@/assets/images/womensscottish.jpg'
+import chevronImg from '@/assets/images/chevron.jpg'
+import pncImg from '@/assets/images/pnc.jpg'
+import bowwowLondonImg from '@/assets/images/bowwowlondon.jpg'
+import justDanceLiveImg from '@/assets/images/just-dance-live.jpg'
 ---
 
 <section id="work" class="relative py-24 bg-gradient-to-br from-slate-50 via-white to-teal-50 overflow-hidden">
   <!-- Background Pattern -->
-  <div class="absolute inset-0 opacity-[0.02]" style="background-image: radial-gradient(circle at 2px 2px, #000 1px, transparent 0); background-size: 60px 60px;"></div>
+  <div class="absolute inset-0 opacity-[0.02] bg-dot-pattern-work"></div>
   <div class="absolute top-20 right-20 w-72 h-72 bg-gradient-to-br from-teal-300/15 to-emerald-300/10 rounded-full blur-3xl animate-pulse"></div>
-  <div class="absolute bottom-20 left-20 w-96 h-96 bg-gradient-to-br from-cyan-300/15 to-blue-300/10 rounded-full blur-3xl animate-pulse" style="animation-delay: 2s;"></div>
+  <div class="absolute bottom-20 left-20 w-96 h-96 bg-gradient-to-br from-cyan-300/15 to-blue-300/10 rounded-full blur-3xl animate-pulse animate-delay-2s"></div>
 
   <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     
@@ -16,11 +27,11 @@
         <div class="w-2 h-2 bg-gradient-to-r from-teal-500 to-emerald-500 rounded-full animate-pulse"></div>
         <span class="bg-gradient-to-r from-teal-600 to-emerald-600 bg-clip-text text-transparent text-sm font-medium">Portfolio</span>
       </div>
-      <h2 class="font-heading font-bold text-neutral-900 mb-6" style="font-size: clamp(2rem, 6vw, 4rem);">
+      <h2 class="font-heading font-bold text-neutral-900 mb-6 text-work-heading">
         Featured 
         <span class="bg-gradient-to-r from-teal-500 via-emerald-500 to-cyan-500 bg-clip-text text-transparent">Work</span>
       </h2>
-      <p class="text-neutral-600 max-w-3xl mx-auto leading-relaxed" style="font-size: clamp(1rem, 2vw, 1.25rem);">
+      <p class="text-neutral-600 max-w-3xl mx-auto leading-relaxed text-work-subtitle">
         From world-renowned entertainment venues to major sporting championships. Hover over projects to explore them.
       </p>
     </div>
@@ -30,7 +41,7 @@
       <!-- Main Projects -->
       <div class="space-y-4 mb-16">
         
-        <div class="project-item group animate-item" data-image="/src/assets/images/frameless.jpg" data-url="https://frameless.com/" style="transition-delay: 0.1s;">
+        <div class="project-item group animate-item work-delay-100" data-image={framelessImg.src} data-url="https://frameless.com/">
           <div class="flex items-center justify-between py-6 px-8 bg-white/80 backdrop-blur-sm border border-neutral-200/50 rounded-2xl hover:bg-white hover:shadow-xl hover:shadow-teal-500/10 transition-all duration-500 cursor-pointer">
             <div class="flex-1">
               <h3 class="text-lg sm:text-xl lg:text-2xl xl:text-3xl font-heading font-bold text-neutral-900 group-hover:text-teal-600 transition-colors duration-300">Frameless</h3>
@@ -45,7 +56,7 @@
           </div>
         </div>
 
-        <div class="project-item group animate-item" data-image="/src/assets/images/winter-wonderland.jpg" data-url="https://hydeparkwinterwonderland.com/" style="transition-delay: 0.15s;">
+        <div class="project-item group animate-item work-delay-150" data-image={winterWonderlandImg.src} data-url="https://hydeparkwinterwonderland.com/">
           <div class="flex items-center justify-between py-6 px-8 bg-white/80 backdrop-blur-sm border border-neutral-200/50 rounded-2xl hover:bg-white hover:shadow-xl hover:shadow-teal-500/10 transition-all duration-500 cursor-pointer">
             <div class="flex-1">
               <h3 class="text-lg sm:text-xl lg:text-2xl xl:text-3xl font-heading font-bold text-neutral-900 group-hover:text-teal-600 transition-colors duration-300">Hyde Park Winter Wonderland</h3>
@@ -60,7 +71,7 @@
           </div>
         </div>
 
-        <div class="project-item group animate-item" data-image="/src/assets/images/taste.jpg" data-url="https://london.tastefestivals.com/" style="transition-delay: 0.2s;">
+        <div class="project-item group animate-item work-delay-200" data-image={tasteImg.src} data-url="https://london.tastefestivals.com/">
           <div class="flex items-center justify-between py-6 px-8 bg-white/80 backdrop-blur-sm border border-neutral-200/50 rounded-2xl hover:bg-white hover:shadow-xl hover:shadow-teal-500/10 transition-all duration-500 cursor-pointer">
             <div class="flex-1">
               <h3 class="text-lg sm:text-xl lg:text-2xl xl:text-3xl font-heading font-bold text-neutral-900 group-hover:text-teal-600 transition-colors duration-300">Taste Festival</h3>
@@ -75,7 +86,7 @@
           </div>
         </div>
 
-        <div class="project-item group animate-item" data-image="/src/assets/images/thewalk.jpg" data-url="https://walkwithamal.org/" style="transition-delay: 0.25s;">
+        <div class="project-item group animate-item work-delay-250" data-image={thewalkImg.src} data-url="https://walkwithamal.org/">
           <div class="flex items-center justify-between py-6 px-8 bg-white/80 backdrop-blur-sm border border-neutral-200/50 rounded-2xl hover:bg-white hover:shadow-xl hover:shadow-teal-500/10 transition-all duration-500 cursor-pointer">
             <div class="flex-1">
               <h3 class="text-lg sm:text-xl lg:text-2xl xl:text-3xl font-heading font-bold text-neutral-900 group-hover:text-teal-600 transition-colors duration-300">Walk With Amal</h3>
@@ -90,7 +101,7 @@
           </div>
         </div>
 
-        <div class="project-item group animate-item" data-image="/src/assets/images/bows.jpg" data-url="https://bouquetsandbows.com/" style="transition-delay: 0.3s;">
+        <div class="project-item group animate-item work-delay-300" data-image={bowsImg.src} data-url="https://bouquetsandbows.com/">
           <div class="flex items-center justify-between py-6 px-8 bg-white/80 backdrop-blur-sm border border-neutral-200/50 rounded-2xl hover:bg-white hover:shadow-xl hover:shadow-teal-500/10 transition-all duration-500 cursor-pointer">
             <div class="flex-1">
               <h3 class="text-lg sm:text-xl lg:text-2xl xl:text-3xl font-heading font-bold text-neutral-900 group-hover:text-teal-600 transition-colors duration-300">Bouquets & Bows</h3>
@@ -105,7 +116,7 @@
           </div>
         </div>
 
-        <div class="project-item group animate-item" data-image="/src/assets/images/wsm.jpg" data-url="https://www.theworldsstrongestman.com/" style="transition-delay: 0.35s;">
+        <div class="project-item group animate-item work-delay-350" data-image={wsmImg.src} data-url="https://www.theworldsstrongestman.com/">
           <div class="flex items-center justify-between py-6 px-8 bg-white/80 backdrop-blur-sm border border-neutral-200/50 rounded-2xl hover:bg-white hover:shadow-xl hover:shadow-teal-500/10 transition-all duration-500 cursor-pointer">
             <div class="flex-1">
               <h3 class="text-lg sm:text-xl lg:text-2xl xl:text-3xl font-heading font-bold text-neutral-900 group-hover:text-teal-600 transition-colors duration-300">The World's Strongest Man</h3>
@@ -122,11 +133,11 @@
       </div>
 
       <!-- More Projects Section -->
-      <div class="text-center mb-12 animate-item" style="transition-delay: 0.4s;">
+      <div class="text-center mb-12 animate-item work-delay-400">
         <h3 class="text-xl font-heading font-semibold text-neutral-700 mb-8">More Projects</h3>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
 
-          <div class="project-item group animate-item" data-image="/src/assets/images/womensscottish.jpg" data-url="https://www.womensscottish.com/" style="transition-delay: 0.45s;">
+          <div class="project-item group animate-item work-delay-450" data-image={womensScottishImg.src} data-url="https://www.womensscottish.com/">
             <div class="flex items-center justify-between py-4 px-6 bg-white/60 backdrop-blur-sm border border-neutral-200/40 rounded-xl hover:bg-white hover:shadow-lg transition-all duration-300 cursor-pointer">
               <div class="flex-1">
                 <h4 class="text-base sm:text-lg font-heading font-semibold text-neutral-900 group-hover:text-teal-600 transition-colors duration-300">Women's Scottish Open</h4>
@@ -138,7 +149,7 @@
             </div>
           </div>
 
-          <div class="project-item group animate-item" data-image="/src/assets/images/chevron.jpg" data-url="https://www.thechevronchampionship.com/" style="transition-delay: 0.5s;">
+          <div class="project-item group animate-item work-delay-500" data-image={chevronImg.src} data-url="https://www.thechevronchampionship.com/">
             <div class="flex items-center justify-between py-4 px-6 bg-white/60 backdrop-blur-sm border border-neutral-200/40 rounded-xl hover:bg-white hover:shadow-lg transition-all duration-300 cursor-pointer">
               <div class="flex-1">
                 <h4 class="text-base sm:text-lg font-heading font-semibold text-neutral-900 group-hover:text-teal-600 transition-colors duration-300">The Chevron Championship</h4>
@@ -150,7 +161,7 @@
             </div>
           </div>
 
-          <div class="project-item group animate-item" data-image="/src/assets/images/pnc.jpg" data-url="https://www.pncchampionship.com/" style="transition-delay: 0.55s;">
+          <div class="project-item group animate-item work-delay-550" data-image={pncImg.src} data-url="https://www.pncchampionship.com/">
             <div class="flex items-center justify-between py-4 px-6 bg-white/60 backdrop-blur-sm border border-neutral-200/40 rounded-xl hover:bg-white hover:shadow-lg transition-all duration-300 cursor-pointer">
               <div class="flex-1">
                 <h4 class="text-base sm:text-lg font-heading font-semibold text-neutral-900 group-hover:text-teal-600 transition-colors duration-300">PNC Championship</h4>
@@ -162,7 +173,7 @@
             </div>
           </div>
 
-          <div class="project-item group animate-item" data-image="/src/assets/images/bowwowlondon.jpg" data-url="https://www.bowwowlondon.org/" style="transition-delay: 0.6s;">
+          <div class="project-item group animate-item work-delay-600" data-image={bowwowLondonImg.src} data-url="https://www.bowwowlondon.org/">
             <div class="flex items-center justify-between py-4 px-6 bg-white/60 backdrop-blur-sm border border-neutral-200/40 rounded-xl hover:bg-white hover:shadow-lg transition-all duration-300 cursor-pointer">
               <div class="flex-1">
                 <h4 class="text-base sm:text-lg font-heading font-semibold text-neutral-900 group-hover:text-teal-600 transition-colors duration-300">Bowwow London</h4>
@@ -174,7 +185,7 @@
             </div>
           </div>
 
-          <div class="project-item group animate-item" data-image="/src/assets/images/just-dance-live.jpg" data-url="https://justdancelive.com/" style="transition-delay: 0.65s;">
+          <div class="project-item group animate-item work-delay-650" data-image={justDanceLiveImg.src} data-url="https://justdancelive.com/">
             <div class="flex items-center justify-between py-4 px-6 bg-white/60 backdrop-blur-sm border border-neutral-200/40 rounded-xl hover:bg-white hover:shadow-lg transition-all duration-300 cursor-pointer">
               <div class="flex-1">
                 <h4 class="text-base sm:text-lg font-heading font-semibold text-neutral-900 group-hover:text-teal-600 transition-colors duration-300">Just Dance Live</h4>
@@ -199,12 +210,12 @@
     </div>
 
     <!-- CTA Section -->
-    <div class="text-center mt-20 animate-item" style="transition-delay: 0.7s;">
+    <div class="text-center mt-20 animate-item work-delay-700">
       <div class="inline-block p-8 lg:p-12 bg-gradient-to-br from-white via-teal-50/30 to-emerald-50/30 border border-teal-200/40 rounded-3xl shadow-lg backdrop-blur-sm">
-        <h3 class="font-heading font-bold text-neutral-900 mb-4" style="font-size: clamp(1.5rem, 4vw, 2rem);">
+        <h3 class="font-heading font-bold text-neutral-900 mb-4 text-work-cta-title">
           Ready to Join This Portfolio?
         </h3>
-        <p class="text-neutral-600 mb-6 max-w-md mx-auto" style="font-size: clamp(0.875rem, 2vw, 1rem);">
+        <p class="text-neutral-600 mb-6 max-w-md mx-auto text-work-cta-subtitle">
           Let's create something exceptional together that showcases your brand's unique story.
         </p>
         <a 
