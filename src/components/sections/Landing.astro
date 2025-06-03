@@ -9,38 +9,28 @@
   <!-- Dot Pattern Background -->
   <div class="absolute inset-0 opacity-5" style="background-image: radial-gradient(circle at 2px 2px, white 1px, transparent 0); background-size: 40px 40px;"></div>
   
-  <!-- Cinematic Glow Orbs -->
+  <!-- Optimized Cinematic Glow Orbs - Reduced from 5 to 3 main orbs -->
   <div class="absolute inset-0">
     <!-- Primary orb -->
-    <div class="absolute -top-32 -left-32 w-[600px] h-[600px] bg-gradient-to-br from-blue-500/20 to-cyan-500/15 rounded-full blur-3xl animate-mega-float md:animate-mega-float animate-mega-float-mobile"></div>
+    <div class="absolute -top-32 -left-32 w-[600px] h-[600px] bg-gradient-to-br from-blue-500/20 to-cyan-500/15 rounded-full blur-3xl will-change-transform animate-mega-float"></div>
     <!-- Secondary orb -->
-    <div class="absolute top-1/4 -right-48 w-[500px] h-[500px] bg-gradient-to-br from-purple-500/18 to-pink-500/12 rounded-full blur-3xl animate-mega-float-delayed md:animate-mega-float-delayed animate-mega-float-delayed-mobile"></div>
-    <!-- Tertiary orb -->
-    <div class="absolute -bottom-48 left-1/3 w-[700px] h-[700px] bg-gradient-to-br from-teal-500/20 to-emerald-500/15 rounded-full blur-3xl animate-mega-spiral md:animate-mega-spiral animate-mega-spiral-mobile"></div>
-    <!-- Accent orb -->
-    <div class="absolute bottom-1/4 -right-32 w-[400px] h-[400px] bg-gradient-to-br from-indigo-500/18 to-blue-500/12 rounded-full blur-3xl animate-mega-orbit md:animate-mega-orbit animate-mega-orbit-mobile"></div>
-    <!-- Center accent -->
-    <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-to-br from-cyan-500/15 to-purple-500/10 rounded-full blur-3xl animate-mega-pulse md:animate-mega-pulse animate-mega-pulse-mobile"></div>
+    <div class="absolute -bottom-48 left-1/3 w-[700px] h-[700px] bg-gradient-to-br from-teal-500/20 to-emerald-500/15 rounded-full blur-3xl will-change-transform animate-mega-spiral"></div>
+    <!-- Center accent - reduced opacity for better performance -->
+    <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-to-br from-cyan-500/10 to-purple-500/8 rounded-full blur-3xl will-change-transform animate-mega-pulse"></div>
   </div>
   
-  <!-- Geometric Elements -->
+  <!-- Optimized Geometric Elements - Reduced complexity -->
   <div class="absolute inset-0 md:opacity-20 opacity-10">
-    <!-- Large geometric shapes -->
-    <div class="absolute top-20 left-20 w-48 h-48 border border-blue-400/30 rounded-3xl rotate-45 animate-mega-spin md:animate-mega-spin animate-mega-spin-mobile"></div>
-    <div class="absolute bottom-32 right-32 w-32 h-32 border border-cyan-400/40 rounded-full animate-mega-bounce md:animate-mega-bounce animate-mega-bounce-mobile"></div>
-    <div class="absolute top-1/3 right-20 w-24 h-24 bg-gradient-to-r from-purple-400/30 to-pink-400/25 rounded-2xl rotate-12 animate-mega-rotate md:animate-mega-rotate animate-mega-rotate-mobile"></div>
-    <div class="absolute bottom-1/3 left-32 w-40 h-40 border-2 border-teal-400/35 rounded-xl animate-mega-drift md:animate-mega-drift animate-mega-drift-mobile"></div>
-    <!-- Additional floating elements -->
-    <div class="absolute top-1/4 left-1/4 w-16 h-16 bg-blue-400/25 rounded-full animate-mega-float-small md:animate-mega-float-small animate-mega-float-small-mobile"></div>
-    <div class="absolute bottom-1/4 right-1/4 w-20 h-20 border border-indigo-400/40 rounded-lg rotate-45 animate-mega-sway md:animate-mega-sway animate-mega-sway-mobile"></div>
+    <!-- Essential geometric shapes only -->
+    <div class="absolute top-20 left-20 w-48 h-48 border border-blue-400/30 rounded-3xl rotate-45 will-change-transform animate-mega-spin"></div>
+    <div class="absolute bottom-32 right-32 w-32 h-32 border border-cyan-400/40 rounded-full will-change-transform animate-mega-bounce"></div>
+    <div class="absolute top-1/3 right-20 w-24 h-24 bg-gradient-to-r from-purple-400/30 to-pink-400/25 rounded-2xl rotate-12 will-change-transform animate-mega-rotate"></div>
   </div>
   
-  <!-- Particle-like elements -->
+  <!-- Simplified particle-like elements - reduced from 4 to 2 -->
   <div class="absolute inset-0 md:opacity-30 opacity-15">
-    <div class="absolute top-1/6 left-1/5 w-2 h-2 bg-blue-400 rounded-full animate-mega-twinkle md:animate-mega-twinkle animate-mega-twinkle-mobile"></div>
-    <div class="absolute top-1/3 right-1/4 w-1.5 h-1.5 bg-cyan-400 rounded-full animate-mega-twinkle-delayed md:animate-mega-twinkle-delayed animate-mega-twinkle-delayed-mobile"></div>
-    <div class="absolute bottom-1/3 left-1/3 w-2.5 h-2.5 bg-teal-400 rounded-full animate-mega-twinkle-slow md:animate-mega-twinkle-slow animate-mega-twinkle-slow-mobile"></div>
-    <div class="absolute bottom-1/6 right-1/5 w-1 h-1 bg-purple-400 rounded-full animate-mega-twinkle-fast md:animate-mega-twinkle-fast animate-mega-twinkle-fast-mobile"></div>
+    <div class="absolute top-1/6 left-1/5 w-2 h-2 bg-blue-400 rounded-full will-change-transform animate-mega-twinkle"></div>
+    <div class="absolute bottom-1/6 right-1/5 w-1 h-1 bg-purple-400 rounded-full will-change-transform animate-mega-twinkle-fast"></div>
   </div>
   
   <!-- Main Content Container with proper spacing from nav -->
@@ -216,7 +206,7 @@
     animation-delay: 1.4s;
   }
 
-  /* Subtle glow effects for key text */
+  /*  Performance-optimized glow effects */
   .glow-text {
     text-shadow: 0 0 20px rgba(59, 130, 246, 0.3), 0 0 40px rgba(34, 211, 238, 0.2);
   }
@@ -230,162 +220,72 @@
     text-shadow: 0 0 15px rgba(59, 130, 246, 0.4), 0 0 30px rgba(34, 211, 238, 0.2);
   }
 
-  /* Background animations */
-  @keyframes gradient-shift {
-    0%, 100% {
-      background-position: 0% 50%;
-    }
-    50% {
-      background-position: 100% 50%;
-    }
-  }
-
-  @keyframes gradient-shift-reverse {
-    0%, 100% {
-      background-position: 100% 50%;
-    }
-    50% {
-      background-position: 0% 50%;
-    }
-  }
-
+  /* Optimized animations with GPU acceleration */
   @keyframes mega-float {
     0%, 100% {
-      transform: translateY(0px) translateX(0px) scale(1);
+      transform: translate3d(0px, 0px, 0) scale(1);
     }
     25% {
-      transform: translateY(-80px) translateX(50px) scale(1.08);
+      transform: translate3d(50px, -80px, 0) scale(1.05);
     }
     50% {
-      transform: translateY(-40px) translateX(-25px) scale(0.92);
+      transform: translate3d(-25px, -40px, 0) scale(0.95);
     }
     75% {
-      transform: translateY(-60px) translateX(35px) scale(1.05);
-    }
-  }
-
-  @keyframes mega-float-delayed {
-    0%, 100% {
-      transform: translateY(0px) scale(1);
-    }
-    33% {
-      transform: translateY(-90px) scale(1.15);
-    }
-    66% {
-      transform: translateY(-45px) scale(0.85);
+      transform: translate3d(35px, -60px, 0) scale(1.02);
     }
   }
 
   @keyframes mega-spiral {
-    0% {
-      transform: translateY(0px);
+    0%, 100% {
+      transform: translate3d(0px, 0px, 0);
     }
     25% {
-      transform: translateY(-50px);
+      transform: translate3d(0px, -50px, 0);
     }
     50% {
-      transform: translateY(-25px);
+      transform: translate3d(0px, -25px, 0);
     }
     75% {
-      transform: translateY(-75px);
-    }
-    100% {
-      transform: translateY(0px);
-    }
-  }
-
-  @keyframes mega-orbit {
-    0% {
-      transform: translateX(0px) translateY(0px);
-    }
-    25% {
-      transform: translateX(50px) translateY(-30px);
-    }
-    50% {
-      transform: translateX(0px) translateY(-60px);
-    }
-    75% {
-      transform: translateX(-50px) translateY(-30px);
-    }
-    100% {
-      transform: translateX(0px) translateY(0px);
+      transform: translate3d(0px, -75px, 0);
     }
   }
 
   @keyframes mega-pulse {
     0%, 100% {
-      transform: translate(-50%, -50%) scale(1);
-      opacity: 0.15;
+      transform: translate3d(-50%, -50%, 0) scale(1);
+      opacity: 0.1;
     }
     50% {
-      transform: translate(-50%, -50%) scale(1.2);
-      opacity: 0.25;
+      transform: translate3d(-50%, -50%, 0) scale(1.1);
+      opacity: 0.2;
     }
   }
 
   @keyframes mega-spin {
-    0% {
+    0%, 100% {
       transform: scale(1);
     }
     50% {
-      transform: scale(1.1);
-    }
-    100% {
-      transform: scale(1);
+      transform: scale(1.05);
     }
   }
 
   @keyframes mega-bounce {
     0%, 100% {
-      transform: translateY(0px) scale(1);
+      transform: translate3d(0px, 0px, 0) scale(1);
     }
     50% {
-      transform: translateY(-30px) scale(1.1);
+      transform: translate3d(0px, -20px, 0) scale(1.05);
     }
   }
 
   @keyframes mega-rotate {
-    0% {
+    0%, 100% {
       transform: scale(1);
     }
     50% {
-      transform: scale(1.15);
-    }
-    100% {
-      transform: scale(1);
-    }
-  }
-
-  @keyframes mega-drift {
-    0%, 100% {
-      transform: translateX(0px) translateY(0px);
-    }
-    25% {
-      transform: translateX(30px) translateY(-20px);
-    }
-    50% {
-      transform: translateX(-20px) translateY(-40px);
-    }
-    75% {
-      transform: translateX(40px) translateY(-10px);
-    }
-  }
-
-  @keyframes mega-float-small {
-    0%, 100% {
-      transform: translateY(0px) scale(1);
-    }
-    50% {
-      transform: translateY(-20px) scale(1.1);
-    }
-  }
-
-  @keyframes mega-sway {
-    0%, 100% {
-      transform: translateX(0px);
-    }
-    50% {
-      transform: translateX(20px);
+      transform: scale(1.08);
     }
   }
 
@@ -396,40 +296,18 @@
     }
     50% {
       opacity: 1;
-      transform: scale(1.5);
-    }
-  }
-
-  @keyframes mega-twinkle-delayed {
-    0%, 100% {
-      opacity: 0.2;
-      transform: scale(0.8);
-    }
-    50% {
-      opacity: 0.8;
       transform: scale(1.3);
-    }
-  }
-
-  @keyframes mega-twinkle-slow {
-    0%, 100% {
-      opacity: 0.4;
-      transform: scale(1.2);
-    }
-    50% {
-      opacity: 1;
-      transform: scale(1.8);
     }
   }
 
   @keyframes mega-twinkle-fast {
     0%, 100% {
-      opacity: 0.1;
-      transform: scale(0.5);
+      opacity: 0.2;
+      transform: scale(0.8);
     }
     50% {
-      opacity: 0.6;
-      transform: scale(1);
+      opacity: 0.7;
+      transform: scale(1.1);
     }
   }
 
@@ -444,68 +322,45 @@
     }
   }
 
-  /* Animation classes */
+  /* Optimized animation classes with better performance */
   .animate-mega-float {
-    animation: mega-float 20s ease-in-out infinite;
-  }
-
-  .animate-mega-float-delayed {
-    animation: mega-float-delayed 25s ease-in-out infinite;
-    animation-delay: 2s;
+    animation: mega-float 25s ease-in-out infinite;
+    will-change: transform;
   }
 
   .animate-mega-spiral {
-    animation: mega-spiral 30s linear infinite;
-  }
-
-  .animate-mega-orbit {
-    animation: mega-orbit 35s linear infinite;
+    animation: mega-spiral 35s linear infinite;
+    will-change: transform;
   }
 
   .animate-mega-pulse {
-    animation: mega-pulse 15s ease-in-out infinite;
+    animation: mega-pulse 20s ease-in-out infinite;
+    will-change: transform, opacity;
   }
 
   .animate-mega-spin {
-    animation: mega-spin 20s linear infinite;
+    animation: mega-spin 30s ease-in-out infinite;
+    will-change: transform;
   }
 
   .animate-mega-bounce {
-    animation: mega-bounce 6s ease-in-out infinite;
+    animation: mega-bounce 8s ease-in-out infinite;
+    will-change: transform;
   }
 
   .animate-mega-rotate {
-    animation: mega-rotate 25s linear infinite;
-  }
-
-  .animate-mega-drift {
-    animation: mega-drift 18s ease-in-out infinite;
-  }
-
-  .animate-mega-float-small {
-    animation: mega-float-small 8s ease-in-out infinite;
-  }
-
-  .animate-mega-sway {
-    animation: mega-sway 12s ease-in-out infinite;
+    animation: mega-rotate 35s ease-in-out infinite;
+    will-change: transform;
   }
 
   .animate-mega-twinkle {
-    animation: mega-twinkle 3s ease-in-out infinite;
-  }
-
-  .animate-mega-twinkle-delayed {
-    animation: mega-twinkle-delayed 4s ease-in-out infinite;
-    animation-delay: 1s;
-  }
-
-  .animate-mega-twinkle-slow {
-    animation: mega-twinkle-slow 5s ease-in-out infinite;
-    animation-delay: 2s;
+    animation: mega-twinkle 4s ease-in-out infinite;
+    will-change: opacity, transform;
   }
 
   .animate-mega-twinkle-fast {
-    animation: mega-twinkle-fast 2s ease-in-out infinite;
+    animation: mega-twinkle-fast 3s ease-in-out infinite;
+    will-change: opacity, transform;
   }
 
   .animate-fade-in-up {
@@ -524,126 +379,83 @@
     transform: translateY(0);
   }
 
-  /* Mobile versions with slower animations */
+  /* Mobile optimizations */
   @media (max-width: 768px) {
-    .animate-mega-float-mobile {
-      animation: mega-float 40s ease-in-out infinite;
+    /* Slower animations on mobile for better performance */
+    .animate-mega-float {
+      animation-duration: 45s;
     }
-
-    .animate-mega-float-delayed-mobile {
-      animation: mega-float-delayed 50s ease-in-out infinite;
-      animation-delay: 4s;
+    
+    .animate-mega-spiral {
+      animation-duration: 60s;
     }
-
-    .animate-mega-spiral-mobile {
-      animation: mega-spiral 60s linear infinite;
+    
+    .animate-mega-pulse {
+      animation-duration: 35s;
     }
-
-    .animate-mega-orbit-mobile {
-      animation: mega-orbit 70s linear infinite;
+    
+    .animate-mega-spin {
+      animation-duration: 50s;
     }
-
-    .animate-mega-pulse-mobile {
-      animation: mega-pulse 30s ease-in-out infinite;
+    
+    .animate-mega-bounce {
+      animation-duration: 15s;
     }
-
-    .animate-mega-spin-mobile {
-      animation: mega-spin 40s linear infinite;
+    
+    .animate-mega-rotate {
+      animation-duration: 60s;
     }
-
-    .animate-mega-bounce-mobile {
-      animation: mega-bounce 12s ease-in-out infinite;
+    
+    .animate-mega-twinkle {
+      animation-duration: 6s;
     }
-
-    .animate-mega-rotate-mobile {
-      animation: mega-rotate 50s linear infinite;
-    }
-
-    .animate-mega-drift-mobile {
-      animation: mega-drift 36s ease-in-out infinite;
-    }
-
-    .animate-mega-float-small-mobile {
-      animation: mega-float-small 16s ease-in-out infinite;
-    }
-
-    .animate-mega-sway-mobile {
-      animation: mega-sway 24s ease-in-out infinite;
-    }
-
-    .animate-mega-twinkle-mobile {
-      animation: mega-twinkle 6s ease-in-out infinite;
-    }
-
-    .animate-mega-twinkle-delayed-mobile {
-      animation: mega-twinkle-delayed 8s ease-in-out infinite;
-      animation-delay: 2s;
-    }
-
-    .animate-mega-twinkle-slow-mobile {
-      animation: mega-twinkle-slow 10s ease-in-out infinite;
-      animation-delay: 4s;
-    }
-
-    .animate-mega-twinkle-fast-mobile {
-      animation: mega-twinkle-fast 4s ease-in-out infinite;
+    
+    .animate-mega-twinkle-fast {
+      animation-duration: 5s;
     }
   }
 
-  /* Firefox-specific optimizations */
-  @-moz-document url-prefix() {
+  /* Reduce motion for users who prefer it */
+  @media (prefers-reduced-motion: reduce) {
     .animate-mega-float,
-    .animate-mega-float-delayed,
     .animate-mega-spiral,
-    .animate-mega-orbit,
-    .animate-mega-pulse {
-      animation-duration: 25s;
-    }
-    
+    .animate-mega-pulse,
     .animate-mega-spin,
-    .animate-mega-rotate {
-      animation-duration: 30s;
-    }
-    
-    /* Reduce mobile animation complexity for Firefox */
-    @media (max-width: 768px) {
-      .animate-mega-float-mobile,
-      .animate-mega-float-delayed-mobile,
-      .animate-mega-spiral-mobile,
-      .animate-mega-orbit-mobile,
-      .animate-mega-pulse-mobile {
-        animation-duration: 60s;
-      }
+    .animate-mega-bounce,
+    .animate-mega-rotate,
+    .animate-mega-twinkle,
+    .animate-mega-twinkle-fast {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      opacity: 0.5;
     }
   }
 </style>
 
 <script>
-  // Enhanced animations with intersection observer
+  // Performance-optimized animations
   document.addEventListener('DOMContentLoaded', function() {
-    // Fixed animation system - no more flash
+    // Optimized fade-in animation system
     const animatedElements = document.querySelectorAll('.fade-in-element');
     
-    // Use setTimeout with proper staggered delays
-    animatedElements.forEach((element, index) => {
-      const delay = element.getAttribute('style')?.match(/animation-delay:\s*([\d.]+)s/);
-      const animationDelay = delay ? parseFloat(delay[1]) * 1000 : index * 200;
-      
-      setTimeout(() => {
-        (element as HTMLElement).classList.add('animate-in');
-      }, animationDelay);
-    });
+    // Use RAF for better performance
+    const animateElements = () => {
+      animatedElements.forEach((element, index) => {
+        const delay = element.getAttribute('style')?.match(/animation-delay:\s*([\d.]+)s/);
+        const animationDelay = delay ? parseFloat(delay[1]) * 1000 : index * 200;
+        
+        setTimeout(() => {
+          requestAnimationFrame(() => {
+            (element as HTMLElement).classList.add('animate-in');
+          });
+        }, animationDelay);
+      });
+    };
 
-    // Keep legacy support for old animate-fade-in-up elements
-    const legacyElements = document.querySelectorAll('.animate-fade-in-up');
-    legacyElements.forEach((element, index) => {
-      setTimeout(() => {
-        (element as HTMLElement).style.opacity = '1';
-        (element as HTMLElement).style.transform = 'translateY(0)';
-      }, index * 200);
-    });
+    // Start animations
+    animateElements();
 
-    // Smooth scroll for anchor links
+    // Optimized smooth scroll for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function (e) {
         e.preventDefault();
@@ -657,30 +469,39 @@
       });
     });
 
-    // Enhanced parallax effect
+    // Passive scroll listener for better performance
     let ticking = false;
+    let lastScrollY = 0;
     
-    function updateParallax() {
-      const scrolled = window.pageYOffset;
-      const rate = scrolled * -0.12;
+    const handleScroll = () => {
+      lastScrollY = window.pageYOffset;
       
-      const orbs = document.querySelectorAll('.absolute.top-0, .absolute.top-1\\/4, .absolute.bottom-0, .absolute.bottom-1\\/4');
-      orbs.forEach((orb, index) => {
-        const element = orb as HTMLElement;
-        const speed = (index + 1) * 0.04;
-        element.style.transform = `translateY(${rate * speed}px) translateX(${Math.sin(scrolled * 0.001) * 8}px)`;
-      });
-      
-      ticking = false;
-    }
-
-    function requestTick() {
       if (!ticking) {
-        requestAnimationFrame(updateParallax);
+        requestAnimationFrame(() => {
+          // Only apply parallax effect if user hasn't scrolled past the landing section
+          if (lastScrollY < window.innerHeight) {
+            const rate = lastScrollY * -0.05; // Reduced parallax intensity
+            const orbs = document.querySelectorAll('#landing .animate-mega-float, #landing .animate-mega-spiral');
+            
+            orbs.forEach((orb, index) => {
+              const element = orb as HTMLElement;
+              const speed = (index + 1) * 0.02; // Reduced parallax speed
+              element.style.transform = `translate3d(0, ${rate * speed}px, 0)`;
+            });
+          }
+          
+          ticking = false;
+        });
         ticking = true;
       }
-    }
+    };
 
-    window.addEventListener('scroll', requestTick);
+    // Use passive listener for better scroll performance
+    window.addEventListener('scroll', handleScroll, { passive: true });
+
+    // Cleanup on page unload
+    window.addEventListener('beforeunload', () => {
+      window.removeEventListener('scroll', handleScroll);
+    });
   });
 </script>
