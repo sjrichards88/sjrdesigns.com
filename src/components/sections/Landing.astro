@@ -6,12 +6,8 @@
   id="landing" 
   class="relative min-h-screen w-full bg-gradient-to-br from-neutral-900 via-neutral-800 to-neutral-900 overflow-hidden"
 >
-  <!-- Dot Pattern Background (like contact section) -->
+  <!-- Dot Pattern Background -->
   <div class="absolute inset-0 opacity-5" style="background-image: radial-gradient(circle at 2px 2px, white 1px, transparent 0); background-size: 40px 40px;"></div>
-  
-  <!-- Dynamic Animated Background Gradients -->
-  <div class="absolute inset-0 bg-gradient-to-br from-blue-900/20 via-purple-900/15 to-teal-900/20 animate-gradient-shift"></div>
-  <div class="absolute inset-0 bg-gradient-to-tr from-emerald-900/10 via-transparent to-cyan-900/15 animate-gradient-shift-reverse"></div>
   
   <!-- Cinematic Glow Orbs -->
   <div class="absolute inset-0">
@@ -449,16 +445,6 @@
   }
 
   /* Animation classes */
-  .animate-gradient-shift {
-    animation: gradient-shift 8s ease-in-out infinite;
-    background-size: 400% 400%;
-  }
-
-  .animate-gradient-shift-reverse {
-    animation: gradient-shift-reverse 10s ease-in-out infinite;
-    background-size: 400% 400%;
-  }
-
   .animate-mega-float {
     animation: mega-float 20s ease-in-out infinite;
   }
@@ -606,11 +592,6 @@
 
   /* Firefox-specific optimizations */
   @-moz-document url-prefix() {
-    .animate-gradient-shift,
-    .animate-gradient-shift-reverse {
-      animation-duration: 12s;
-    }
-    
     .animate-mega-float,
     .animate-mega-float-delayed,
     .animate-mega-spiral,
