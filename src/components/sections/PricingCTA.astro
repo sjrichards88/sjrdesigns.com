@@ -1,0 +1,44 @@
+---
+// Pricing CTA Section - Call to action for the pricing page
+import Button from '@/components/Button.astro';
+---
+
+<section class="relative py-16 sm:py-20 bg-gradient-to-br from-neutral-900 via-neutral-800 to-neutral-900 overflow-hidden">
+  <!-- Decorative background elements -->
+  <div class="absolute top-0 left-0 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2"></div>
+  <div class="absolute bottom-0 right-0 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl translate-x-1/2 translate-y-1/2"></div>
+  <div class="absolute inset-0 opacity-5" style="background-image: radial-gradient(circle at 2px 2px, white 1px, transparent 0); background-size: 40px 40px;"></div>
+  
+  <div class="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="relative bg-gradient-to-br from-purple-500/10 via-blue-500/10 to-cyan-500/10 backdrop-blur-sm border border-white/10 rounded-3xl p-8 sm:p-12 overflow-hidden">
+      <!-- Decorative elements -->
+      <div class="absolute top-0 right-0 w-64 h-64 bg-purple-500/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
+      <div class="absolute bottom-0 left-0 w-64 h-64 bg-blue-500/10 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2"></div>
+      
+      <div class="relative text-center">
+        <!-- Icon/Badge -->
+        <div class="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-purple-500/20 to-blue-500/20 rounded-2xl mb-6">
+          <svg class="w-8 h-8 text-purple-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+          </svg>
+        </div>
+
+        <!-- Heading -->
+        <h2 class="text-3xl sm:text-4xl font-bold text-white mb-4">
+          Website Packages from £100/month
+        </h2>
+        
+        <!-- Description -->
+        <p class="text-lg text-neutral-300 max-w-2xl mx-auto mb-8">
+          Complete website solutions including build, hosting, maintenance, and ongoing support
+        </p>
+
+        <!-- CTA Button -->
+        <Button href="/pricing" variant="primary" size="lg" icon="arrow">
+          View Packages & Pricing
+        </Button>
+      </div>
+    </div>
+  </div>
+</section>
+

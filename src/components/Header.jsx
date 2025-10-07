@@ -25,6 +25,28 @@ class Header extends Component {
 		this.horizontalScrollBar()
 		window.addEventListener('scroll', this.horizontalScrollBar, true)
 		window.addEventListener('resize', this.horizontalScrollBar, true)
+
+		// Handle hash navigation on page load (e.g., from external links or other pages)
+		if (window.location.hash) {
+			const sectionName = window.location.hash.substring(1) // Remove the # symbol
+			
+			// Wait for all components (including React ones) to mount
+			setTimeout(() => {
+				const section = document.getElementById(sectionName)
+				if (section) {
+					let sectionPos = section.offsetTop
+					
+					if (window.innerWidth < 768 && sectionName !== 'about') {
+						sectionPos = sectionPos - 30
+					}
+					
+					window.scrollTo({
+						top: sectionPos,
+						behavior: 'smooth'
+					})
+				}
+			}, 500) // Give React components time to render
+		}
 	}
 
 	componentWillUnmount() {
@@ -94,17 +116,39 @@ class Header extends Component {
 
 	scrollToSection(e, sectionName) {
 		e.preventDefault()
-		let sectionPos = document.getElementById(sectionName).offsetTop
 		
-		// Reduce scroll on mobile apart from about
-		if (window.innerWidth < 768 && sectionName !== 'about') {
-			sectionPos = sectionPos - 30
+		// Check if we're on the homepage
+		const isHomePage = window.location.pathname === '/'
+		
+		if (!isHomePage) {
+			// If not on homepage, navigate to homepage with hash
+			window.location.href = `/#${sectionName}`
+			return
 		}
+		
+		// On homepage - scroll to section
+		const scrollToElement = () => {
+			const section = document.getElementById(sectionName)
+			if (!section) {
+				// If section not found (e.g., React component not yet rendered), try again after a delay
+				setTimeout(scrollToElement, 100)
+				return
+			}
+			
+			let sectionPos = section.offsetTop
+			
+			// Reduce scroll on mobile apart from about
+			if (window.innerWidth < 768 && sectionName !== 'about') {
+				sectionPos = sectionPos - 30
+			}
 
-		window.scrollTo({
-			top: sectionPos,
-			behavior: 'smooth'
-		})
+			window.scrollTo({
+				top: sectionPos,
+				behavior: 'smooth'
+			})
+		}
+		
+		scrollToElement()
 
 		if (this.state.navToggled === true) {
 			this.toggleNav()
@@ -186,60 +230,72 @@ class Header extends Component {
 						${navScrolled ? 'bg-white/95 backdrop-blur-md' : 'bg-slate-900/95 backdrop-blur-md'}
 					`}>
 						<nav className="py-4">
-							<ul className="flex flex-col space-y-2">
-								<li>
-									<a 
-										href="#about" 
-										onClick={(e) => this.scrollToSection(e, 'about')}
-										className={`
-											block px-6 py-3 font-poppins text-lg font-medium transition-all duration-300
-											hover:bg-white/10
-											${navScrolled ? 'text-slate-800 hover:bg-slate-100' : 'text-white hover:bg-white/10'}
-										`}
-									>
-										About
-									</a>
-								</li>
-								<li>
-									<a 
-										href="#services" 
-										onClick={(e) => this.scrollToSection(e, 'services')}
-										className={`
-											block px-6 py-3 font-poppins text-lg font-medium transition-all duration-300
-											hover:bg-white/10
-											${navScrolled ? 'text-slate-800 hover:bg-slate-100' : 'text-white hover:bg-white/10'}
-										`}
-									>
-										Services
-									</a>
-								</li>
-								<li>
-									<a 
-										href="#work" 
-										onClick={(e) => this.scrollToSection(e, 'work')}
-										className={`
-											block px-6 py-3 font-poppins text-lg font-medium transition-all duration-300
-											hover:bg-white/10
-											${navScrolled ? 'text-slate-800 hover:bg-slate-100' : 'text-white hover:bg-white/10'}
-										`}
-									>
-										Work
-									</a>
-								</li>
-								<li>
-									<a 
-										href="#contact" 
-										onClick={(e) => this.scrollToSection(e, 'contact')}
-										className={`
-											block px-6 py-3 font-poppins text-lg font-medium transition-all duration-300
-											hover:bg-white/10
-											${navScrolled ? 'text-slate-800 hover:bg-slate-100' : 'text-white hover:bg-white/10'}
-										`}
-									>
-										Contact
-									</a>
-								</li>
-							</ul>
+					<ul className="flex flex-col space-y-2">
+						<li>
+							<a 
+								href="#about" 
+								onClick={(e) => this.scrollToSection(e, 'about')}
+								className={`
+									block px-6 py-3 font-poppins text-lg font-medium transition-all duration-300
+									hover:bg-white/10
+									${navScrolled ? 'text-slate-800 hover:bg-slate-100' : 'text-white hover:bg-white/10'}
+								`}
+							>
+								About
+							</a>
+						</li>
+						<li>
+							<a 
+								href="#services" 
+								onClick={(e) => this.scrollToSection(e, 'services')}
+								className={`
+									block px-6 py-3 font-poppins text-lg font-medium transition-all duration-300
+									hover:bg-white/10
+									${navScrolled ? 'text-slate-800 hover:bg-slate-100' : 'text-white hover:bg-white/10'}
+								`}
+							>
+								Services
+							</a>
+						</li>
+						<li>
+							<a 
+								href="#work" 
+								onClick={(e) => this.scrollToSection(e, 'work')}
+								className={`
+									block px-6 py-3 font-poppins text-lg font-medium transition-all duration-300
+									hover:bg-white/10
+									${navScrolled ? 'text-slate-800 hover:bg-slate-100' : 'text-white hover:bg-white/10'}
+								`}
+							>
+								Work
+							</a>
+						</li>
+						<li>
+							<a 
+								href="/pricing"
+								className={`
+									block px-6 py-3 font-poppins text-lg font-medium transition-all duration-300
+									hover:bg-white/10
+									${navScrolled ? 'text-slate-800 hover:bg-slate-100' : 'text-white hover:bg-white/10'}
+								`}
+							>
+								Pricing
+							</a>
+						</li>
+						<li>
+							<a 
+								href="#contact" 
+								onClick={(e) => this.scrollToSection(e, 'contact')}
+								className={`
+									block px-6 py-3 font-poppins text-lg font-medium transition-all duration-300
+									hover:bg-white/10
+									${navScrolled ? 'text-slate-800 hover:bg-slate-100' : 'text-white hover:bg-white/10'}
+								`}
+							>
+								Contact
+							</a>
+						</li>
+					</ul>
 						</nav>
 					</div>
 				</div>
@@ -302,6 +358,24 @@ class Header extends Component {
 								`}
 							>
 								Work
+							</a>
+						</li>
+						<li>
+							<a 
+								href="/pricing"
+								className={`
+									no-underline relative leading-none font-poppins text-lg font-normal 
+									transition-all duration-[400ms] inline-block overflow-hidden
+									hover:after:translate-x-0
+									after:content-[''] after:absolute after:z-[1] after:w-full after:h-0.5 after:left-0 
+									after:top-[52%] after:-translate-y-1/2 after:-translate-x-full after:transition-all after:duration-300
+									${navScrolled 
+										? 'text-slate-800 after:bg-slate-800' 
+										: 'text-white after:bg-white'
+									}
+								`}
+							>
+								Pricing
 							</a>
 						</li>
 						<li>

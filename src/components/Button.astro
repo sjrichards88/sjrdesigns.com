@@ -1,0 +1,42 @@
+---
+interface Props {
+  href?: string;
+  variant?: 'primary' | 'secondary' | 'outline';
+  size?: 'sm' | 'md' | 'lg';
+  class?: string;
+  icon?: 'arrow' | 'none';
+}
+
+const { 
+  href = '#', 
+  variant = 'primary', 
+  size = 'md',
+  class: className = '',
+  icon = 'none'
+} = Astro.props;
+
+const sizeClasses = {
+  sm: 'px-6 py-2.5 text-sm',
+  md: 'px-8 py-4 text-base',
+  lg: 'px-10 py-5 text-lg'
+};
+
+const variantClasses = {
+  primary: 'bg-gradient-to-r from-purple-500 via-blue-500 to-indigo-500 text-white hover:from-purple-600 hover:via-blue-600 hover:to-indigo-600 shadow-lg hover:shadow-purple-500/30',
+  secondary: 'bg-white text-purple-600 hover:bg-purple-50 shadow-lg hover:shadow-xl',
+  outline: 'border-2 border-white/20 text-white hover:border-purple-400/50 hover:bg-purple-500/10 backdrop-blur-sm'
+};
+---
+
+<a 
+  href={href}
+  class={`group inline-flex items-center justify-center gap-2 font-semibold rounded-xl transition-all duration-300 ${sizeClasses[size]} ${variantClasses[variant]} ${className}`}
+>
+  <slot />
+  {icon === 'arrow' && (
+    <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+    </svg>
+  )}
+</a>
+

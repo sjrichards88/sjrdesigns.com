@@ -1,0 +1,341 @@
+---
+import Layout from "@/layouts/Layout.astro";
+
+export const prerender = true
+---
+<Layout title="Website Packages | Build & Maintain Your Site | Simon Richards">
+	<main class="min-h-screen bg-gradient-to-br from-neutral-900 via-neutral-800 to-neutral-900">
+		
+		<!-- Hero Section -->
+		<section class="relative pt-32 sm:pt-40 pb-8 sm:pb-12 px-4 sm:px-6 lg:px-8 mb-8">
+			<!-- Background effects -->
+			<div class="absolute inset-0 opacity-5" style="background-image: radial-gradient(circle at 2px 2px, white 1px, transparent 0); background-size: 40px 40px;"></div>
+			<div class="absolute top-0 left-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl"></div>
+			<div class="absolute bottom-0 right-1/4 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl"></div>
+			
+			<div class="relative max-w-4xl mx-auto text-center">
+				<!-- Badge -->
+				<div class="inline-flex items-center gap-2 px-4 py-2 bg-blue-500/10 border border-blue-500/20 rounded-full backdrop-blur-sm mb-6">
+					<span class="text-blue-400 text-sm font-medium">Simple, Transparent Pricing</span>
+				</div>
+
+				<!-- Heading -->
+				<h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6">
+					Website Packages
+				</h1>
+				
+				<!-- Subtitle -->
+				<p class="text-lg sm:text-xl text-neutral-300 max-w-3xl mx-auto leading-relaxed">
+					Complete website solutions with ongoing support and maintenance included. 
+					From simple static sites to powerful CMS platforms, choose the package that fits your needs.
+				</p>
+			</div>
+		</section>
+
+		<!-- Pricing Cards -->
+		<section class="relative pb-12 sm:pb-16 px-4 sm:px-6 lg:px-8">
+			<div class="max-w-7xl mx-auto">
+				<div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+					
+					<!-- Plan 1 - Essentials -->
+					<div class="group relative bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8 hover:bg-white/[0.07] hover:border-blue-400/30 transition-all duration-300">
+						<div class="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+						
+						<div class="relative">
+							<!-- Plan Header -->
+							<div class="mb-6">
+								<h3 class="text-2xl font-bold text-white mb-2">Essentials</h3>
+								<div class="flex items-baseline gap-2">
+									<span class="text-4xl font-bold bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">£100</span>
+									<span class="text-neutral-400">/month</span>
+								</div>
+							</div>
+
+							<!-- Features List -->
+							<ul class="space-y-4 mb-8">
+								<li class="flex items-start gap-3 text-neutral-300">
+									<svg class="w-5 h-5 text-blue-400 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+									</svg>
+									<span class="font-medium text-white">Simple static website</span>
+								</li>
+								<li class="flex items-start gap-3 text-neutral-300">
+									<svg class="w-5 h-5 text-blue-400 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+									</svg>
+									<span>Hosting included</span>
+								</li>
+								<li class="flex items-start gap-3 text-neutral-300">
+									<svg class="w-5 h-5 text-blue-400 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+									</svg>
+									<span>Regular maintenance & security updates</span>
+								</li>
+								<li class="flex items-start gap-3 text-neutral-300">
+									<svg class="w-5 h-5 text-blue-400 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+									</svg>
+									<span>Up to 5 small content changes per month</span>
+								</li>
+								<li class="flex items-start gap-3 text-neutral-300">
+									<svg class="w-5 h-5 text-blue-400 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+									</svg>
+									<span>Basic performance monitoring</span>
+								</li>
+							</ul>
+
+							<!-- CTA Button -->
+							<a 
+								href="/get-started?plan=essentials" 
+								class="block w-full text-center px-6 py-3 bg-white/10 border border-white/20 text-white font-semibold rounded-xl hover:bg-blue-500/20 hover:border-blue-400/40 transition-all duration-300"
+							>
+								Get Started
+							</a>
+						</div>
+					</div>
+
+					<!-- Plan 2 - Professional (Popular) -->
+					<div class="group relative bg-white/5 backdrop-blur-sm border-2 border-cyan-400/40 rounded-2xl p-8 hover:bg-white/[0.07] hover:border-cyan-400/60 transition-all duration-300 md:-mt-4">
+						<!-- Popular Badge -->
+						<div class="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-full">
+							<span class="text-white text-sm font-semibold">Most Popular</span>
+						</div>
+
+						<div class="absolute inset-0 bg-gradient-to-br from-cyan-500/10 to-blue-500/5 rounded-2xl"></div>
+						
+						<div class="relative">
+							<!-- Plan Header -->
+							<div class="mb-6 pt-2">
+								<h3 class="text-2xl font-bold text-white mb-2">Professional</h3>
+								<div class="flex items-baseline gap-2">
+									<span class="text-4xl font-bold bg-gradient-to-r from-cyan-400 to-teal-400 bg-clip-text text-transparent">£200</span>
+									<span class="text-neutral-400">/month</span>
+								</div>
+							</div>
+
+							<!-- Features List -->
+							<ul class="space-y-4 mb-8">
+								<li class="flex items-start gap-3 text-neutral-300">
+									<svg class="w-5 h-5 text-cyan-400 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+									</svg>
+									<span class="font-medium text-white">Dynamic website with advanced features</span>
+								</li>
+								<li class="flex items-start gap-3 text-neutral-300">
+									<svg class="w-5 h-5 text-cyan-400 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+									</svg>
+									<span class="font-medium text-white">Everything in Essentials</span>
+								</li>
+								<li class="flex items-start gap-3 text-neutral-300">
+									<svg class="w-5 h-5 text-cyan-400 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+									</svg>
+									<span>Up to 10 content changes per month</span>
+								</li>
+								<li class="flex items-start gap-3 text-neutral-300">
+									<svg class="w-5 h-5 text-cyan-400 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+									</svg>
+									<span>Priority response times</span>
+								</li>
+								<li class="flex items-start gap-3 text-neutral-300">
+									<svg class="w-5 h-5 text-cyan-400 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+									</svg>
+									<span>Design & layout customizations</span>
+								</li>
+							</ul>
+
+							<!-- CTA Button -->
+							<a 
+								href="/get-started?plan=professional" 
+								class="block w-full text-center px-6 py-3 bg-gradient-to-r from-cyan-500 to-blue-500 text-white font-semibold rounded-xl hover:from-cyan-400 hover:to-blue-400 transition-all duration-300 shadow-lg shadow-cyan-500/25"
+							>
+								Get Started
+							</a>
+						</div>
+					</div>
+
+					<!-- Plan 3 - Complete -->
+					<div class="group relative bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8 hover:bg-white/[0.07] hover:border-teal-400/30 transition-all duration-300">
+						<div class="absolute inset-0 bg-gradient-to-br from-teal-500/5 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+						
+						<div class="relative">
+							<!-- Plan Header -->
+							<div class="mb-6">
+								<h3 class="text-2xl font-bold text-white mb-2">Complete</h3>
+								<div class="flex items-baseline gap-2">
+									<span class="text-4xl font-bold bg-gradient-to-r from-teal-400 to-emerald-400 bg-clip-text text-transparent">£300</span>
+									<span class="text-neutral-400">/month</span>
+								</div>
+							</div>
+
+							<!-- Features List -->
+							<ul class="space-y-4 mb-8">
+								<li class="flex items-start gap-3 text-neutral-300">
+									<svg class="w-5 h-5 text-teal-400 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+									</svg>
+									<span class="font-medium text-white">Full CMS website (WordPress, etc.)</span>
+								</li>
+								<li class="flex items-start gap-3 text-neutral-300">
+									<svg class="w-5 h-5 text-teal-400 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+									</svg>
+									<span class="font-medium text-white">Everything in Professional</span>
+								</li>
+								<li class="flex items-start gap-3 text-neutral-300">
+									<svg class="w-5 h-5 text-teal-400 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+									</svg>
+									<span>Easy content management - update yourself</span>
+								</li>
+								<li class="flex items-start gap-3 text-neutral-300">
+									<svg class="w-5 h-5 text-teal-400 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+									</svg>
+									<span>Unlimited content changes</span>
+								</li>
+								<li class="flex items-start gap-3 text-neutral-300">
+									<svg class="w-5 h-5 text-teal-400 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+									</svg>
+									<span>Ongoing feature updates & improvements</span>
+								</li>
+							</ul>
+
+							<!-- CTA Button -->
+							<a 
+								href="/get-started?plan=complete" 
+								class="block w-full text-center px-6 py-3 bg-white/10 border border-white/20 text-white font-semibold rounded-xl hover:bg-teal-500/20 hover:border-teal-400/40 transition-all duration-300"
+							>
+								Get Started
+							</a>
+						</div>
+					</div>
+
+				</div>
+
+				<!-- Terms Notice -->
+				<div class="mt-12 text-center">
+					<p class="text-sm text-neutral-400">
+						Cancel anytime after your initial term. New projects have a minimum term of 12 months.
+					</p>
+				</div>
+			</div>
+		</section>
+
+		<!-- Premium/Custom Section -->
+		<section class="relative pb-16 sm:pb-20 px-4 sm:px-6 lg:px-8">
+			<div class="max-w-5xl mx-auto">
+				<div class="relative bg-gradient-to-br from-purple-500/10 via-blue-500/10 to-cyan-500/10 backdrop-blur-sm border border-white/10 rounded-3xl p-8 sm:p-12 overflow-hidden">
+					<!-- Decorative elements -->
+					<div class="absolute top-0 right-0 w-64 h-64 bg-purple-500/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
+					<div class="absolute bottom-0 left-0 w-64 h-64 bg-blue-500/10 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2"></div>
+					
+					<div class="relative text-center">
+						<!-- Icon/Badge -->
+						<div class="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-purple-500/20 to-blue-500/20 rounded-2xl mb-6">
+							<svg class="w-8 h-8 text-purple-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+							</svg>
+						</div>
+
+						<!-- Heading -->
+						<h2 class="text-3xl sm:text-4xl font-bold text-white mb-4">
+							Need Something More?
+						</h2>
+						
+						<!-- Description -->
+						<p class="text-lg text-neutral-300 max-w-2xl mx-auto mb-8">
+							Looking for a fully custom solution, enterprise-level support, or unique requirements? 
+							I'd love to discuss a bespoke package tailored specifically to your business needs.
+						</p>
+
+						<!-- CTA -->
+						<a 
+							href="/get-started?plan=custom" 
+							class="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-purple-500 to-blue-500 text-white font-semibold rounded-xl hover:from-purple-400 hover:to-blue-400 transition-all duration-300 shadow-lg shadow-purple-500/25 hover:scale-105"
+						>
+							<span>Get in Touch</span>
+							<svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+							</svg>
+						</a>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- FAQ or Benefits Section (Optional - adds more content) -->
+		<section class="relative pb-20 sm:pb-32 px-4 sm:px-6 lg:px-8">
+			<div class="max-w-4xl mx-auto">
+				<div class="text-center mb-12">
+					<h2 class="text-3xl sm:text-4xl font-bold text-white mb-4">
+						Why Choose a Care Plan?
+					</h2>
+					<p class="text-lg text-neutral-300">
+						Peace of mind knowing your website is always performing at its best
+					</p>
+				</div>
+
+				<div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+					<!-- Benefit 1 -->
+					<div class="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 hover:bg-white/[0.07] transition-all duration-300">
+						<div class="w-12 h-12 bg-blue-500/20 rounded-lg flex items-center justify-center mb-4">
+							<svg class="w-6 h-6 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+							</svg>
+						</div>
+						<h3 class="text-xl font-semibold text-white mb-2">Always Secure</h3>
+						<p class="text-neutral-300">Regular security updates and monitoring keep your site protected from threats</p>
+					</div>
+
+					<!-- Benefit 2 -->
+					<div class="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 hover:bg-white/[0.07] transition-all duration-300">
+						<div class="w-12 h-12 bg-cyan-500/20 rounded-lg flex items-center justify-center mb-4">
+							<svg class="w-6 h-6 text-cyan-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+							</svg>
+						</div>
+						<h3 class="text-xl font-semibold text-white mb-2">Peak Performance</h3>
+						<p class="text-neutral-300">Ongoing optimization ensures fast load times and smooth user experience</p>
+					</div>
+
+					<!-- Benefit 3 -->
+					<div class="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 hover:bg-white/[0.07] transition-all duration-300">
+						<div class="w-12 h-12 bg-teal-500/20 rounded-lg flex items-center justify-center mb-4">
+							<svg class="w-6 h-6 text-teal-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+							</svg>
+						</div>
+						<h3 class="text-xl font-semibold text-white mb-2">Save Time</h3>
+						<p class="text-neutral-300">Focus on your business while I handle all technical maintenance and updates</p>
+					</div>
+
+					<!-- Benefit 4 -->
+					<div class="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 hover:bg-white/[0.07] transition-all duration-300">
+						<div class="w-12 h-12 bg-purple-500/20 rounded-lg flex items-center justify-center mb-4">
+							<svg class="w-6 h-6 text-purple-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+							</svg>
+						</div>
+						<h3 class="text-xl font-semibold text-white mb-2">Cost Effective</h3>
+						<p class="text-neutral-300">Predictable monthly costs with no surprise bills or emergency fix charges</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+	</main>
+</Layout>
+
+<style>
+	/* Smooth scrolling for anchor links */
+	html {
+		scroll-behavior: smooth;
+	}
+</style>
+

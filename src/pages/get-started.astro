@@ -1,0 +1,12 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import GetStartedForm from "@/components/GetStartedForm";
+
+export const prerender = true
+---
+<Layout title="Get Started | Website Care Plans | Simon Richards">
+	<main class="min-h-screen bg-gradient-to-br from-neutral-900 via-neutral-800 to-neutral-900">
+		<GetStartedForm client:load />
+	</main>
+</Layout>
+
