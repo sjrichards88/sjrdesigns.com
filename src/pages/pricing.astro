@@ -1,9 +1,106 @@
 ---
 import Layout from "@/layouts/Layout.astro";
 
-export const prerender = true
+export const prerender = true;
+
+const pricingSchema = {
+	"@context": "https://schema.org",
+	"@type": "ItemList",
+	"name": "Website Development Packages",
+	"description": "Complete website solutions with ongoing support and maintenance",
+	"itemListElement": [
+		{
+			"@type": "ListItem",
+			"position": 1,
+			"item": {
+				"@type": "Product",
+				"name": "Essentials Package",
+				"description": "Simple static website with hosting, maintenance, and security updates",
+				"offers": {
+					"@type": "Offer",
+					"price": "100",
+					"priceCurrency": "GBP",
+					"priceSpecification": {
+						"@type": "UnitPriceSpecification",
+						"price": "100",
+						"priceCurrency": "GBP",
+						"billingDuration": "P1M"
+					},
+					"availability": "https://schema.org/InStock",
+					"seller": {
+						"@type": "Person",
+						"name": "Simon Richards"
+					}
+				},
+				"category": "Web Development"
+			}
+		},
+		{
+			"@type": "ListItem",
+			"position": 2,
+			"item": {
+				"@type": "Product",
+				"name": "Professional Package",
+				"description": "Dynamic website with advanced features, priority support, and design customizations",
+				"offers": {
+					"@type": "Offer",
+					"price": "200",
+					"priceCurrency": "GBP",
+					"priceSpecification": {
+						"@type": "UnitPriceSpecification",
+						"price": "200",
+						"priceCurrency": "GBP",
+						"billingDuration": "P1M"
+					},
+					"availability": "https://schema.org/InStock",
+					"seller": {
+						"@type": "Person",
+						"name": "Simon Richards"
+					}
+				},
+				"category": "Web Development"
+			}
+		},
+		{
+			"@type": "ListItem",
+			"position": 3,
+			"item": {
+				"@type": "Product",
+				"name": "Complete Package",
+				"description": "Full CMS website with unlimited changes, ongoing updates, and comprehensive support",
+				"offers": {
+					"@type": "Offer",
+					"price": "300",
+					"priceCurrency": "GBP",
+					"priceSpecification": {
+						"@type": "UnitPriceSpecification",
+						"price": "300",
+						"priceCurrency": "GBP",
+						"billingDuration": "P1M"
+					},
+					"availability": "https://schema.org/InStock",
+					"seller": {
+						"@type": "Person",
+						"name": "Simon Richards"
+					}
+				},
+				"category": "Web Development"
+			}
+		}
+	]
+};
+
+const breadcrumbs = [
+	{ name: "Home", url: "https://sjrdesigns.com" },
+	{ name: "Website Packages", url: "https://sjrdesigns.com/pricing" }
+];
 ---
-<Layout title="Website Packages | Build & Maintain Your Site | Simon Richards">
+<Layout 
+	title="Website Packages | Build & Maintain Your Site | Simon Richards"
+	description="Complete website solutions from £100/month. Choose from static sites, dynamic web apps, or full CMS platforms. Hosting, maintenance & support included. 12-month minimum term."
+	schema={pricingSchema}
+	breadcrumbs={breadcrumbs}
+>
 	<main class="min-h-screen bg-gradient-to-br from-neutral-900 via-neutral-800 to-neutral-900">
 		
 		<!-- Hero Section -->

@@ -4,9 +4,17 @@ import Footer from "@/components/Footer.astro"
 
 export interface Props {
 	title: string;
+	description?: string;
+	schema?: any;
+	breadcrumbs?: Array<{name: string; url: string}>;
 }
 
-const { title } = Astro.props;
+const { 
+	title, 
+	description = "Senior freelance web developer Simon Richards - Available for new projects. 8+ years experience building high-performance websites for Disney, BBC & Barclays. Fast, secure, SEO-optimized web solutions that drive results.",
+	schema,
+	breadcrumbs
+} = Astro.props;
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 ---
 <!DOCTYPE html>
@@ -18,7 +26,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 		
 		<!-- SEO Meta Tags -->
 		<title>{title}</title>
-		<meta name="description" content="Senior freelance web developer Simon Richards - Available for new projects. 8+ years experience building high-performance websites for Disney, BBC & Barclays. Fast, secure, SEO-optimized web solutions that drive results." />
+		<meta name="description" content={description} />
 		<meta name="keywords" content="freelance web developer London, senior full stack developer, custom web development, React developer for hire, Next.js developer, performance optimization, SEO web developer, Basingstoke web design, premium website development, web application development" />
 		<meta name="author" content="Simon Richards" />
 		<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
@@ -45,8 +53,8 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 		<!-- Open Graph / Social Media -->
 		<meta property="og:type" content="website" />
 		<meta property="og:url" content={canonicalURL} />
-		<meta property="og:title" content="Simon Richards - Senior Freelance Web Developer | Available for Projects" />
-		<meta property="og:description" content="Hire a senior freelance web developer with 8+ years experience. Built premium websites for Disney, BBC & Barclays. Fast, secure, results-driven web solutions." />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
 		<meta property="og:image" content="https://sjrdesigns.com/android-chrome-384x384.png" />
 		<meta property="og:image:width" content="384" />
 		<meta property="og:image:height" content="384" />
@@ -56,8 +64,8 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 		
 		<meta property="twitter:card" content="summary_large_image" />
 		<meta property="twitter:url" content={canonicalURL} />
-		<meta property="twitter:title" content="Simon Richards - Senior Freelance Web Developer | Available for Projects" />
-		<meta property="twitter:description" content="Hire a senior freelance web developer with 8+ years experience. Built premium websites for Disney, BBC & Barclays. Fast, secure, results-driven web solutions." />
+		<meta property="twitter:title" content={title} />
+		<meta property="twitter:description" content={description} />
 		<meta property="twitter:image" content="https://sjrdesigns.com/android-chrome-384x384.png" />
 		<meta property="twitter:image:alt" content="Simon Richards - Senior Web Developer" />
 		
@@ -172,6 +180,69 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 						]
 					}
 				}
+			}
+		</script>
+
+		<!-- Breadcrumb Schema (if provided) -->
+		{breadcrumbs && breadcrumbs.length > 0 && (
+			<script type="application/ld+json">
+				{
+					"@context": "https://schema.org",
+					"@type": "BreadcrumbList",
+					"itemListElement": breadcrumbs.map((crumb, index) => ({
+						"@type": "ListItem",
+						"position": index + 1,
+						"name": crumb.name,
+						"item": crumb.url
+					}))
+				}
+			</script>
+		)}
+
+		<!-- Additional Page-Specific Schema -->
+		{schema && (
+			<script type="application/ld+json" set:html={JSON.stringify(schema)} />
+		)}
+
+		<!-- FAQ Schema for Homepage -->
+		<script type="application/ld+json">
+			{
+				"@context": "https://schema.org",
+				"@type": "FAQPage",
+				"mainEntity": [
+					{
+						"@type": "Question",
+						"name": "What services does Simon Richards offer?",
+						"acceptedAnswer": {
+							"@type": "Answer",
+							"text": "Simon Richards offers custom web development, performance optimization, CMS solutions (WordPress, headless CMS), ongoing website maintenance, and technical consulting. Specializing in React, Next.js, Astro, and modern web technologies."
+						}
+					},
+					{
+						"@type": "Question",
+						"name": "What is the minimum contract term for website packages?",
+						"acceptedAnswer": {
+							"@type": "Answer",
+							"text": "New projects have a minimum term of 12 months. After the initial term, you can cancel anytime with appropriate notice."
+						}
+					},
+					{
+						"@type": "Question",
+						"name": "What technologies does Simon Richards work with?",
+						"acceptedAnswer": {
+							"@type": "Answer",
+							"text": "Primary technologies include React, Next.js, Astro, TypeScript, Tailwind CSS, Node.js, PHP, GraphQL, MySQL, WordPress, and modern deployment platforms like AWS and Cloudflare."
+						}
+					},
+					{
+						"@type": "Question",
+						"name": "Does the website package include hosting?",
+						"acceptedAnswer": {
+							"@type": "Answer",
+							"text": "Yes, all website packages include hosting, SSL certificates, regular security updates, and performance monitoring."
+						}
+					}
+				]
 			}
 		</script>
 		

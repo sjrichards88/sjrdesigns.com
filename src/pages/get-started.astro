@@ -2,9 +2,41 @@
 import Layout from "@/layouts/Layout.astro";
 import GetStartedForm from "@/components/GetStartedForm";
 
-export const prerender = true
+export const prerender = true;
+
+const breadcrumbs = [
+	{ name: "Home", url: "https://sjrdesigns.com" },
+	{ name: "Website Packages", url: "https://sjrdesigns.com/pricing" },
+	{ name: "Get Started", url: "https://sjrdesigns.com/get-started" }
+];
+
+const serviceSchema = {
+	"@context": "https://schema.org",
+	"@type": "Service",
+	"serviceType": "Website Development Consultation",
+	"provider": {
+		"@type": "Person",
+		"name": "Simon Richards",
+		"url": "https://sjrdesigns.com"
+	},
+	"description": "Free consultation for custom website development projects. Discuss your requirements and get a tailored solution.",
+	"areaServed": {
+		"@type": "Country",
+		"name": "United Kingdom"
+	},
+	"availableChannel": {
+		"@type": "ServiceChannel",
+		"serviceUrl": "https://sjrdesigns.com/get-started",
+		"serviceType": "Online consultation form"
+	}
+};
 ---
-<Layout title="Get Started | Website Care Plans | Simon Richards">
+<Layout 
+	title="Get Started | Website Packages | Simon Richards"
+	description="Start your website project today. Fill out our quick questionnaire to discuss your requirements and get a customized solution. Free consultation available."
+	schema={serviceSchema}
+	breadcrumbs={breadcrumbs}
+>
 	<main class="min-h-screen bg-gradient-to-br from-neutral-900 via-neutral-800 to-neutral-900">
 		<GetStartedForm client:load />
 	</main>
