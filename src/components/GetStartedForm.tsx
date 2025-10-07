@@ -15,7 +15,7 @@ interface FormData {
 export default function GetStartedForm() {
   const [step, setStep] = useState(1)
   const [isSubmitting, setIsSubmitting] = useState(false)
-  const [isSuccess, setIsSuccess] = useState(true)
+  const [isSuccess, setIsSuccess] = useState(false)
   const [formData, setFormData] = useState<FormData>({
     plan: '',
     name: '',
