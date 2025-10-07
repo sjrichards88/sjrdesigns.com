@@ -73,10 +73,14 @@ export default function GetStartedForm() {
     if (step > 1) setStep(step - 1)
   }
 
+  const isValidEmail = (email: string) => {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)
+  }
+
   const canProceed = () => {
     switch (step) {
       case 1: return formData.plan !== ''
-      case 2: return formData.name !== '' && formData.email !== ''
+      case 2: return formData.name !== '' && formData.email !== '' && isValidEmail(formData.email)
       case 3: return formData.hasWebsite !== ''
       case 4: return formData.goals.length > 0
       case 5: return formData.timeline !== ''
@@ -248,9 +252,17 @@ export default function GetStartedForm() {
                     type="email"
                     value={formData.email}
                     onChange={(e) => updateFormData('email', e.target.value)}
-                    className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white placeholder-neutral-500 focus:outline-none focus:border-blue-500 transition-colors"
+                    className={`w-full px-4 py-3 bg-white/5 border rounded-xl text-white placeholder-neutral-500 focus:outline-none focus:border-blue-500 transition-colors ${
+                      formData.email && !isValidEmail(formData.email) 
+                        ? 'border-red-500' 
+                        : 'border-white/10'
+                    }`}
                     placeholder="john@company.com"
+                    required
                   />
+                  {formData.email && !isValidEmail(formData.email) && (
+                    <p className="text-rose-400 text-sm mt-2 font-semibold">Please enter a valid email address</p>
+                  )}
                 </div>
               </div>
             </div>
@@ -298,6 +310,7 @@ export default function GetStartedForm() {
               <p className="text-neutral-400 mb-6">Select all that apply</p>
               <div className="space-y-3">
                 {[
+                  'Brand new project',
                   'Keep website secure & updated',
                   'Improve website performance',
                   'Add new features',
@@ -367,13 +380,13 @@ export default function GetStartedForm() {
                   <select
                     value={formData.budget}
                     onChange={(e) => updateFormData('budget', e.target.value)}
-                    className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white focus:outline-none focus:border-blue-500 transition-colors"
+                    className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white focus:outline-none focus:border-blue-500 transition-colors [&>option]:bg-neutral-800 [&>option]:text-white"
                   >
-                    <option value="">Select budget range</option>
-                    <option value="£100-200/month">£100-200/month</option>
-                    <option value="£200-300/month">£200-300/month</option>
-                    <option value="£300+/month">£300+/month</option>
-                    <option value="One-time project">One-time project</option>
+                    <option value="" className="bg-neutral-800 text-white">Select budget range</option>
+                    <option value="£100-200/month" className="bg-neutral-800 text-white">£100-200/month</option>
+                    <option value="£200-300/month" className="bg-neutral-800 text-white">£200-300/month</option>
+                    <option value="£300+/month" className="bg-neutral-800 text-white">£300+/month</option>
+                    <option value="One-time project" className="bg-neutral-800 text-white">One-time project</option>
                   </select>
                 </div>
                 <div>
