@@ -259,6 +259,18 @@ class Header extends Component {
 						</li>
 						<li>
 							<a 
+								href="/ai-html-to-wordpress-theme/"
+								className={`
+									block px-6 py-3 font-poppins text-lg font-medium transition-all duration-300
+									hover:bg-white/10
+									${navScrolled ? 'text-slate-800 hover:bg-slate-100' : 'text-white hover:bg-white/10'}
+								`}
+							>
+								AI → WordPress
+							</a>
+						</li>
+						<li>
+							<a 
 								href="#work" 
 								onClick={(e) => this.scrollToSection(e, 'work')}
 								className={`
@@ -339,6 +351,24 @@ class Header extends Component {
 								`}
 							>
 								Services
+							</a>
+						</li>
+						<li>
+							<a 
+								href="/ai-html-to-wordpress-theme/"
+								className={`
+									no-underline relative leading-none font-poppins text-lg font-normal 
+									transition-all duration-[400ms] inline-block overflow-hidden
+									hover:after:translate-x-0
+									after:content-[''] after:absolute after:z-[1] after:w-full after:h-0.5 after:left-0 
+									after:top-[52%] after:-translate-y-1/2 after:-translate-x-full after:transition-all after:duration-300
+									${navScrolled 
+										? 'text-slate-800 after:bg-slate-800' 
+										: 'text-white after:bg-white'
+									}
+								`}
+							>
+								AI → WordPress
 							</a>
 						</li>
 						<li>

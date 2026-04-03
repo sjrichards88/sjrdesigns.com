@@ -1,0 +1,260 @@
+---
+import Layout from "@/layouts/Layout.astro";
+
+export const prerender = true;
+
+const pageUrl = "https://sjrdesigns.com/ai-html-to-wordpress-theme/";
+
+const faqEntities = [
+	{
+		"@type": "Question",
+		name: "Can you convert any AI-generated HTML into a WordPress theme?",
+		acceptedAnswer: {
+			"@type": "Answer",
+			text: "In most cases, yes. I work from HTML and CSS produced by tools like ChatGPT, Claude, v0, or other generators, clean up the markup, split it into proper WordPress templates, and wire everything into the CMS. Very experimental layouts may need small design adjustments for WordPress constraints.",
+		},
+	},
+	{
+		"@type": "Question",
+		name: "Will my site look the same as the AI-generated preview?",
+		acceptedAnswer: {
+			"@type": "Answer",
+			text: "The goal is a pixel-faithful or near-faithful match to your approved static design, implemented with valid theme structure, responsive behaviour, and WordPress best practices. If something cannot map cleanly to blocks or templates, I will flag it before build.",
+		},
+	},
+	{
+		"@type": "Question",
+		name: "Do I need my own WordPress hosting?",
+		acceptedAnswer: {
+			"@type": "Answer",
+			text: "You can deploy the finished theme to hosting you already use. If you prefer, we can pair the one-off build with my optional monthly packages that include hosting, SSL, and maintenance — but you are not required to use them.",
+		},
+	},
+	{
+		"@type": "Question",
+		name: "Is this only available on a monthly subscription?",
+		acceptedAnswer: {
+			"@type": "Answer",
+			text: "No. The conversion is usually quoted as a one-off project with fixed scope and price. Monthly packages are a separate option if you want ongoing hosting and support after handover.",
+		},
+	},
+	{
+		"@type": "Question",
+		name: "How long does an AI HTML to WordPress conversion take?",
+		acceptedAnswer: {
+			"@type": "Answer",
+			text: "Typical marketing sites take roughly one to three weeks depending on page count, dynamic features, forms, and ecommerce hooks. I will give you a fixed scope and timeline after reviewing your HTML and requirements.",
+		},
+	},
+];
+
+const pageSchema = {
+	"@context": "https://schema.org",
+	"@graph": [
+		{
+			"@type": "Service",
+			name: "AI HTML to WordPress theme conversion",
+			description:
+				"One-off conversion of AI-generated static HTML and CSS into a production-ready, editable WordPress theme (templates, theme.json where appropriate, CMS-friendly structure). Optional ongoing hosting and care available separately.",
+			serviceType: "WordPress theme development",
+			url: pageUrl,
+			provider: {
+				"@type": "Person",
+				name: "Simon Richards",
+				url: "https://sjrdesigns.com",
+			},
+			areaServed: {
+				"@type": "Country",
+				name: "United Kingdom",
+			},
+		},
+		{
+			"@type": "FAQPage",
+			mainEntity: faqEntities,
+		},
+	],
+};
+
+const breadcrumbs = [
+	{ name: "Home", url: "https://sjrdesigns.com" },
+	{ name: "AI HTML to WordPress theme", url: pageUrl },
+];
+---
+
+<Layout
+	title="AI HTML to WordPress Theme Conversion | Simon Richards"
+	description="Turn AI-generated HTML into a real WordPress theme: proper templates, editable content, performance and SEO-ready. One-off project pricing from UK developer Simon Richards — optional monthly care if you want it."
+	schema={pageSchema}
+	breadcrumbs={breadcrumbs}
+>
+	<main class="min-h-screen bg-gradient-to-br from-neutral-900 via-neutral-800 to-neutral-900">
+		<section class="relative pt-32 sm:pt-40 pb-10 sm:pb-14 px-4 sm:px-6 lg:px-8">
+			<div class="absolute inset-0 opacity-5" style="background-image: radial-gradient(circle at 2px 2px, white 1px, transparent 0); background-size: 40px 40px;"></div>
+			<div class="absolute top-0 right-1/4 w-96 h-96 bg-violet-500/10 rounded-full blur-3xl"></div>
+			<div class="absolute bottom-0 left-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl"></div>
+
+			<div class="relative max-w-4xl mx-auto text-center">
+				<div class="inline-flex items-center gap-2 px-4 py-2 bg-violet-500/10 border border-violet-500/25 rounded-full backdrop-blur-sm mb-6">
+					<span class="text-violet-300 text-sm font-medium">WordPress · AI workflows</span>
+				</div>
+				<h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
+					Turn AI-generated HTML into a <span class="text-transparent bg-clip-text bg-gradient-to-r from-violet-400 to-blue-400">usable WordPress theme</span>
+				</h1>
+				<p class="text-lg sm:text-xl text-neutral-300 max-w-3xl mx-auto leading-relaxed">
+					Static pages from ChatGPT, Claude, v0, or other tools are a fast way to explore design — but they are not a CMS. I convert your AI-built HTML and CSS into a real WordPress theme you can edit, extend, and run in production. Most projects are a <span class="text-white font-medium">one-off build and handover</span> — monthly care is optional, not required.
+				</p>
+				<div class="flex flex-col sm:flex-row gap-4 justify-center mt-10">
+					<a
+						href="/#contact"
+						class="inline-flex items-center justify-center px-8 py-4 rounded-xl font-semibold text-white bg-gradient-to-r from-violet-600 to-blue-600 hover:from-violet-500 hover:to-blue-500 shadow-lg shadow-violet-500/25 transition-all duration-300"
+					>
+						Get in touch
+					</a>
+					<a
+						href="/pricing/"
+						class="inline-flex items-center justify-center px-8 py-4 rounded-xl font-semibold text-white border border-white/20 hover:bg-white/5 transition-all duration-300"
+					>
+						Optional monthly packages
+					</a>
+				</div>
+			</div>
+		</section>
+
+		<section class="relative px-4 sm:px-6 lg:px-8 pb-16 max-w-3xl mx-auto">
+			<h2 class="text-2xl sm:text-3xl font-bold text-white mb-4">Why this service exists</h2>
+			<p class="text-neutral-300 leading-relaxed mb-4">
+				AI coding assistants are excellent at producing landing-page HTML in minutes. What they do not give you is a maintainable WordPress theme: template hierarchy (<code class="text-violet-300 text-sm">header.php</code>, <code class="text-violet-300 text-sm">front-page.php</code>, patterns, blocks), enqueueing of scripts and styles, security-conscious output, editable fields for your team, and a path to future features.
+			</p>
+			<p class="text-neutral-300 leading-relaxed">
+				This offering closes that gap. You keep the creative direction from your AI prototype; I implement it as a proper WordPress theme so you are not stuck pasting HTML into a single page or relying on fragile page-builder imports.
+			</p>
+		</section>
+
+		<section class="relative px-4 sm:px-6 lg:px-8 pb-16 max-w-5xl mx-auto">
+			<h2 class="text-2xl sm:text-3xl font-bold text-white mb-8 text-center">What you get</h2>
+			<div class="grid sm:grid-cols-2 gap-6">
+				<div class="bg-white/5 border border-white/10 rounded-2xl p-6">
+					<h3 class="text-lg font-semibold text-white mb-2">Production theme structure</h3>
+					<p class="text-neutral-300 text-sm leading-relaxed">
+						Clean theme folder, sensible template split, navigation menus, widget areas or block theme configuration as appropriate, and standards-friendly markup.
+					</p>
+				</div>
+				<div class="bg-white/5 border border-white/10 rounded-2xl p-6">
+					<h3 class="text-lg font-semibold text-white mb-2">Editable content</h3>
+					<p class="text-neutral-300 text-sm leading-relaxed">
+						Content that should change often lives in the block editor, custom fields (ACF or native where it fits), or patterns — not buried in raw HTML files.
+					</p>
+				</div>
+				<div class="bg-white/5 border border-white/10 rounded-2xl p-6">
+					<h3 class="text-lg font-semibold text-white mb-2">Performance and SEO baseline</h3>
+					<p class="text-neutral-300 text-sm leading-relaxed">
+						Assets enqueued correctly, lazy loading where it helps, semantic headings, and a foundation that works with your SEO plugin of choice.
+					</p>
+				</div>
+				<div class="bg-white/5 border border-white/10 rounded-2xl p-6">
+					<h3 class="text-lg font-semibold text-white mb-2">Handover you can own</h3>
+					<p class="text-neutral-300 text-sm leading-relaxed">
+						Documentation for how templates map to pages, how to add sections, and optional training so you or your team can iterate without starting from zero.
+					</p>
+				</div>
+			</div>
+		</section>
+
+		<section class="relative px-4 sm:px-6 lg:px-8 pb-16 max-w-3xl mx-auto">
+			<h2 class="text-2xl sm:text-3xl font-bold text-white mb-4">Pricing</h2>
+			<p class="text-neutral-300 leading-relaxed mb-4">
+				This work is normally quoted as a <span class="text-white font-medium">one-off project</span> — clear scope, fixed price, and full handover of the theme. You are not tied to a subscription to get the conversion done.
+			</p>
+			<p class="text-neutral-300 leading-relaxed">
+				If you want hosting, SSL, and ongoing updates handled for you afterwards, <a href="/pricing/" class="text-blue-400 hover:text-blue-300 underline underline-offset-2">monthly packages</a> are available as a separate choice — many clients take the one-off build only and run the site themselves.
+			</p>
+		</section>
+
+		<section class="relative px-4 sm:px-6 lg:px-8 pb-16 max-w-3xl mx-auto">
+			<h2 class="text-2xl sm:text-3xl font-bold text-white mb-6">How the process works</h2>
+			<ol class="space-y-5 text-neutral-300 list-decimal list-inside marker:text-violet-400">
+				<li>
+					<span class="font-semibold text-white">Review</span> — We align on your AI-generated HTML/CSS (however you already have it — export, repo, or ZIP), plus brand assets and hosting context, once we have spoken.
+				</li>
+				<li>
+					<span class="font-semibold text-white">Plan</span> — I map pages to templates, identify dynamic areas (blog, forms, team members, case studies), and confirm block vs classic theme approach.
+				</li>
+				<li>
+					<span class="font-semibold text-white">Build</span> — Theme development, content migration strategy, and staging deployment for your review.
+				</li>
+				<li>
+					<span class="font-semibold text-white">Launch</span> — Production cutover, redirects if needed, and handover. If you want hosting and updates bundled afterwards, <a href="/pricing/" class="text-blue-400 hover:text-blue-300 underline underline-offset-2">monthly packages</a> are optional — not part of the core one-off quote unless you choose them.
+				</li>
+			</ol>
+		</section>
+
+		<section class="relative px-4 sm:px-6 lg:px-8 pb-16 max-w-3xl mx-auto">
+			<h2 class="text-2xl sm:text-3xl font-bold text-white mb-4">Who it is for</h2>
+			<p class="text-neutral-300 leading-relaxed mb-4">
+				Founders, marketers, and agencies who used AI to speed up design exploration and now need a real CMS. It is especially useful when you already like the look of your static HTML but do not have time to learn the WordPress theme layer yourself.
+			</p>
+			<p class="text-neutral-300 leading-relaxed">
+				If you are unsure whether your HTML is ready or how a one-off quote might look, <a href="/#contact" class="text-blue-400 hover:text-blue-300 underline underline-offset-2">get in touch</a> — I will tell you honestly what is feasible.
+			</p>
+		</section>
+
+		<section class="relative px-4 sm:px-6 lg:px-8 pb-20 max-w-3xl mx-auto">
+			<h2 class="text-2xl sm:text-3xl font-bold text-white mb-8">Frequently asked questions</h2>
+			<div class="space-y-8">
+				<div>
+					<h3 class="text-lg font-semibold text-white mb-2">
+						Can you convert any AI-generated HTML into a WordPress theme?
+					</h3>
+					<p class="text-neutral-300 leading-relaxed">
+						In most cases, yes. I work from HTML and CSS produced by tools like ChatGPT, Claude, v0, or other generators, clean up the markup, split it into proper WordPress templates, and wire everything into the CMS. Very experimental layouts may need small design adjustments for WordPress constraints.
+					</p>
+				</div>
+				<div>
+					<h3 class="text-lg font-semibold text-white mb-2">Will my site look the same as the AI-generated preview?</h3>
+					<p class="text-neutral-300 leading-relaxed">
+						The goal is a pixel-faithful or near-faithful match to your approved static design, implemented with valid theme structure, responsive behaviour, and WordPress best practices. If something cannot map cleanly to blocks or templates, I will flag it before build.
+					</p>
+				</div>
+				<div>
+					<h3 class="text-lg font-semibold text-white mb-2">Do I need my own WordPress hosting?</h3>
+					<p class="text-neutral-300 leading-relaxed">
+						You can deploy the finished theme to hosting you already use. If you prefer, we can pair the one-off build with my optional monthly packages that include hosting, SSL, and maintenance — but you are not required to use them.
+					</p>
+				</div>
+				<div>
+					<h3 class="text-lg font-semibold text-white mb-2">Is this only available on a monthly subscription?</h3>
+					<p class="text-neutral-300 leading-relaxed">
+						No. The conversion is usually quoted as a one-off project with fixed scope and price. Monthly packages are a separate option if you want ongoing hosting and support after handover.
+					</p>
+				</div>
+				<div>
+					<h3 class="text-lg font-semibold text-white mb-2">How long does an AI HTML to WordPress conversion take?</h3>
+					<p class="text-neutral-300 leading-relaxed">
+						Typical marketing sites take roughly one to three weeks depending on page count, dynamic features, forms, and ecommerce hooks. I will give you a fixed scope and timeline after reviewing your HTML and requirements.
+					</p>
+				</div>
+			</div>
+		</section>
+
+		<section class="relative px-4 sm:px-6 lg:px-8 pb-24 max-w-3xl mx-auto text-center">
+			<div class="bg-gradient-to-br from-violet-500/10 to-blue-500/10 border border-white/10 rounded-2xl p-10">
+				<h2 class="text-2xl font-bold text-white mb-3">Ready to make your AI layout real?</h2>
+				<p class="text-neutral-300 mb-8 max-w-xl mx-auto">
+					Send a short note about your project and goals. I will reply with next steps, what I need to see, and a realistic one-off scope.
+				</p>
+				<a
+					href="/#contact"
+					class="inline-flex items-center justify-center px-8 py-4 rounded-xl font-semibold text-white bg-gradient-to-r from-violet-600 to-blue-600 hover:from-violet-500 hover:to-blue-500 transition-all duration-300"
+				>
+					Get in touch
+				</a>
+			</div>
+		</section>
+	</main>
+</Layout>
+
+<style>
+	html {
+		scroll-behavior: smooth;
+	}
+</style>
