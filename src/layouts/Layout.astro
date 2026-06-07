@@ -11,7 +11,14 @@ export interface Props {
 	includeFaqSchema?: boolean;
 	/** Error and utility pages that must not be indexed. */
 	noindex?: boolean;
+	/** Override default site keywords; omit tag when undefined and use default, or pass empty string to skip. */
+	keywords?: string;
+	/** Local geo meta tags (homepage-oriented); disable on national/remote service pages. */
+	includeGeoMeta?: boolean;
 }
+
+const defaultKeywords =
+	"freelance web developer London, senior full stack developer, custom web development, React developer for hire, Next.js developer, performance optimization, SEO web developer, Basingstoke web design, premium website development, web application development";
 
 const { 
 	title, 
@@ -20,6 +27,8 @@ const {
 	breadcrumbs,
 	includeFaqSchema = false,
 	noindex = false,
+	keywords = defaultKeywords,
+	includeGeoMeta = true,
 } = Astro.props;
 
 const robotsContent = noindex
@@ -29,7 +38,7 @@ const googlebotContent = noindex ? "noindex, nofollow" : "index, follow";
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 ---
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="overflow-x-clip">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -38,7 +47,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 		<!-- SEO Meta Tags -->
 		<title>{title}</title>
 		<meta name="description" content={description} />
-		<meta name="keywords" content="freelance web developer London, senior full stack developer, custom web development, React developer for hire, Next.js developer, performance optimization, SEO web developer, Basingstoke web design, premium website development, web application development" />
+		{keywords && <meta name="keywords" content={keywords} />}
 		<meta name="author" content="Simon Richards" />
 		<meta name="robots" content={robotsContent} />
 		<meta name="googlebot" content={googlebotContent} />
@@ -81,10 +90,14 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 		<meta property="twitter:image:alt" content="Simon Richards - Senior Web Developer" />
 		
 		<!-- Additional SEO Meta Tags -->
-		<meta name="geo.region" content="GB-HAM" />
-		<meta name="geo.placename" content="Hampshire, London" />
-		<meta name="geo.position" content="51.2663;-1.0974" />
-		<meta name="ICBM" content="51.2663, -1.0974" />
+		{includeGeoMeta && (
+			<>
+				<meta name="geo.region" content="GB-HAM" />
+				<meta name="geo.placename" content="Hampshire, London" />
+				<meta name="geo.position" content="51.2663;-1.0974" />
+				<meta name="ICBM" content="51.2663, -1.0974" />
+			</>
+		)}
 		
 		<!-- Search Console Verification -->
 		<meta name="google-site-verification" content="8pUgVl34mzJdzrW7d4EivXrpFyEhgGdrfWfIl4c2bNo" />
@@ -271,7 +284,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 			});
 		</script>
 	</head>
-	<body>
+	<body class="overflow-x-clip">
 		<Header client:load />
 		<slot />
 		<Footer />

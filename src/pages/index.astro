@@ -11,13 +11,13 @@ import Contact from "@/components/sections/Contact";
 export const prerender = true
 ---
 <Layout title="Available for Hire | Senior Freelance Web Developer | Simon Richards" includeFaqSchema>
-	<main id="content-wrap" class="transition-all duration-[400ms] ease-in-out">
+	<main id="content-wrap" class="overflow-x-clip transition-all duration-[400ms] ease-in-out">
 		<Landing />
 		<About />
 		<Services />
 		<PricingCTA />
 		<Work />
 		<Tech />
-		<Contact client:only="react" />
+		<Contact client:load />
 	</main>
 </Layout>

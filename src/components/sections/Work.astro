@@ -1,28 +1,50 @@
 ---
-// Import all project images for proper Astro asset processing
 import Button from '@/components/Button.astro';
+import WorkProjectItem from '@/components/WorkProjectItem.astro';
 import framelessImg from '@/assets/images/frameless.jpg'
-import winterWonderlandImg from '@/assets/images/winter-wonderland.jpg'
 import tasteImg from '@/assets/images/taste.jpg'
 import thewalkImg from '@/assets/images/thewalk.jpg'
+import holidayOnIceImg from '@/assets/images/holidayonice.com.png'
+import moulinRougeImg from '@/assets/images/moulinrougemusical.co.uk.png'
 import bowsImg from '@/assets/images/bows.jpg'
+import ratefeedImg from '@/assets/images/ratefeed.co.uk.png'
 import wsmImg from '@/assets/images/wsm.jpg'
 import womensScottishImg from '@/assets/images/womensscottish.jpg'
-import chevronImg from '@/assets/images/chevron.jpg'
 import pncImg from '@/assets/images/pnc.jpg'
-import bowwowLondonImg from '@/assets/images/bowwowlondon.jpg'
 import justDanceLiveImg from '@/assets/images/just-dance-live.jpg'
+import multipleCalcsImg from '@/assets/images/multiplecalcs.com.png'
+
+const MOBILE_VISIBLE_COUNT = 5;
+
+const featuredProjects = [
+	{ title: "Frameless", subtitle: "Immersive Art Experience • developed at Dewynters", image: framelessImg, url: "https://frameless.com/", delay: "work-delay-100" },
+	{ title: "Taste Festival", subtitle: "Culinary Celebration • developed at Dewynters", image: tasteImg, url: "https://london.tastefestivals.com/", delay: "work-delay-200" },
+	{ title: "Walk With Amal", subtitle: "Interactive Journey • developed at Dewynters", image: thewalkImg, url: "https://walkwithamal.org/", delay: "work-delay-250" },
+	{ title: "Holiday On Ice", subtitle: "International ice show • developed at Dewynters", image: holidayOnIceImg, url: "https://holidayonice.com/", delay: "work-delay-275" },
+	{ title: "Moulin Rouge Musical", subtitle: "West End musical • developed at Dewynters", image: moulinRougeImg, url: "https://moulinrougemusical.co.uk/", delay: "work-delay-290" },
+	{ title: "Bouquets & Bows", subtitle: "Luxury wedding planning • independent project", image: bowsImg, url: "https://bouquetsandbows.com/", delay: "work-delay-300" },
+	{ title: "RateFeed", subtitle: "Trades price comparison tool • independent project", image: ratefeedImg, url: "https://ratefeed.co.uk/", delay: "work-delay-325" },
+	{ title: "The World's Strongest Man", subtitle: "Strength Athletics Championship • developed at Dewynters", image: wsmImg, url: "https://www.theworldsstrongestman.com/", delay: "work-delay-350" },
+];
+
+const moreProjects = [
+	{ title: "Women's Scottish Open", subtitle: "Golf Championship", image: womensScottishImg, url: "https://www.womensscottish.com/", delay: "work-delay-450" },
+	{ title: "PNC Championship", subtitle: "Golf Tournament", image: pncImg, url: "https://www.pncchampionship.com/", delay: "work-delay-550" },
+	{ title: "Just Dance Live", subtitle: "Interactive Entertainment", image: justDanceLiveImg, url: "https://justdancelive.com/", delay: "work-delay-650" },
+	{ title: "Multiple Calcs", subtitle: "Online calculator tools", image: multipleCalcsImg, url: "https://multiplecalcs.com/", delay: "work-delay-700" },
+];
+
+const mobileVisibleProjects = featuredProjects.slice(0, MOBILE_VISIBLE_COUNT);
+const mobileMoreProjects = [...featuredProjects.slice(MOBILE_VISIBLE_COUNT), ...moreProjects];
 ---
 
 <section id="work" class="relative py-24 bg-gradient-to-br from-slate-50 via-white to-teal-50 overflow-hidden">
-  <!-- Background Pattern -->
   <div class="absolute inset-0 opacity-[0.02] bg-dot-pattern-work"></div>
   <div class="absolute top-20 right-20 w-72 h-72 bg-gradient-to-br from-teal-300/15 to-emerald-300/10 rounded-full blur-3xl animate-pulse"></div>
   <div class="absolute bottom-20 left-20 w-96 h-96 bg-gradient-to-br from-cyan-300/15 to-blue-300/10 rounded-full blur-3xl animate-pulse animate-delay-2s"></div>
 
   <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     
-    <!-- Section Header -->
     <div class="text-center mb-20 animate-item">
       <div class="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-teal-100 to-emerald-100 border border-teal-200/50 rounded-full mb-6 shadow-sm">
         <div class="w-2 h-2 bg-gradient-to-r from-teal-500 to-emerald-500 rounded-full animate-pulse"></div>
@@ -33,184 +55,57 @@ import justDanceLiveImg from '@/assets/images/just-dance-live.jpg'
         <span class="bg-gradient-to-r from-cyan-500 via-blue-500 to-teal-500 bg-clip-text text-transparent">Work</span>
       </h2>
       <p class="text-neutral-600 max-w-3xl mx-auto leading-relaxed text-work-subtitle text-lg">
-        From world-renowned entertainment venues to major sporting championships. Hover over projects to explore them.
+        <span class="lg:hidden">Tap a project to visit the live site.</span>
+        <span class="hidden lg:inline">From world-renowned entertainment venues to major sporting championships. Hover over projects to explore them.</span>
       </p>
     </div>
 
-    <!-- Interactive Project List -->
     <div class="max-w-5xl mx-auto">
-      <!-- Main Projects -->
-      <div class="space-y-4 mb-16">
-        
-        <div class="project-item group animate-item work-delay-100" data-image={framelessImg.src} data-url="https://frameless.com/">
-          <div class="flex items-center justify-between py-6 px-8 bg-white/80 backdrop-blur-sm border border-neutral-200/50 rounded-2xl hover:bg-white hover:shadow-xl hover:shadow-teal-500/10 transition-all duration-500 cursor-pointer">
-            <div class="flex-1">
-              <h3 class="text-lg sm:text-xl lg:text-2xl xl:text-3xl font-heading font-bold text-neutral-900 group-hover:text-teal-600 transition-colors duration-300">Frameless</h3>
-              <p class="text-neutral-500 text-xs sm:text-sm mt-1">Immersive Art Experience • developed at Dewynters</p>
-            </div>
-            <div class="flex items-center gap-4">
-              <span class="text-sm text-neutral-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300 hidden sm:block">View Project</span>
-              <svg class="w-6 h-6 text-neutral-400 group-hover:text-teal-600 group-hover:translate-x-1 transition-all duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5-5 5M6 12h12"/>
-              </svg>
-            </div>
-          </div>
-        </div>
-
-        <div class="project-item group animate-item work-delay-150" data-image={winterWonderlandImg.src} data-url="https://hydeparkwinterwonderland.com/">
-          <div class="flex items-center justify-between py-6 px-8 bg-white/80 backdrop-blur-sm border border-neutral-200/50 rounded-2xl hover:bg-white hover:shadow-xl hover:shadow-teal-500/10 transition-all duration-500 cursor-pointer">
-            <div class="flex-1">
-              <h3 class="text-lg sm:text-xl lg:text-2xl xl:text-3xl font-heading font-bold text-neutral-900 group-hover:text-teal-600 transition-colors duration-300">Hyde Park Winter Wonderland</h3>
-              <p class="text-neutral-500 text-xs sm:text-sm mt-1">London's Festive Experience • developed at Dewynters</p>
-            </div>
-            <div class="flex items-center gap-4">
-              <span class="text-sm text-neutral-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300 hidden sm:block">View Project</span>
-              <svg class="w-6 h-6 text-neutral-400 group-hover:text-teal-600 group-hover:translate-x-1 transition-all duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5-5 5M6 12h12"/>
-              </svg>
-            </div>
-          </div>
-        </div>
-
-        <div class="project-item group animate-item work-delay-200" data-image={tasteImg.src} data-url="https://london.tastefestivals.com/">
-          <div class="flex items-center justify-between py-6 px-8 bg-white/80 backdrop-blur-sm border border-neutral-200/50 rounded-2xl hover:bg-white hover:shadow-xl hover:shadow-teal-500/10 transition-all duration-500 cursor-pointer">
-            <div class="flex-1">
-              <h3 class="text-lg sm:text-xl lg:text-2xl xl:text-3xl font-heading font-bold text-neutral-900 group-hover:text-teal-600 transition-colors duration-300">Taste Festival</h3>
-              <p class="text-neutral-500 text-xs sm:text-sm mt-1">Culinary Celebration • developed at Dewynters</p>
-            </div>
-            <div class="flex items-center gap-4">
-              <span class="text-sm text-neutral-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300 hidden sm:block">View Project</span>
-              <svg class="w-6 h-6 text-neutral-400 group-hover:text-teal-600 group-hover:translate-x-1 transition-all duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5-5 5M6 12h12"/>
-              </svg>
-            </div>
-          </div>
-        </div>
-
-        <div class="project-item group animate-item work-delay-250" data-image={thewalkImg.src} data-url="https://walkwithamal.org/">
-          <div class="flex items-center justify-between py-6 px-8 bg-white/80 backdrop-blur-sm border border-neutral-200/50 rounded-2xl hover:bg-white hover:shadow-xl hover:shadow-teal-500/10 transition-all duration-500 cursor-pointer">
-            <div class="flex-1">
-              <h3 class="text-lg sm:text-xl lg:text-2xl xl:text-3xl font-heading font-bold text-neutral-900 group-hover:text-teal-600 transition-colors duration-300">Walk With Amal</h3>
-              <p class="text-neutral-500 text-xs sm:text-sm mt-1">Interactive Journey • developed at Dewynters</p>
-            </div>
-            <div class="flex items-center gap-4">
-              <span class="text-sm text-neutral-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300 hidden sm:block">View Project</span>
-              <svg class="w-6 h-6 text-neutral-400 group-hover:text-teal-600 group-hover:translate-x-1 transition-all duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5-5 5M6 12h12"/>
-              </svg>
-            </div>
-          </div>
-        </div>
-
-        <div class="project-item group animate-item work-delay-300" data-image={bowsImg.src} data-url="https://bouquetsandbows.com/">
-          <div class="flex items-center justify-between py-6 px-8 bg-white/80 backdrop-blur-sm border border-neutral-200/50 rounded-2xl hover:bg-white hover:shadow-xl hover:shadow-teal-500/10 transition-all duration-500 cursor-pointer">
-            <div class="flex-1">
-              <h3 class="text-lg sm:text-xl lg:text-2xl xl:text-3xl font-heading font-bold text-neutral-900 group-hover:text-teal-600 transition-colors duration-300">Bouquets & Bows</h3>
-              <p class="text-neutral-500 text-xs sm:text-sm mt-1">Luxury wedding planning • independent project</p>
-            </div>
-            <div class="flex items-center gap-4">
-              <span class="text-sm text-neutral-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300 hidden sm:block">View Project</span>
-              <svg class="w-6 h-6 text-neutral-400 group-hover:text-teal-600 group-hover:translate-x-1 transition-all duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5-5 5M6 12h12"/>
-              </svg>
-            </div>
-          </div>
-        </div>
-
-        <div class="project-item group animate-item work-delay-350" data-image={wsmImg.src} data-url="https://www.theworldsstrongestman.com/">
-          <div class="flex items-center justify-between py-6 px-8 bg-white/80 backdrop-blur-sm border border-neutral-200/50 rounded-2xl hover:bg-white hover:shadow-xl hover:shadow-teal-500/10 transition-all duration-500 cursor-pointer">
-            <div class="flex-1">
-              <h3 class="text-lg sm:text-xl lg:text-2xl xl:text-3xl font-heading font-bold text-neutral-900 group-hover:text-teal-600 transition-colors duration-300">The World's Strongest Man</h3>
-              <p class="text-neutral-500 text-xs sm:text-sm mt-1">Strength Athletics Championship • developed at Dewynters</p>
-            </div>
-            <div class="flex items-center gap-4">
-              <span class="text-sm text-neutral-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300 hidden sm:block">View Project</span>
-              <svg class="w-6 h-6 text-neutral-400 group-hover:text-teal-600 group-hover:translate-x-1 transition-all duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5-5 5M6 12h12"/>
-              </svg>
-            </div>
-          </div>
-        </div>
+      <!-- Mobile: first 5 projects -->
+      <div class="lg:hidden space-y-4 mb-4">
+        {mobileVisibleProjects.map((project) => (
+          <WorkProjectItem {...project} />
+        ))}
       </div>
 
-      <!-- More Projects Section -->
-      <div class="text-center mb-12 animate-item work-delay-400">
+      <!-- Desktop: all featured projects -->
+      <div class="desktop-project-list hidden lg:block space-y-4 mb-16">
+        {featuredProjects.map((project) => (
+          <WorkProjectItem {...project} />
+        ))}
+      </div>
+
+      <!-- Mobile: collapsible more projects -->
+      {mobileMoreProjects.length > 0 && (
+        <details id="mobile-more-projects" class="work-more-details lg:hidden mb-12 animate-item work-delay-400">
+          <summary class="work-more-summary flex items-center justify-between gap-3 py-3 px-4 bg-white/70 backdrop-blur-sm border border-neutral-200/50 rounded-2xl cursor-pointer list-none select-none">
+            <span class="text-lg font-heading font-semibold text-neutral-800">More Projects</span>
+            <span class="flex items-center gap-2 text-sm text-neutral-500">
+              <span>{mobileMoreProjects.length} more</span>
+              <svg class="work-more-chevron w-5 h-5 text-teal-600 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </span>
+          </summary>
+          <div class="space-y-4 mt-4">
+            {mobileMoreProjects.map((project) => (
+              <WorkProjectItem {...project} />
+            ))}
+          </div>
+        </details>
+      )}
+
+      <!-- Desktop: more projects grid -->
+      <div class="desktop-project-list hidden lg:block text-center mb-12 animate-item work-delay-400">
         <h3 class="text-xl font-heading font-semibold text-neutral-700 mb-8">More Projects</h3>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-
-          <div class="project-item group animate-item work-delay-450" data-image={womensScottishImg.src} data-url="https://www.womensscottish.com/">
-            <div class="flex items-center justify-between py-4 px-6 bg-white/60 backdrop-blur-sm border border-neutral-200/40 rounded-xl hover:bg-white hover:shadow-lg transition-all duration-300 cursor-pointer">
-              <div class="flex-1">
-                <h4 class="text-base sm:text-lg font-heading font-semibold text-neutral-900 group-hover:text-teal-600 transition-colors duration-300">Women's Scottish Open</h4>
-                <p class="text-neutral-500 text-xs">Golf Championship</p>
-              </div>
-              <svg class="w-4 h-4 text-neutral-400 group-hover:text-teal-600 group-hover:translate-x-1 transition-all duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5-5 5M6 12h12"/>
-              </svg>
-            </div>
-          </div>
-
-          <div class="project-item group animate-item work-delay-500" data-image={chevronImg.src} data-url="https://www.thechevronchampionship.com/">
-            <div class="flex items-center justify-between py-4 px-6 bg-white/60 backdrop-blur-sm border border-neutral-200/40 rounded-xl hover:bg-white hover:shadow-lg transition-all duration-300 cursor-pointer">
-              <div class="flex-1">
-                <h4 class="text-base sm:text-lg font-heading font-semibold text-neutral-900 group-hover:text-teal-600 transition-colors duration-300">The Chevron Championship</h4>
-                <p class="text-neutral-500 text-xs">Golf Major</p>
-              </div>
-              <svg class="w-4 h-4 text-neutral-400 group-hover:text-teal-600 group-hover:translate-x-1 transition-all duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5-5 5M6 12h12"/>
-              </svg>
-            </div>
-          </div>
-
-          <div class="project-item group animate-item work-delay-550" data-image={pncImg.src} data-url="https://www.pncchampionship.com/">
-            <div class="flex items-center justify-between py-4 px-6 bg-white/60 backdrop-blur-sm border border-neutral-200/40 rounded-xl hover:bg-white hover:shadow-lg transition-all duration-300 cursor-pointer">
-              <div class="flex-1">
-                <h4 class="text-base sm:text-lg font-heading font-semibold text-neutral-900 group-hover:text-teal-600 transition-colors duration-300">PNC Championship</h4>
-                <p class="text-neutral-500 text-xs">Golf Tournament</p>
-              </div>
-              <svg class="w-4 h-4 text-neutral-400 group-hover:text-teal-600 group-hover:translate-x-1 transition-all duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5-5 5M6 12h12"/>
-              </svg>
-            </div>
-          </div>
-
-          <div class="project-item group animate-item work-delay-600" data-image={bowwowLondonImg.src} data-url="https://www.bowwowlondon.org/">
-            <div class="flex items-center justify-between py-4 px-6 bg-white/60 backdrop-blur-sm border border-neutral-200/40 rounded-xl hover:bg-white hover:shadow-lg transition-all duration-300 cursor-pointer">
-              <div class="flex-1">
-                <h4 class="text-base sm:text-lg font-heading font-semibold text-neutral-900 group-hover:text-teal-600 transition-colors duration-300">Bowwow London</h4>
-                <p class="text-neutral-500 text-xs">Dog Online Store</p>
-              </div>
-              <svg class="w-4 h-4 text-neutral-400 group-hover:text-teal-600 group-hover:translate-x-1 transition-all duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5-5 5M6 12h12"/>
-              </svg>
-            </div>
-          </div>
-
-          <div class="project-item group animate-item work-delay-650" data-image={justDanceLiveImg.src} data-url="https://justdancelive.com/">
-            <div class="flex items-center justify-between py-4 px-6 bg-white/60 backdrop-blur-sm border border-neutral-200/40 rounded-xl hover:bg-white hover:shadow-lg transition-all duration-300 cursor-pointer">
-              <div class="flex-1">
-                <h4 class="text-base sm:text-lg font-heading font-semibold text-neutral-900 group-hover:text-teal-600 transition-colors duration-300">Just Dance Live</h4>
-                <p class="text-neutral-500 text-xs">Interactive Entertainment</p>
-              </div>
-              <svg class="w-4 h-4 text-neutral-400 group-hover:text-teal-600 group-hover:translate-x-1 transition-all duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5-5 5M6 12h12"/>
-              </svg>
-            </div>
-          </div>
-
+          {moreProjects.map((project) => (
+            <WorkProjectItem {...project} compact />
+          ))}
         </div>
       </div>
     </div>
 
-    <!-- Mouse Following Image Preview -->
-    <div id="mouseImagePreview" class="fixed pointer-events-none z-50 opacity-0 transition-opacity duration-300">
-      <div class="relative">
-        <img id="previewImage" src="" alt="Project preview" loading="lazy" class="w-80 h-48 object-cover rounded-2xl shadow-2xl border-4 border-white/90 backdrop-blur-sm">
-        <div class="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent rounded-2xl"></div>
-      </div>
-    </div>
-
-    <!-- CTA Section -->
     <div class="text-center mt-20 animate-item work-delay-700">
       <div class="inline-block p-8 lg:p-12 bg-gradient-to-br from-white via-teal-50/30 to-emerald-50/30 border border-teal-200/40 rounded-3xl shadow-lg backdrop-blur-sm">
         <h3 class="font-heading font-bold text-neutral-900 mb-4 text-work-cta-title">
@@ -227,15 +122,23 @@ import justDanceLiveImg from '@/assets/images/just-dance-live.jpg'
   </div>
 </section>
 
+<div id="mouseImagePreview" class="hidden lg:block fixed pointer-events-none z-[200] opacity-0 transition-opacity duration-300" aria-hidden="true">
+  <img id="previewImage" src="" alt="" loading="lazy" class="w-80 h-48 object-cover rounded-2xl border border-neutral-200/80">
+</div>
+
 <script>
   document.addEventListener('DOMContentLoaded', function() {
-    const projectItems = document.querySelectorAll('.project-item') as NodeListOf<HTMLElement>;
-    const mousePreview = document.getElementById('mouseImagePreview') as HTMLElement;
-    const previewImage = document.getElementById('previewImage') as HTMLImageElement;
+    const projectItems = document.querySelectorAll('#work .desktop-project-list .project-item') as NodeListOf<HTMLElement>;
+    const mousePreview = document.getElementById('mouseImagePreview') as HTMLElement | null;
+    const previewImage = document.getElementById('previewImage') as HTMLImageElement | null;
+    const mobileMoreDetails = document.getElementById('mobile-more-projects') as HTMLDetailsElement | null;
     let isHovering = false;
     let currentItem: HTMLElement | null = null;
 
-    // Perfect scroll animation system (same as Tech section)
+    function isDesktopHover() {
+      return window.matchMedia('(min-width: 1024px)').matches;
+    }
+
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -245,24 +148,37 @@ import justDanceLiveImg from '@/assets/images/just-dance-live.jpg'
       });
     }, { threshold: 0.1 });
 
-    document.querySelectorAll('#work .animate-item').forEach(item => {
-      observer.observe(item);
+    function observeWorkItems(root: ParentNode = document) {
+      root.querySelectorAll('#work .animate-item').forEach(item => {
+        if (!item.classList.contains('visible')) {
+          observer.observe(item);
+        }
+      });
+    }
+
+    observeWorkItems();
+
+    mobileMoreDetails?.addEventListener('toggle', () => {
+      if (mobileMoreDetails.open) {
+        mobileMoreDetails.querySelectorAll('.animate-item').forEach(item => {
+          item.classList.add('visible');
+        });
+      }
     });
 
-    function updateMousePreview(e: MouseEvent, imageSrc: string) {
-      if (!isHovering) return;
+    function updateMousePreview(e: MouseEvent) {
+      if (!isHovering || !mousePreview || !previewImage) return;
       
       const mouseX = e.clientX;
       const mouseY = e.clientY;
       const windowWidth = window.innerWidth;
       const windowHeight = window.innerHeight;
-      const previewWidth = 320; // 80 * 4 (w-80)
-      const previewHeight = 192; // 48 * 4 (h-48)
+      const previewWidth = 320;
+      const previewHeight = 192;
       
       let x = mouseX + 20;
       let y = mouseY - previewHeight / 2;
       
-      // Keep preview within viewport
       if (x + previewWidth > windowWidth) {
         x = mouseX - previewWidth - 20;
       }
@@ -282,16 +198,17 @@ import justDanceLiveImg from '@/assets/images/just-dance-live.jpg'
       const projectUrl = item.dataset.url || '';
 
       item.addEventListener('mouseenter', function(e: MouseEvent) {
+        if (!isDesktopHover() || !mousePreview || !previewImage) return;
         isHovering = true;
         currentItem = item;
         previewImage.src = imageUrl;
         mousePreview.style.opacity = '1';
-        updateMousePreview(e, imageUrl);
+        updateMousePreview(e);
       });
 
       item.addEventListener('mousemove', function(e: MouseEvent) {
-        if (currentItem === item) {
-          updateMousePreview(e, imageUrl);
+        if (currentItem === item && isDesktopHover()) {
+          updateMousePreview(e);
         }
       });
 
@@ -299,34 +216,36 @@ import justDanceLiveImg from '@/assets/images/just-dance-live.jpg'
         if (currentItem === item) {
           isHovering = false;
           currentItem = null;
-          mousePreview.style.opacity = '0';
+          if (mousePreview) mousePreview.style.opacity = '0';
         }
       });
+    });
+
+    document.querySelectorAll('#work .project-item').forEach(item => {
+      const projectUrl = (item as HTMLElement).dataset.url || '';
 
       item.addEventListener('click', function(e: MouseEvent) {
-        if (projectUrl) {
+        if (projectUrl && !(e.target as Element).closest('summary')) {
           window.open(projectUrl, '_blank', 'noopener,noreferrer');
         }
       });
     });
 
-    // Handle window mouse move for smooth tracking
     document.addEventListener('mousemove', function(e: MouseEvent) {
-      if (isHovering && currentItem) {
-        updateMousePreview(e, currentItem.dataset.image || '');
+      if (isHovering && currentItem && isDesktopHover()) {
+        updateMousePreview(e);
       }
     });
 
     document.addEventListener('mouseleave', function() {
       isHovering = false;
       currentItem = null;
-      mousePreview.style.opacity = '0';
+      if (mousePreview) mousePreview.style.opacity = '0';
     });
   });
 </script>
 
 <style>
-  /* Perfect animation system from Tech section */
   .animate-item {
     opacity: 0;
     transform: translateY(30px);
@@ -338,7 +257,19 @@ import justDanceLiveImg from '@/assets/images/just-dance-live.jpg'
     transform: translateY(0);
   }
 
-  /* Smooth image preview */
+  .work-more-summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .work-more-details[open] .work-more-chevron {
+    transform: rotate(180deg);
+  }
+
+  .work-more-details[open] .work-more-summary {
+    background-color: rgb(255 255 255 / 0.95);
+    border-color: rgb(20 184 166 / 0.25);
+  }
+
   #mouseImagePreview {
     transition: opacity 0.3s ease, transform 0.1s ease;
     will-change: transform;
@@ -348,9 +279,10 @@ import justDanceLiveImg from '@/assets/images/just-dance-live.jpg'
     transition: transform 0.3s ease;
   }
 
-  /* Enhanced project item interactions */
-  .project-item:hover {
-    transform: translateY(-2px);
+  @media (min-width: 1024px) {
+    .project-item:hover {
+      transform: translateY(-2px);
+    }
   }
 
   .project-item .group-hover\:translate-x-1:hover {

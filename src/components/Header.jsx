@@ -36,7 +36,7 @@ class Header extends Component {
 				if (section) {
 					let sectionPos = section.offsetTop
 					
-					if (window.innerWidth < 768 && sectionName !== 'about') {
+					if (window.innerWidth < 1024 && sectionName !== 'about') {
 						sectionPos = sectionPos - 30
 					}
 					
@@ -138,7 +138,7 @@ class Header extends Component {
 			let sectionPos = section.offsetTop
 			
 			// Reduce scroll on mobile apart from about
-			if (window.innerWidth < 768 && sectionName !== 'about') {
+			if (window.innerWidth < 1024 && sectionName !== 'about') {
 				sectionPos = sectionPos - 30
 			}
 
@@ -193,8 +193,8 @@ class Header extends Component {
 					</a>
 				</div>
 
-				{/* Mobile Hamburger Menu */}
-				<div className="sm:hidden">
+				{/* Mobile / tablet: hamburger until lg to avoid nav overlapping logo */}
+				<div className="lg:hidden">
 					<button 
 						onClick={this.toggleNav}
 						aria-label="Toggle mobile menu"
@@ -313,8 +313,8 @@ class Header extends Component {
 				</div>
 
 				{/* Desktop Navigation */}
-				<nav className="hidden sm:block absolute right-8 top-1/2 -translate-y-1/2">
-					<ul className="flex items-center gap-6 p-0 m-0 list-none">
+				<nav className="hidden lg:block absolute right-8 top-1/2 -translate-y-1/2">
+					<ul className="flex items-center gap-5 xl:gap-6 p-0 m-0 list-none">
 						<li>
 							<a 
 								href="#about" 

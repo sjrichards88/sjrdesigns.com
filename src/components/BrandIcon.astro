@@ -1,0 +1,21 @@
+---
+import type { SimpleIcon } from "simple-icons";
+
+interface Props {
+	icon?: SimpleIcon;
+	src?: string;
+	label: string;
+	class?: string;
+	fill?: string;
+}
+
+const { icon, src, label, class: className = "h-5 w-5", fill } = Astro.props;
+---
+
+{icon ? (
+	<svg role="img" aria-label={label} viewBox="0 0 24 24" class={className} fill={fill ?? `#${icon.hex}`}>
+		<path d={icon.path} />
+	</svg>
+) : src ? (
+	<img src={src} alt="" class={`${className} object-contain`} width="20" height="20" loading="lazy" />
+) : null}
