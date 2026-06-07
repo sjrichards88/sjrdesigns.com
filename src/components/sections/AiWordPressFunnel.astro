@@ -2,25 +2,20 @@
 import BrandIcon from "@/components/BrandIcon.astro";
 import {
 	siClaude,
+	siFramer,
 	siStackblitz,
 	siV0,
 	siWebflow,
 	siWordpress,
 } from "simple-icons";
 
-const aiTools = [
+const aiToolsLeft = [
 	{
 		name: "ChatGPT",
 		logoSrc: "/brand/openai.svg",
 		color: "from-emerald-500/20 to-teal-500/10",
 		border: "border-emerald-500/30",
 		iconBg: "bg-white ring-1 ring-black/10",
-	},
-	{
-		name: "Claude",
-		icon: siClaude,
-		color: "from-orange-500/20 to-amber-500/10",
-		border: "border-orange-500/30",
 	},
 	{
 		name: "v0",
@@ -30,16 +25,32 @@ const aiTools = [
 		iconBg: "bg-white ring-1 ring-black/10",
 	},
 	{
-		name: "Bolt",
-		icon: siStackblitz,
-		color: "from-blue-500/20 to-cyan-500/10",
-		border: "border-blue-500/30",
-	},
-	{
 		name: "Lovable",
 		logoSrc: "/brand/lovable.svg",
 		color: "from-pink-500/20 to-rose-500/10",
 		border: "border-pink-500/30",
+	},
+	{
+		name: "Framer",
+		icon: siFramer,
+		color: "from-blue-600/20 to-sky-500/10",
+		border: "border-blue-500/30",
+		iconBg: "bg-white ring-1 ring-black/10",
+	},
+];
+
+const aiToolsRight = [
+	{
+		name: "Claude",
+		icon: siClaude,
+		color: "from-orange-500/20 to-amber-500/10",
+		border: "border-orange-500/30",
+	},
+	{
+		name: "Bolt",
+		icon: siStackblitz,
+		color: "from-blue-500/20 to-cyan-500/10",
+		border: "border-blue-500/30",
 	},
 	{
 		name: "Webflow",
@@ -48,12 +59,14 @@ const aiTools = [
 		border: "border-indigo-500/30",
 	},
 ];
+
+const aiTools = [...aiToolsLeft, ...aiToolsRight];
 ---
 
 <section class="relative px-4 sm:px-6 lg:px-8 pb-16 max-w-5xl mx-auto" aria-labelledby="ai-tools-heading">
 	<h2 id="ai-tools-heading" class="text-2xl sm:text-3xl font-bold text-white mb-3 text-center">Which AI tools does this work with?</h2>
 	<p class="text-neutral-400 text-center text-sm sm:text-base mb-10 max-w-3xl mx-auto leading-relaxed">
-		Valid HTML and CSS from any of these - exported, zipped, or in a repo - can flow through to a production WordPress theme.
+		Valid HTML and CSS from AI builders, Framer exports, or tools like Webflow - exported, zipped, or in a repo - can flow through to a production WordPress theme.
 	</p>
 
 	<div class="funnel-panel relative overflow-hidden rounded-3xl border border-white/10 bg-white/[0.03] p-6 sm:p-8 lg:p-10">
@@ -63,15 +76,27 @@ const aiTools = [
 		<div class="hidden lg:grid lg:grid-cols-[1.1fr_auto_0.75fr_auto_0.85fr] lg:items-center lg:gap-3 relative z-10">
 			<div class="space-y-3">
 				<p class="text-xs font-semibold uppercase tracking-wider text-violet-300/80 mb-4">AI &amp; design tools</p>
-				<div class="grid grid-cols-2 gap-2.5">
-					{aiTools.map((tool) => (
-						<div class={`flex items-center gap-2.5 rounded-xl border bg-gradient-to-br px-3 py-2.5 ${tool.color} ${tool.border}`}>
-							<span class={`flex h-8 w-8 shrink-0 items-center justify-center rounded-lg p-1.5 ${tool.iconBg ?? "bg-black/30"}`}>
-								<BrandIcon icon={tool.icon} src={tool.logoSrc} label={tool.name} class="h-full w-full" />
-							</span>
-							<span class="text-sm font-medium text-white">{tool.name}</span>
-						</div>
-					))}
+				<div class="grid grid-cols-2 gap-2.5 items-stretch">
+					<div class="flex flex-col gap-2.5">
+						{aiToolsLeft.map((tool) => (
+							<div class={`flex items-center gap-2.5 rounded-xl border bg-gradient-to-br px-3 py-2.5 ${tool.color} ${tool.border}`}>
+								<span class={`flex h-8 w-8 shrink-0 items-center justify-center rounded-lg p-1.5 ${tool.iconBg ?? "bg-black/30"}`}>
+									<BrandIcon icon={tool.icon} src={tool.logoSrc} label={tool.name} class="h-full w-full" />
+								</span>
+								<span class="text-sm font-medium text-white">{tool.name}</span>
+							</div>
+						))}
+					</div>
+					<div class="flex flex-col justify-center gap-2.5">
+						{aiToolsRight.map((tool) => (
+							<div class={`flex items-center gap-2.5 rounded-xl border bg-gradient-to-br px-3 py-2.5 ${tool.color} ${tool.border}`}>
+								<span class={`flex h-8 w-8 shrink-0 items-center justify-center rounded-lg p-1.5 ${tool.iconBg ?? "bg-black/30"}`}>
+									<BrandIcon icon={tool.icon} src={tool.logoSrc} label={tool.name} class="h-full w-full" />
+								</span>
+								<span class="text-sm font-medium text-white">{tool.name}</span>
+							</div>
+						))}
+					</div>
 				</div>
 			</div>
 

@@ -1,8 +1,11 @@
 ---
 import Layout from "@/layouts/Layout.astro";
 import AiWordPressFunnel from "@/components/sections/AiWordPressFunnel.astro";
+import { contactHref } from "@/lib/contactServices";
 
 export const prerender = true;
+
+const aiContactUrl = contactHref("ai-html-to-wordpress");
 
 const pageUrl = "https://sjrdesigns.com/ai-html-to-wordpress-theme/";
 
@@ -13,7 +16,7 @@ const faqs = [
 	{
 		question: "Can you convert any AI-generated HTML into a WordPress theme?",
 		answer:
-			"In most cases, yes. I work from HTML and CSS produced by tools like ChatGPT, Claude, v0, Bolt, Lovable, or other generators, clean up the markup, split it into proper WordPress templates, and wire everything into the CMS. Very experimental layouts may need small design adjustments for WordPress constraints.",
+			"In most cases, yes. I work from HTML and CSS produced by tools like ChatGPT, Claude, v0, Bolt, Lovable, Framer exports, or other generators, clean up the markup, split it into proper WordPress templates, and wire everything into the CMS. Very experimental layouts may need small design adjustments for WordPress constraints.",
 	},
 	{
 		question: "Will my site look the same as the AI-generated preview?",
@@ -151,11 +154,11 @@ const whatYouGet = [
 					Turn AI-generated HTML into a <span class="text-transparent bg-clip-text bg-gradient-to-r from-violet-400 to-blue-400">usable WordPress theme</span>
 				</h1>
 				<p class="text-lg sm:text-xl text-neutral-300 mx-auto leading-relaxed">
-					Static pages from ChatGPT, Claude, v0, or other tools are a fast way to explore design - but they are not a CMS. I convert your AI-built HTML and CSS into a real WordPress theme you can edit, extend, and run in production. Most projects are a <span class="text-white font-medium">one-off build and handover</span> - monthly care is optional, not required.
+					Static pages from ChatGPT, Claude, v0, Framer, or other tools are a fast way to explore design - but they are not a CMS. I convert your AI-built or exported HTML and CSS into a real WordPress theme you can edit, extend, and run in production. Most projects are a <span class="text-white font-medium">one-off build and handover</span> - monthly care is optional, not required.
 				</p>
 				<div class="flex flex-col sm:flex-row gap-4 justify-center mt-10">
 					<a
-						href="/#contact"
+						href={aiContactUrl}
 						class="inline-flex items-center justify-center px-8 py-4 rounded-xl font-semibold text-white bg-gradient-to-r from-violet-600 to-blue-600 hover:from-violet-500 hover:to-blue-500 shadow-lg shadow-violet-500/25 transition-all duration-300"
 					>
 						Send me your HTML
@@ -231,7 +234,7 @@ const whatYouGet = [
 				If you want hosting, SSL, and ongoing updates handled for you afterwards, <a href="/pricing/" class="text-blue-400 hover:text-blue-300 underline underline-offset-2">monthly packages</a> are available as a separate choice - many clients take the one-off build only and run the site themselves.
 			</p>
 			<a
-				href="/#contact"
+				href={aiContactUrl}
 				class="inline-flex items-center justify-center px-8 py-4 rounded-xl font-semibold text-white bg-gradient-to-r from-violet-600 to-blue-600 hover:from-violet-500 hover:to-blue-500 transition-all duration-300"
 			>
 				Tell me about your project
@@ -265,7 +268,7 @@ const whatYouGet = [
 				Founders, marketers, and agencies who used AI to speed up design exploration and now need a real CMS. It is especially useful when you already like the look of your static HTML but do not have time to learn the WordPress theme layer yourself.
 			</p>
 			<p class="text-neutral-300 leading-relaxed">
-				If you are unsure whether your HTML is ready or how a one-off quote might look, <a href="/#contact" class="text-blue-400 hover:text-blue-300 underline underline-offset-2">tell me about your project</a> - I will reply honestly about what is feasible and what a fixed scope would look like.
+				If you are unsure whether your HTML is ready or how a one-off quote might look, <a href={aiContactUrl} class="text-blue-400 hover:text-blue-300 underline underline-offset-2">tell me about your project</a> - I will reply honestly about what is feasible and what a fixed scope would look like.
 			</p>
 		</section>
 
@@ -297,7 +300,7 @@ const whatYouGet = [
 					Send a short note about your project and goals. I will reply with next steps, what I need to see, and a realistic one-off scope - usually within one working day.
 				</p>
 				<a
-					href="/#contact"
+					href={aiContactUrl}
 					class="inline-flex items-center justify-center px-8 py-4 rounded-xl font-semibold text-white bg-gradient-to-r from-violet-600 to-blue-600 hover:from-violet-500 hover:to-blue-500 transition-all duration-300"
 				>
 					Start with a free scope call

@@ -1,5 +1,27 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { useForm } from "react-hook-form"
+import {
+  CONTACT_SERVICES,
+  getServiceFromUrl,
+  isValidServiceId,
+} from "../../lib/contactServices"
+
+type ContactFormData = {
+  name: string
+  email: string
+  message: string
+  service: string
+  budget: string
+  monthlyPayments?: boolean
+  honeypot?: string
+}
+
+function applyServiceFromUrl(setValue: (name: "service", value: string) => void) {
+  const serviceId = getServiceFromUrl()
+  if (serviceId && isValidServiceId(serviceId)) {
+    setValue("service", serviceId)
+  }
+}
 
 export default function Contact() {
   const [success, setSuccess] = useState(false);
@@ -7,8 +29,13 @@ export default function Contact() {
     register,
     handleSubmit,
     reset,
+    setValue,
     formState: { errors },
-  } = useForm()
+  } = useForm<ContactFormData>()
+
+  useEffect(() => {
+    applyServiceFromUrl(setValue)
+  }, [setValue])
 
   const onSubmit = async (data: any) => {
     if (data.honeypot === "") {
@@ -31,6 +58,7 @@ export default function Contact() {
         if (json.data && !json.error) {
           setSuccess(true);
           reset()
+          applyServiceFromUrl(setValue)
         }
       } catch (error) {
         console.error('Failed to send message:', error);
@@ -113,6 +141,32 @@ export default function Contact() {
                     <p className="text-rose-300 text-sm mt-1">{errors.email.message as string}</p>
                   )}
                 </div>
+              </div>
+
+              {/* Service */}
+              <div>
+                <label className="block text-sm font-medium text-neutral-300 mb-2">What are you interested in?</label>
+                <div className="relative">
+                  <select
+                    {...register("service", { required: "Please select a service" })}
+                    className="w-full px-4 py-3 pr-10 bg-white/5 border border-white/20 rounded-xl text-white focus:outline-none focus:border-blue-400 focus:bg-white/10 transition-all duration-300 appearance-none cursor-pointer"
+                  >
+                    <option value="" className="bg-neutral-800 text-neutral-300">Select a service</option>
+                    {CONTACT_SERVICES.map((service) => (
+                      <option key={service.id} value={service.id} className="bg-neutral-800 text-white">
+                        {service.label}
+                      </option>
+                    ))}
+                  </select>
+                  <div className="absolute inset-y-0 right-3 flex items-center pointer-events-none">
+                    <svg className="w-4 h-4 text-neutral-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"/>
+                    </svg>
+                  </div>
+                </div>
+                {errors.service && (
+                  <p className="text-rose-300 text-sm mt-1">{errors.service.message as string}</p>
+                )}
               </div>
               
               {/* Message */}
